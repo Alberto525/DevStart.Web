@@ -1,6 +1,14 @@
 ﻿@{
     ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
 }
+<div class="card">
+    <div class="card-body" style="background:#c2c7c7">
+        <h5 class="card-title" style="color:black">Bienvenido</h5>
+        <p class="card-text" style="color:black">Por favor inicie sesión</p>
+    </div>
+</div>
+<br />
 
 <div class="col-lg-5">
     <!-- Material form login -->
@@ -14,17 +22,19 @@
         <div class="card-body px-lg-5 pt-0">
 
             <!-- Form -->
-            <form class="text-center" style="color: #757575;" action="#!">
+            <form class="text-center" style="color: #757575;" action="#!" method="post">
 
                 <!-- Email -->
                 <div class="md-form">
-                    <input type="email" id="materialLoginFormEmail" class="form-control">
+                    <i class="fa fa-envelope prefix" style="left:0"></i>
+                    <input type="email" name="us" id="materialLoginFormEmail" class="form-control">
                     <label for="materialLoginFormEmail">E-mail</label>
                 </div>
 
                 <!-- Password -->
                 <div class="md-form">
-                    <input type="password" id="materialLoginFormPassword" class="form-control">
+                    <i class="fa fa-lock prefix" style="left:0"></i>
+                    <input type="password" name="pw" id="materialLoginFormPassword" class="form-control">
                     <label for="materialLoginFormPassword">Password</label>
                 </div>
 
@@ -74,3 +84,32 @@
     </div>
     <!-- Material form login -->
 </div>
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('#mainform').submit(function (event) {
+            //event.preventDefault();
+            WebShowLoading();
+            WebNotifyAsBlock("info", "Hola Mundo", "Titulo");
+            //$.ajax({
+            //    url: $('#mainform').attr('action'),
+            //    type: 'POST',
+            //    data: $('#mainform').serialize(),
+            //    success: function (response) {
+            //        fireCodeHideLoading();
+            //        if (response.HasError != undefined) {
+            //            if (response.HasError) {
+            //                fireCodeNotifyAsPopup(response.Messages);
+            //            } else {
+            //                fireCodeNotifyAsPopup(response.Messages);
+            //                document.location = "/Security/User/Index"
+            //            }
+            //        }
+            //    }
+            //});
+        });
+    });
+
+</script>
