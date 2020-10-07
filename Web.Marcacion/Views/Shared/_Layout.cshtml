@@ -10,9 +10,25 @@
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
 </head>
 <body class="fixed-sn black-skin">
+
+    <div class="modal-webloading" style="display: none;">
+        <div style="background-color: #000;position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 1060;opacity: 0.20;"></div>
+        <div id="webLoading">
+
+            <div class="spinner-grow text-primary" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+            <div class="spinner-grow text-primary" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+            <div class="spinner-grow text-primary" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+    </div>
+
     <!--Double navigation-->
     <header>
         <!-- Sidebar navigation -->
@@ -164,13 +180,15 @@
         <!-- /.Navbar -->
     </header>
     <!--/.Double navigation-->
-    
+
     <main>
         <div class="container body-content">
             @RenderBody()
         </div>
     </main>
 
+    
+    @RenderSection("scripts", required: false)
     <script>
         $(document).ready(() => {
             // SideNav Initialization

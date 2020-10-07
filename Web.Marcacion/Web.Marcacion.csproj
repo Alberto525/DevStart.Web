@@ -133,7 +133,6 @@
     <Compile Include="Areas\Perfil\PerfilAreaRegistration.cs" />
     <Compile Include="Context\StoreContext.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -148,6 +147,7 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\cssDesign\Layout.css" />
     <Content Include="Content\mdb.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -213,6 +213,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jsDesign\jsLayout.js" />
     <Content Include="Scripts\mdb.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\popper-utils.js" />
@@ -313,6 +314,7 @@
     <Content Include="Views\Home\Grid.cshtml" />
     <Content Include="Views\Home\Containers.cshtml" />
     <Content Include="Views\Home\Buttons.cshtml" />
+    <Content Include="Views\Shared\_LayoutLogin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

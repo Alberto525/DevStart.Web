@@ -1,0 +1,22 @@
+﻿#webLoading {
+    position: fixed;
+    z-index: 1070;
+    /*width: 100px;
+    background-color: #fff;*/
+    border-radius: 100%;
+    top: 35%;
+    left: 45%;
+}
+
+    /*#webLoading img {
+        width: 30%;
+        background-color: #fff;
+        border-radius: 100%;
+    }*/
+
+@media (max-width: 500px) {
+    #webLoading {
+        left: 30%;
+        left: 35%;
+    }
+}

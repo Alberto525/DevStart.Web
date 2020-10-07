@@ -2,6 +2,8 @@
     ViewBag.Title = "Home Page";
     Layout = "~/Views/Shared/_LayoutLogin.cshtml";
 }
+
+
 <div class="card">
     <div class="card-body" style="background:#c2c7c7">
         <h5 class="card-title" style="color:black">Bienvenido</h5>
@@ -10,7 +12,7 @@
 </div>
 <br />
 
-<div class="col-lg-5">
+<div class="col-lg-5" style="margin: 0 auto;">
     <!-- Material form login -->
     <div class="card">
 
@@ -22,7 +24,7 @@
         <div class="card-body px-lg-5 pt-0">
 
             <!-- Form -->
-            <form class="text-center" style="color: #757575;" action="#!" method="post">
+            <form id="mainform" class="text-center" style="color: #757575;" action="#!" method="post">
 
                 <!-- Email -->
                 <div class="md-form">
@@ -85,14 +87,13 @@
     <!-- Material form login -->
 </div>
 
-
 <script type="text/javascript">
 
     $(document).ready(function () {
         $('#mainform').submit(function (event) {
             //event.preventDefault();
             WebShowLoading();
-            WebNotifyAsBlock("info", "Hola Mundo", "Titulo");
+            WebNotifyAsBlock("info","Hola Mundo", "Titulo");
             //$.ajax({
             //    url: $('#mainform').attr('action'),
             //    type: 'POST',
