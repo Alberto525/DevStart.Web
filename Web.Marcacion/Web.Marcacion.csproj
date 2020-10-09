@@ -132,10 +132,12 @@
     <Compile Include="Areas\Perfil\Controllers\T_PerfilController.cs" />
     <Compile Include="Areas\Perfil\PerfilAreaRegistration.cs" />
     <Compile Include="Context\StoreContext.cs" />
+    <Compile Include="Controllers\EmpresaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\T_Empresa.cs" />
     <Compile Include="Models\T_Perfil.cs" />
     <Compile Include="Models\T_Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -315,6 +317,11 @@
     <Content Include="Views\Home\Containers.cshtml" />
     <Content Include="Views\Home\Buttons.cshtml" />
     <Content Include="Views\Shared\_LayoutLogin.cshtml" />
+    <Content Include="Views\Empresa\Create.cshtml" />
+    <Content Include="Views\Empresa\Index.cshtml" />
+    <Content Include="Views\Empresa\Delete.cshtml" />
+    <Content Include="Views\Empresa\Detail.cshtml" />
+    <Content Include="Views\Empresa\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

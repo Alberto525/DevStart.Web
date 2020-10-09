@@ -432,3 +432,7 @@ C:\Users\Usuario\Documents\Project git\DevStar.Web-Git\DevStart.Web\Web.Marcacio
 C:\Users\Usuario\Documents\Project git\DevStar.Web-Git\DevStart.Web\Web.Marcacion\bin\es\System.Web.WebPages.Deployment.resources.dll
 C:\Users\Usuario\Documents\Project git\DevStar.Web-Git\DevStart.Web\Web.Marcacion\bin\es\System.Web.WebPages.Razor.resources.dll
 C:\Users\Usuario\Documents\Project git\DevStar.Web-Git\DevStart.Web\Web.Marcacion\obj\Debug\Web.Marcacion.csproj.CopyComplete
+E:\Project Asistencia\DevStart.Web\DevStart.Web\Web.Marcacion\bin\EntityFramework.dll
+E:\Project Asistencia\DevStart.Web\DevStart.Web\Web.Marcacion\bin\EntityFramework.SqlServer.dll
+E:\Project Asistencia\DevStart.Web\DevStart.Web\Web.Marcacion\bin\EntityFramework.xml
+E:\Project Asistencia\DevStart.Web\DevStart.Web\Web.Marcacion\bin\EntityFramework.SqlServer.xml
