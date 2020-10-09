@@ -1,0 +1,74 @@
+﻿@model Web.Marcacion.Models.T_EmpleadoJornada
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-lg-5">
+    <!-- Material form login -->
+    <div class="card">
+        <div class="card-header info-color white-text py-4t">
+            DETALLE DE LA JORNADA DEL EMPLEADO
+        </div>
+        <!--Card content-->
+        <div class="card-body px-lg-5 pt-0">
+            <!-- Form -->
+            <!--<form class="text-center" style="color: #757575;" action="" method="post">-->
+            @using (Html.BeginForm("Detail", "T_EmpleadoJornada", FormMethod.Post))
+            {
+                <!-- Nombre -->
+                @Html.HiddenFor(model => model.ID_EmpleadoJornada)
+                <div class="md-form">
+                    <i class="fas fa-envelope prefix" style="left:0"></i>
+                    @Html.TextBoxFor(model => model.Nombre, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
+                    <label for="Descripcion">Nombres</label>
+                </div>
+                <!-- Apellido -->
+                <div class="md-form">
+                    <i class="fas fa-envelope prefix" style="left:0"></i>
+                    @Html.TextBoxFor(model => model.Apellido, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
+                    <label for="Descripcion">Apellidos</label>
+                </div>
+                <!-- Cargo -->
+                <div class="md-form">
+                    <i class="fas fa-envelope prefix" style="left:0"></i>
+                    @Html.TextBoxFor(model => model.Cargo, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
+                    <label for="Descripcion">Cargo</label>
+                </div>
+                <!-- Descripcion -->
+                <div class="md-form">
+                    <i class="fas fa-envelope prefix" style="left:0"></i>
+                    @Html.TextBoxFor(model => model.Descripcion, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
+                    <label for="Descripcion">Tipo de Jornada</label>
+                </div>
+                <!-- HoraEntrada -->
+                <div class="md-form">
+                    <i class="fas fa-envelope prefix" style="left:0"></i>
+                    @Html.TextBoxFor(model => model.HoraEntrada, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
+                    <label for="Descripcion">Hora de Entrada</label>
+                </div>
+                <!-- HoraSalida -->
+                <div class="md-form">
+                    <i class="fas fa-envelope prefix" style="left:0"></i>
+                    @Html.TextBoxFor(model => model.HoraSalida, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
+                    <label for="Descripcion">Hora de Salida</label>
+                </div>
+
+                <hr />
+            }
+ 
+            @using (Html.BeginForm("Salir", "T_EmpleadoJornada", FormMethod.Get))
+            {
+                <button type="submit" class="btn btn-primary">SALIR</button>
+            }
+
+            <!-- Form -->
+
+        </div>
+
+    </div>
+    <!-- Material form login -->
+</div>
+
+

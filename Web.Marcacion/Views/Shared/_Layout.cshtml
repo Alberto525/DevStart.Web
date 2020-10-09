@@ -65,30 +65,30 @@
                     <ul class="collapsible collapsible-accordion">
                         <li>
                             <a class="collapsible-header waves-effect arrow-r">
-                                <i class="fas fa-chevron-right"></i> Submit blog<i class="fas fa-angle-down rotate-icon"></i>
+                                <i class="fas fa-chevron-right"></i>Usuario<i class="fas fa-angle-down rotate-icon"></i>
                             </a>
                             <div class="collapsible-body">
                                 <ul class="list-unstyled">
                                     <li>
-                                        <a href="#" class="waves-effect">Submit listing</a>
+                                        <a href="#" class="waves-effect">Empleados</a>
                                     </li>
                                     <li>
-                                        <a href="#" class="waves-effect">Registration form</a>
+                                        <a href="#" class="waves-effect">Registrar Empleado</a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
                         <li>
                             <a class="collapsible-header waves-effect arrow-r">
-                                <i class="fas fa-hand-pointer"></i> Instruction<i class="fas fa-angle-down rotate-icon"></i>
+                                <i class="fas fa-hand-pointer"></i> Jornada<i class="fas fa-angle-down rotate-icon"></i>
                             </a>
                             <div class="collapsible-body">
                                 <ul class="list-unstyled">
                                     <li>
-                                        <a href="#" class="waves-effect">For bloggers</a>
+                                        <a href="@Url.Action("Index", null, new { area = "TipoJornada", controller = "T_TipoJornada" }, Request.Url.Scheme)" class="elements" >Tipo de Jornadas</a>
                                     </li>
                                     <li>
-                                        <a href="#" class="waves-effect">For authors</a>
+                                        <a href="@Url.Action("Index", null, new { area = "EmpleadoJornada", controller = "T_EmpleadoJornada" }, Request.Url.Scheme)" class="waves-effect">Jornadas de Empleados</a>
                                     </li>
                                 </ul>
                             </div>
