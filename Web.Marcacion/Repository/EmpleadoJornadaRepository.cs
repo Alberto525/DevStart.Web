@@ -25,5 +25,23 @@ namespace Web.Marcacion.Repository
             }
         }
 
+        public List<T_EmpleadoJornada> ListarXNombre(string nombre, string apellido, string jornada)
+        {
+            using (var db = new StoreContext())
+            {
+                return db.Database.SqlQuery<T_EmpleadoJornada>("sp_ListarXNombre @p0,@p1,@p2", nombre,apellido,jornada).ToList();
+            }
+        }
+
+        public void ActualizarJornadaEmpleado(int id, int idtipojornada)
+        {
+            using (var db = new StoreContext())
+            {
+                db.Database.ExecuteSqlCommand("UpdateJornadaEmpleado @p0,@p1", id, idtipojornada);
+            }
+
+
+        }
+
     }
 }

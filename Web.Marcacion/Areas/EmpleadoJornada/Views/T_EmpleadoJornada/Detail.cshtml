@@ -5,69 +5,87 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="col-lg-5">
+<div class="col-lg-8 col-md-6 col-sm-12">
     <!-- Material form login -->
     <div class="card">
         <div class="card-header info-color white-text py-4t">
             DETALLE DE LA JORNADA DEL EMPLEADO
         </div>
         <!--Card content-->
-        <div class="card-body px-lg-5 pt-0">
+        <div class="card-body px-lg-12 pt-0">
             <!-- Form -->
             <!--<form class="text-center" style="color: #757575;" action="" method="post">-->
             @using (Html.BeginForm("Detail", "T_EmpleadoJornada", FormMethod.Post))
             {
                 <!-- Nombre -->
                 @Html.HiddenFor(model => model.ID_EmpleadoJornada)
-                <div class="md-form">
-                    <i class="fas fa-envelope prefix" style="left:0"></i>
-                    @Html.TextBoxFor(model => model.Nombre, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
-                    <label for="Descripcion">Nombres</label>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="md-form">
+                            <i class="fas fa-envelope prefix" style="left:0"></i>
+                            @Html.TextBoxFor(model => model.Nombre, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
+                            <label for="Descripcion">Nombres</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <!-- Apellido -->
+                        <div class="md-form">
+                            <i class="fas fa-envelope prefix" style="left:0"></i>
+                            @Html.TextBoxFor(model => model.Apellido, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
+                            <label for="Descripcion">Apellidos</label>
+                        </div>
+                    </div>
                 </div>
-                <!-- Apellido -->
-                <div class="md-form">
-                    <i class="fas fa-envelope prefix" style="left:0"></i>
-                    @Html.TextBoxFor(model => model.Apellido, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
-                    <label for="Descripcion">Apellidos</label>
-                </div>
+
                 <!-- Cargo -->
-                <div class="md-form">
-                    <i class="fas fa-envelope prefix" style="left:0"></i>
-                    @Html.TextBoxFor(model => model.Cargo, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
-                    <label for="Descripcion">Cargo</label>
-                </div>
-                <!-- Descripcion -->
-                <div class="md-form">
-                    <i class="fas fa-envelope prefix" style="left:0"></i>
-                    @Html.TextBoxFor(model => model.Descripcion, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
-                    <label for="Descripcion">Tipo de Jornada</label>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="md-form">
+                            <i class="fas fa-envelope prefix" style="left:0"></i>
+                            @Html.TextBoxFor(model => model.Cargo, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
+                            <label for="Descripcion">Cargo</label>
+                        </div>
+                    </div>
+                    <!-- Descripcion -->
+                    <div class="col-md-6">
+                        <div class="md-form">
+                            <i class="fas fa-envelope prefix" style="left:0"></i>
+                            @Html.TextBoxFor(model => model.Descripcion, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
+                            <label for="Descripcion">Tipo de Jornada</label>
+                        </div>
+                    </div>
                 </div>
                 <!-- HoraEntrada -->
-                <div class="md-form">
-                    <i class="fas fa-envelope prefix" style="left:0"></i>
-                    @Html.TextBoxFor(model => model.HoraEntrada, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
-                    <label for="Descripcion">Hora de Entrada</label>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="md-form">
+                            <i class="fas fa-envelope prefix" style="left:0"></i>
+                            @Html.TextBoxFor(model => model.HoraEntrada, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
+                            <label for="Descripcion">Hora de Entrada</label>
+                        </div>
+                    </div>
+                    <!-- HoraSalida -->
+                    <div class="col-md-6">
+                        <div class="md-form">
+                            <i class="fas fa-envelope prefix" style="left:0"></i>
+                            @Html.TextBoxFor(model => model.HoraSalida, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
+                            <label for="Descripcion">Hora de Salida</label>
+                        </div>
+                    </div>
                 </div>
-                <!-- HoraSalida -->
-                <div class="md-form">
-                    <i class="fas fa-envelope prefix" style="left:0"></i>
-                    @Html.TextBoxFor(model => model.HoraSalida, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
-                    <label for="Descripcion">Hora de Salida</label>
+                    <hr />
+                    }
+
+                    @using (Html.BeginForm("Salir", "T_EmpleadoJornada", FormMethod.Get))
+                    {
+                        <button type="submit" class="btn btn-primary">Regresar</button>
+                    }
+
+                    <!-- Form -->
+
                 </div>
 
-                <hr />
-            }
- 
-            @using (Html.BeginForm("Salir", "T_EmpleadoJornada", FormMethod.Get))
-            {
-                <button type="submit" class="btn btn-primary">SALIR</button>
-            }
-
-            <!-- Form -->
-
-        </div>
-
-    </div>
+            </div>
     <!-- Material form login -->
 </div>
 

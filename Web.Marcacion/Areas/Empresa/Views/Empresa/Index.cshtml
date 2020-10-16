@@ -19,16 +19,16 @@
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th>IDEMPRESA</th>
+                        @*<th>IDEMPRESA</th>*@
                         <th>RAZON SOCIAL</th>
                         <th>RUC</th>
                         <th>GRUPO</th>
                         <th>DIRECCION</th>
                         <th>TELEFONO</th>
-                        <th>FECHA DE CREACION</th>
-                        <th>USUARIO CREACION</th>
-                        <th>FECHA DE MODIFICACION</th>
-                        <th>USUARIO MODIFICACION</th>
+                        @*  <th>FECHA DE CREACION</th>
+                            <th>USUARIO CREACION</th>
+                            <th>FECHA DE MODIFICACION</th>
+                            <th>USUARIO MODIFICACION</th>*@
                         <th>ESTADO</th>
                         <th>ACCIONES</th>
 
@@ -38,16 +38,16 @@
                     @foreach (var olista in Model)
                     {
                     <tr>
-                        <td>@olista.ID_Empresa</td>
+                        @*<td>@olista.ID_Empresa</td>*@
                         <td>@olista.RazonSocial</td>
                         <td>@olista.RUC</td>
                         <td>@olista.Grupo</td>
                         <td>@olista.Direccion</td>
                         <td>@olista.Telefono</td>
-                        <td>@olista.FechaCreacion</td>
-                        <td>@olista.UsuarioCreacion</td>
-                        <td>@olista.FechaModificacion</td>
-                        <td>@olista.UsuarioModificacion</td>
+                        @* <td>@olista.FechaCreacion</td>
+        <td>@olista.UsuarioCreacion</td>
+        <td>@olista.FechaModificacion</td>
+        <td>@olista.UsuarioModificacion</td>*@
                         <td>@olista.Estado</td>
                         <td>
                             @Html.ActionLink("Edit", "Edit", new { id = olista.ID_Empresa })  |

@@ -21,19 +21,19 @@
                 @Html.HiddenFor(model => model.ID_TipoJornada)
                 <div class="md-form">
                     <i class="fas fa-envelope prefix" style="left:0"></i>
-                    @Html.TextBoxFor(model => model.Descripcion, htmlAttributes: new { @class = "form-control" })
+                    @Html.TextBoxFor(model => model.Descripcion, htmlAttributes: new { @class = "form-control"  })
                     <label for="Descripcion">Descripción</label>
                 </div>
                 <!-- Hora de Entrada -->
                 <div class="md-form">
                     <i class="fas fa-envelope prefix" style="left:0"></i>
-                    @Html.TextBoxFor(model => model.HoraEntrada, htmlAttributes: new { @class = "form-control" })
+                    @Html.TextBoxFor(model => model.HoraEntrada, htmlAttributes: new { @class = "form-control", type = "time" })
                     <label for="Descripcion">Hora de Entrada</label>
                 </div>
                 <!-- Hora de Salida -->
                 <div class="md-form">
                     <i class="fas fa-envelope prefix" style="left:0"></i>
-                    @Html.TextBoxFor(model => model.HoraSalida, htmlAttributes: new { @class = "form-control" })
+                    @Html.TextBoxFor(model => model.HoraSalida, htmlAttributes: new { @class = "form-control", type = "time" })
                     <label for="Descripcion">Hora de Salida</label>
                 </div>
                 <!-- Estado -->

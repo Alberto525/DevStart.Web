@@ -129,8 +129,12 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Asistencia\AsistenciaAreaRegistration.cs" />
+    <Compile Include="Areas\Asistencia\Controllers\T_AsistenciaController.cs" />
     <Compile Include="Areas\EmpleadoJornada\Controllers\T_EmpleadoJornadaController.cs" />
     <Compile Include="Areas\EmpleadoJornada\EmpleadoJornadaAreaRegistration.cs" />
+    <Compile Include="Areas\Empresa\Controllers\EmpresaController.cs" />
+    <Compile Include="Areas\Empresa\EmpresaAreaRegistration.cs" />
     <Compile Include="Areas\Perfil\Controllers\T_PerfilController.cs" />
     <Compile Include="Areas\Perfil\PerfilAreaRegistration.cs" />
     <Compile Include="Areas\TipoJornada\Controllers\T_TipoJornadaController.cs" />
@@ -141,12 +145,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\T_Asistencia.cs" />
     <Compile Include="Models\T_Empresa.cs" />
     <Compile Include="Models\T_EmpleadoJornada.cs" />
     <Compile Include="Models\T_Perfil.cs" />
     <Compile Include="Models\T_TipoJornada.cs" />
     <Compile Include="Models\T_Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\AsistenciaRepository.cs" />
     <Compile Include="Repository\EmpleadoJornadaRepository.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -221,6 +227,19 @@
     <Content Include="Areas\EmpleadoJornada\Views\web.config" />
     <Content Include="Areas\EmpleadoJornada\Views\T_EmpleadoJornada\Index.cshtml" />
     <Content Include="Areas\EmpleadoJornada\Views\T_EmpleadoJornada\Detail.cshtml" />
+    <Content Include="Areas\Empresa\Views\web.config" />
+    <Content Include="Areas\Empresa\Views\Empresa\Create.cshtml" />
+    <Content Include="Areas\Empresa\Views\Empresa\Delete.cshtml" />
+    <Content Include="Areas\Empresa\Views\Empresa\Detail.cshtml" />
+    <Content Include="Areas\Empresa\Views\Empresa\Edit.cshtml" />
+    <Content Include="Areas\Empresa\Views\Empresa\Index.cshtml" />
+    <Content Include="Areas\EmpleadoJornada\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\EmpleadoJornada\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\EmpleadoJornada\Views\T_EmpleadoJornada\Edit.cshtml" />
+    <Content Include="Areas\Asistencia\Views\web.config" />
+    <Content Include="Areas\Asistencia\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Asistencia\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Asistencia\Views\T_Asistencia\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -341,8 +360,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Asistencia\Models\" />
     <Folder Include="Areas\EmpleadoJornada\Models\" />
-    <Folder Include="Areas\EmpleadoJornada\Views\Shared\" />
+    <Folder Include="Areas\Empresa\Models\" />
+    <Folder Include="Areas\Empresa\Views\Shared\" />
     <Folder Include="Areas\Perfil\Models\" />
     <Folder Include="Areas\TipoJornada\Models\" />
     <Folder Include="Areas\TipoJornada\Views\Shared\" />
