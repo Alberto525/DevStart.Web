@@ -28,7 +28,7 @@ namespace Web.Marcacion.Controllers
             if (user != null)
             {
                 //var modelPerson = db.T_Persona.FirstOrDefault(x => x.ID_Persona == user.ID_Persona);
-                return RedirectToAction("Index", "T_Perfil", new { area = "Perfil" });
+                return RedirectToAction("Index", "T_Persona", new { area = "Persona" });
             }
 
             return View();

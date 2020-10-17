@@ -13,5 +13,8 @@ namespace Web.Marcacion.Context
         public DbSet<T_Usuario> t_Usuarios { get; set; }
         public DbSet<T_Perfil> t_Perfils { get; set; }
 
+        public DbSet<T_Persona> T_Personas { get; set; }
+        public DbSet<T_TipoDocumento> T_TipoDocumentos { get; set; }
+
     }
 }

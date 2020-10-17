@@ -131,12 +131,17 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Perfil\Controllers\T_PerfilController.cs" />
     <Compile Include="Areas\Perfil\PerfilAreaRegistration.cs" />
+    <Compile Include="Areas\Persona\Controllers\T_PersonaController.cs" />
+    <Compile Include="Areas\Persona\PersonaAreaRegistration.cs" />
     <Compile Include="Context\StoreContext.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\T_Empresa.cs" />
     <Compile Include="Models\T_Perfil.cs" />
+    <Compile Include="Models\T_Persona.cs" />
+    <Compile Include="Models\T_TipoDocumento.cs" />
     <Compile Include="Models\T_Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -203,6 +208,15 @@
     <Content Include="Areas\Perfil\Views\T_Perfil\Index.cshtml" />
     <Content Include="Areas\Perfil\Views\web.config" />
     <Content Include="Areas\Perfil\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Persona\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Persona\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Persona\Views\T_Persona\Create.cshtml" />
+    <Content Include="Areas\Persona\Views\T_Persona\Delete.cshtml" />
+    <Content Include="Areas\Persona\Views\T_Persona\Detail.cshtml" />
+    <Content Include="Areas\Persona\Views\T_Persona\Edit.cshtml" />
+    <Content Include="Areas\Persona\Views\T_Persona\Index.cshtml" />
+    <Content Include="Areas\Persona\Views\web.config" />
+    <Content Include="Areas\Persona\Views\T_Persona\CreateUsuario.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -319,6 +333,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Perfil\Models\" />
+    <Folder Include="Areas\Persona\Models\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
