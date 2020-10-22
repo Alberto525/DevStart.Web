@@ -1,20 +1,10 @@
-﻿@model List<Web.Marcacion.Models.T_Perfil>
+﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Success";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-<h2>Perfil</h2>
-@using (Html.BeginForm("Create", "T_Perfil", FormMethod.Get))
-{
-    <button type="submit" class="btn btn-primary">NUEVO</button>
-}
-
-@using (Html.BeginForm("ImportarExcel", "T_Perfil", FormMethod.Get))
-{
-    <button type="submit" class="btn btn-primary">IMPORT</button>
-}
-
+<h2>Success</h2>
 @using (Html.BeginForm("Delete", "T_Perfil", FormMethod.Get))
 {
     <div class="row ">
@@ -24,17 +14,15 @@
                     <tr>
                         <th>IDPERFIL</th>
                         <th>DESCRIPCION</th>
-                        <th>ESTADO</th>
                         <th>ACCIONES</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var olista in Model)
+                    @foreach (var olista in ViewBag.ListPerfil)
                     {
                         <tr>
                             <td>@olista.ID_Perfil</td>
                             <td>@olista.Descripcion</td>
-                            <td>@olista.Estado</td>
                             <td>
                                 @Html.ActionLink("Edit", "Edit", new { id = olista.ID_Perfil })  |
                                 @Html.ActionLink("Detail", "Detail", new { id = olista.ID_Perfil }) |

@@ -56,6 +56,10 @@
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -240,6 +244,10 @@
     <Content Include="Areas\Asistencia\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Asistencia\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Asistencia\Views\T_Asistencia\Index.cshtml" />
+    <Content Include="Areas\Empresa\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Empresa\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Perfil\Views\T_Perfil\ImportarExcel.cshtml" />
+    <Content Include="Areas\Perfil\Views\T_Perfil\Success.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -357,13 +365,13 @@
     <Content Include="Views\Empresa\Delete.cshtml" />
     <Content Include="Views\Empresa\Detail.cshtml" />
     <Content Include="Views\Empresa\Edit.cshtml" />
+    <Content Include="UploadExcel\T_Perfiles.xlsx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Asistencia\Models\" />
     <Folder Include="Areas\EmpleadoJornada\Models\" />
     <Folder Include="Areas\Empresa\Models\" />
-    <Folder Include="Areas\Empresa\Views\Shared\" />
     <Folder Include="Areas\Perfil\Models\" />
     <Folder Include="Areas\TipoJornada\Models\" />
     <Folder Include="Areas\TipoJornada\Views\Shared\" />
@@ -378,6 +386,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

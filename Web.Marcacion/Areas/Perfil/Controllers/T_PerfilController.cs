@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using Web.Marcacion.Context;
 using Web.Marcacion.Models;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Web.Marcacion.Areas.Perfil.Controllers
 {
@@ -128,6 +129,61 @@ namespace Web.Marcacion.Areas.Perfil.Controllers
         public ActionResult Salir()
         {
             return RedirectToAction("Index");
+        }
+
+        public ActionResult ImportarExcel()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult ImportarExcel(HttpPostedFileBase excelfile)
+        {
+            if (excelfile == null || excelfile.ContentLength == 0)
+            {
+                ViewBag.Error = "Please select  a excel file";
+                return View();
+            }
+            else
+            {
+                if (excelfile.FileName.EndsWith("xls") || excelfile.FileName.EndsWith("xlsx"))
+                {
+                    StoreContext db = new StoreContext();
+
+                    string path = Server.MapPath("~/UploadExcel/" + excelfile.FileName);
+                    if (System.IO.File.Exists(path))
+                        System.IO.File.Delete(path);
+                    excelfile.SaveAs(path);
+                    //-----
+                    //-----
+
+
+                    //Read data from excel file
+                    Excel.Application application = new Excel.Application();
+                    Excel.Workbook workbook = application.Workbooks.Open(path);
+                    Excel.Worksheet worksheet = workbook.ActiveSheet;
+                    Excel.Range range = worksheet.UsedRange;
+                    List<T_Perfil> listPerfil = new List<T_Perfil>();
+                    for(int row = 3; row <= range.Rows.Count; row++)
+                    {
+                        T_Perfil p = new T_Perfil();
+                        p.ID_Perfil = int.Parse(((Excel.Range)range.Cells[row, 1]).Text);
+                        p.Descripcion = ((Excel.Range)range.Cells[row, 2]).Text;
+                        listPerfil.Add(p);
+                    }
+                    ViewBag.ListPerfil = listPerfil.ToList();
+                    return RedirectToAction("Success");
+                }
+                else
+                {
+                    ViewBag.Error = "File type is incorrect<br>";
+                    return View();
+                }
+            }
+        }
+
+        public ActionResult Success()
+        {
+            return View();
         }
 
     }
