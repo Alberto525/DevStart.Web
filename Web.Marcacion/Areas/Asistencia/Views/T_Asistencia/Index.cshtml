@@ -1,0 +1,81 @@
+﻿@model List<Web.Marcacion.Models.T_Asistencia>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Asistencia de los empleados</h2>
+<!-- Material input -->
+<div class="col-lg-12">
+    <!-- Material form login -->
+    <div class="card">
+        <div class="card-header info-color white-text py-4t">
+            BUSQUEDA DE ASISTENCIA DEL EMPLEADO
+        </div>
+        <!--Card content-->
+        <div class="card-body px-lg-5 pt-0">
+            @using (Html.BeginForm("Index", "T_EmpleadoJornada", FormMethod.Post, new { @class = "form-inline" }))
+            {
+                <!-- Material input -->
+                <div class="md-form col-lg-3 col-md-3 col-sm-3">
+                    <i class="fas fa-envelope prefix" style="left:0"></i>
+                    <input type="text" name="nombre" id="nombre" class="form-control-lg">
+                    <label for="form1" style="left:10px">Buscar por nombres</label>
+                </div>
+
+                <div class="md-form col-lg-3 col-md-3 col-sm-3">
+                    <i class="fas fa-envelope prefix" style="left:0"></i>
+                    <input type="text" name="apellido" id="apellido" class="form-control-lg">
+                    <label for="form1" style="left:10px">Buscar por apellidos</label>
+                </div>
+                <div class="md-form col-lg-3 col-md-3 col-sm-3">
+                    <i class="fas fa-envelope prefix" style="left:0"></i>
+                    <input type="text" name="jornada" id="jornada" class="form-control-lg">
+                    <label for="form1" style="left:10px">Buscar por jornada</label>
+                </div>
+
+                <button type="submit" class="btn btn-md btn-primary" style="right:-50px;">Buscar</button>
+
+            }
+        </div>
+    </div>
+</div>
+<hr />
+
+    <div class="row ">
+        <div class="col-lg-12">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>APELLIDO</th>
+                        <th>NOMBRE</th>
+                        <th>NRO DOCUMENTO</th>
+                        <th>FECHA</th>
+                        <th>HORA DE ENTRADA</th>
+                        <th>HORA DE SALIDA</th>
+                        <th>ACCIONES</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var olista in Model)
+                    {
+                        <tr>
+                            <td>@olista.Apellido</td>
+                            <td>@olista.Nombre</td>
+                            <td>@olista.NumeroDocumento</td>
+                            <td>@olista.Fecha</td>
+                            <td>@olista.HoraIngreso</td>
+                            <td>@olista.HoraSalida</td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = olista.ID_Asistencia })  |
+                                @Html.ActionLink("Detail", "Detail", new { id = olista.ID_Asistencia})
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+

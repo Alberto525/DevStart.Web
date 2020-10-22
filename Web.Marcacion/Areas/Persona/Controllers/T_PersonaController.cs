@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using Web.Marcacion.Context;
 using Web.Marcacion.Models;
+using Web.Marcacion.Repository;
 
 namespace Web.Marcacion.Areas.Persona.Controllers
 {
@@ -13,7 +14,7 @@ namespace Web.Marcacion.Areas.Persona.Controllers
     {
         // GET: Perfil/T_Perfil
         private StoreContext db = new StoreContext();
-
+  //      PersonaMetodos metodos = new PersonaMetodos();
 
         public ActionResult Index()
         {
@@ -29,7 +30,9 @@ namespace Web.Marcacion.Areas.Persona.Controllers
 
 
            ViewBag.ID_TipoDocumento = new SelectList(db.T_TipoDocumentos.ToList(), "ID_TipoDocumento", "Descripcion");
-       //    ViewBag.ID_Empresa = new SelectList(db.T_TipoDocumentos.ToList(), "ID_TipoDocumento", "Descripcion");
+            ViewBag.ID_Cargo = new SelectList(db.T_Cargos.ToList(), "ID_Cargo", "Descripcion");
+
+            //    ViewBag.ID_Empresa = new SelectList(db.T_TipoDocumentos.ToList(), "ID_TipoDocumento", "Descripcion");
             return View();
 
 
@@ -55,7 +58,8 @@ namespace Web.Marcacion.Areas.Persona.Controllers
                         return RedirectToAction("CreateUsuario", new { id = persona.ID_Persona });
                     }
                     ViewBag.ID_TipoDocumento = new SelectList(db.T_TipoDocumentos.ToList(), "ID_TipoDocumento", "Descripcion");
-                //    ViewBag.ID_Empresa = new SelectList(db.T_TipoDocumentos.ToList(), "ID_TipoDocumento", "Descripcion");
+                    ViewBag.ID_Cargo = new SelectList(db.T_Cargos.ToList(), "ID_Cargo", "Descripcion");
+                    //    ViewBag.ID_Empresa = new SelectList(db.T_TipoDocumentos.ToList(), "ID_TipoDocumento", "Descripcion");
                     return View(persona);
                 }
                 catch (Exception)
@@ -67,33 +71,54 @@ namespace Web.Marcacion.Areas.Persona.Controllers
 
         public ActionResult CreateUsuario(int id)
         {
-            T_Usuario usu = new T_Usuario();
+            T_Persona perso = db.T_Personas.Find(id);
+
+         //   T_Usuario usuario = new T_Usuario();
+            T_Usuario_Reg usu = new T_Usuario_Reg();
+
             usu.ID_Persona = id;
-           // usu.ID_Perfil = 2;
+            usu.Estado = true;
+            usu.RazonSocial = perso.Apellido + " " + perso.Nombre;
+            usu.NumeroDocumento = perso.NumeroDocumento ;
+            ViewBag.ID_Perfil = new SelectList(db.t_Perfils.ToList(), "ID_Perfil", "Perfil");
+            ViewBag.ID_TipoJornada = new SelectList(db.t_TipoJornadas.ToList(), "ID_TipoJornada", "Descripcion");
+            // usu.ID_Perfil = 2;
 
             return View(usu);
         }
 
         [HttpPost]
-        public ActionResult CreateUsuario(T_Usuario usu)
+        public ActionResult CreateUsuario(T_Usuario_Reg usu)
         {
 
-            usu.ID_Perfil = 1;
+            EmpleadoJornadaRepository empleadoJornadaRepository = new EmpleadoJornadaRepository();
             using (StoreContext db = new StoreContext())
             {
                 try
                 {
+
+                    T_Usuario usuario = new T_Usuario();
+                    usuario.ID_Perfil = usu.ID_Perfil;
+                    usuario.ID_Persona = usu.ID_Persona;
+                    usuario.Usuario = usu.Usuario;
+                    usuario.Estado = usu.Estado;
+                    usuario.Clave = usu.Clave;
+
                     if (ModelState.IsValid)
                     {
-                        db.t_Usuarios.Add(usu);
-                        db.SaveChanges();
+                        db.t_Usuarios.Add(usuario);
+                      db.SaveChanges();
+                        empleadoJornadaRepository.iNSERTARJornadaEmpleado(1, usuario.ID_Usuario, usu.ID_TipoJornada);
                         return RedirectToAction("Index");
                     }
+                    ViewBag.ID_Perfil = new SelectList(db.t_Perfils.ToList(), "ID_Perfil", "Perfil", usu.ID_Perfil);
+                    ViewBag.ID_TipoJornada = new SelectList(db.t_TipoJornadas.ToList(), "ID_TipoJornada", "Descripcion", usu.ID_TipoJornada);
+
                     return View(usu);
                 }
                 catch (Exception)
                 {
-                    return View();
+                    return View(usu);
                 }
             }
         }
@@ -123,7 +148,7 @@ namespace Web.Marcacion.Areas.Persona.Controllers
                 }
 
                 ViewBag.ID_TipoDocumento = new SelectList(db.T_TipoDocumentos.ToList(), "ID_TipoDocumento", "Descripcion", data.ID_TipoDocumento);
-            //    ViewBag.ID_Empresa = new SelectList(db.T_TipoDocumentos.ToList(), "ID_TipoDocumento", "Descripcion", data.ID_Empresa);
+                ViewBag.ID_Cargo = new SelectList(db.T_Cargos.ToList(), "ID_Cargo", "Descripcion",data.ID_Cargo);
                 return View(data);
             }
         }
@@ -145,7 +170,7 @@ namespace Web.Marcacion.Areas.Persona.Controllers
                         return RedirectToAction("Index");
                     }
                     ViewBag.ID_TipoDocumento = new SelectList(db.T_TipoDocumentos.ToList(), "ID_TipoDocumento", "Descripcion",persona.ID_TipoDocumento);
-                //    ViewBag.ID_Empresa = new SelectList(db.T_TipoDocumentos.ToList(), "ID_TipoDocumento", "Descripcion", persona.ID_Empresa);
+                    ViewBag.ID_Cargo = new SelectList(db.T_Cargos.ToList(), "ID_Cargo", "Descripcion", persona.ID_Cargo);
 
 
 
@@ -173,18 +198,21 @@ namespace Web.Marcacion.Areas.Persona.Controllers
             }
         }
         [HttpPost]
-        public ActionResult Delete(int id ,T_Persona persona)
+        public ActionResult Delete(int id)
         {
             using (StoreContext db = new StoreContext())
             {
-                persona = db.T_Personas.Find(id);
+            T_Persona   persona = db.T_Personas.Find(id);
                 if (persona == null)
                 {
                     return HttpNotFound();
                 }
-                db.T_Personas.Remove(persona);
+                persona.Estado = false;
+                db.Entry(persona).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
+
+               
             }
         }
 

@@ -13,7 +13,29 @@ namespace Web.Marcacion.Models
         public string Usuario { get; set; }
         public string Clave { get; set; }
         public int ID_Persona { get; set; }
-        public bool Estado{ get; set; }
-        public int ID_Perfil { get; set; }
+        public bool Estado { get; set; }
+        public int ID_Perfil { get; set; }          
+     
+       
+
     }
+
+    public class T_Usuario_Reg
+    {
+        [Key]
+        public int ID_Usuario { get; set; }
+        public string RazonSocial { get; set; }
+        public string NumeroDocumento { get; set; }
+        public string Usuario { get; set; }
+        public string Clave { get; set; }
+        public int ID_Persona { get; set; }
+        public bool Estado { get; set; }
+        public int ID_Perfil { get; set; }
+        public int ID_TipoJornada { get; set; }
+
+
+
+    }
+
+
 }

@@ -17,13 +17,16 @@
         <div style="background-color: #000;position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 1060;opacity: 0.20;"></div>
         <div id="webLoading">
 
-            <div class="spinner-grow text-primary" role="status">
+            <div class="spinner-grow text-danger" role="status">
                 <span class="sr-only">Loading...</span>
             </div>
-            <div class="spinner-grow text-primary" role="status">
+            <div class="spinner-grow text-danger" role="status">
                 <span class="sr-only">Loading...</span>
             </div>
-            <div class="spinner-grow text-primary" role="status">
+            <div class="spinner-grow text-danger" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+            <div class="spinner-grow text-danger" role="status">
                 <span class="sr-only">Loading...</span>
             </div>
         </div>
@@ -65,43 +68,50 @@
                     <ul class="collapsible collapsible-accordion">
                         <li>
                             <a class="collapsible-header waves-effect arrow-r">
-                                <i class="fas fa-chevron-right"></i> Submit blog<i class="fas fa-angle-down rotate-icon"></i>
+                                <i class="fas fa-chevron-right"></i>Usuario<i class="fas fa-angle-down rotate-icon"></i>
                             </a>
                             <div class="collapsible-body">
                                 <ul class="list-unstyled">
                                     <li>
-                                        <a href="#" class="waves-effect">Submit listing</a>
+                                        <a href="#" class="waves-effect">Empleados</a>
                                     </li>
                                     <li>
-                                        <a href="#" class="waves-effect">Registration form</a>
+                                        <a href="#" class="waves-effect">Registrar Empleado</a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
                         <li>
                             <a class="collapsible-header waves-effect arrow-r">
-                                <i class="fas fa-hand-pointer"></i> Instruction<i class="fas fa-angle-down rotate-icon"></i>
+                                <i class="fas fa-hand-pointer"></i> Jornada<i class="fas fa-angle-down rotate-icon"></i>
                             </a>
                             <div class="collapsible-body">
                                 <ul class="list-unstyled">
                                     <li>
-                                        <a href="#" class="waves-effect">For bloggers</a>
+                                        <a href="@Url.Action("Index", null, new { area = "TipoJornada", controller = "T_TipoJornada" }, Request.Url.Scheme)" class="elements">Tipo de Jornadas</a>
                                     </li>
                                     <li>
-                                        <a href="#" class="waves-effect">For authors</a>
+                                        <a href="@Url.Action("Index", null, new { area = "EmpleadoJornada", controller = "T_EmpleadoJornada" }, Request.Url.Scheme)" class="waves-effect">Jornadas de Empleados</a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
                         <li>
-                            <a class="collapsible-header waves-effect arrow-r"><i class="fas fa-eye"></i> About<i class="fas fa-angle-down rotate-icon"></i></a>
+                            <a class="collapsible-header waves-effect arrow-r"><i class="fas fa-eye"></i> Empresa<i class="fas fa-angle-down rotate-icon"></i></a>
                             <div class="collapsible-body">
                                 <ul class="list-unstyled">
                                     <li>
-                                        <a href="#" class="waves-effect">Introduction</a>
+                                        <a href="@Url.Action("Index", null, new { area = "Empresa", controller = "Empresa" }, Request.Url.Scheme)" class="waves-effect">Ver Empresa</a>
                                     </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="collapsible-header waves-effect arrow-r"><i class="fas fa-eye"></i> Marcaciones<i class="fas fa-angle-down rotate-icon"></i></a>
+                            <div class="collapsible-body">
+                                <ul class="list-unstyled">
                                     <li>
-                                        <a href="#" class="waves-effect">Monthly meetings</a>
+                                        <a href="@Url.Action("Index", null, new { area = "Asistencia", controller = "T_Asistencia" }, Request.Url.Scheme)" class="waves-effect">Ver Marcaciones</a>
                                     </li>
                                 </ul>
                             </div>

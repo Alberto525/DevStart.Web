@@ -27,5 +27,6 @@ namespace Web.Marcacion.Models
         public DateTime? FechaModificacion { get; set; }
         public int UsuarioModificacion { get; set; }
         public bool Estado { get; set; }
+        public int? ID_Cargo { get; set; }
     }
 }
