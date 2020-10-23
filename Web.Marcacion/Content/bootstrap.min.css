@@ -1,9 +1,5 @@
-/*!
- * Bootstrap v4.5.0 (https://getbootstrap.com/)
- * Copyright 2011-2020 The Bootstrap Authors
- * Copyright 2011-2020 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
+@import url('https://fonts.googleapis.com/css2?family=Kalam');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand');
 
 :root {
     --blue: #007bff;
@@ -335,7 +331,8 @@ template {
 }
 
 .h2, h2 {
-    font-size: 2rem
+    font-size: 2rem;
+    font-family: 'Quicksand';
 }
 
 .h3, h3 {
@@ -567,7 +564,9 @@ pre {
 
 @media (min-width:1200px) {
     .container, .container-lg, .container-md, .container-sm, .container-xl {
-        max-width: 1140px
+        max-width: 1140px;
+        position: absolute;
+        left: 15%;
     }
 }
 
@@ -577,7 +576,9 @@ pre {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     margin-right: -15px;
-    margin-left: -15px
+    margin-left: -15px;
+    font-family: 'Quicksand';
+    font-weight: 500;
 }
 
 .no-gutters {
@@ -1862,7 +1863,7 @@ pre {
 }
 
 .table-bordered {
-    border: 1px solid #dee2e6
+    border: 1px solid #000;
 }
 
     .table-bordered td, .table-bordered th {
@@ -2158,7 +2159,7 @@ pre {
 .form-control:focus {
     color: #495057;
     background-color: #fff;
-    border-color: #80bdff;
+    border-color: transparent;
     outline: 0;
     box-shadow: 0 0 0 .2rem rgba(0,123,255,.25)
 }
@@ -4715,6 +4716,7 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
         }
 
 .card {
+    font-family: Quicksand;
     position: relative;
     display: -ms-flexbox;
     display: flex;
@@ -4750,7 +4752,16 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
             border-bottom-left-radius: calc(.25rem - 1px)
         }
 
+
+img#idlogo {
+    /* position: absolute; */
+    /* height: 50px; */
+    left: 61%;
+    top: 9px;
+}
+
 .card-body {
+    text-align: center;
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
     min-height: 1px;
@@ -4758,7 +4769,10 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 }
 
 .card-title {
-    margin-bottom: .75rem
+    font-family: Kalam;
+    font-size: 28px;
+    margin-bottom: .75rem;
+    font-weight: 800 !important;
 }
 
 .card-subtitle {
