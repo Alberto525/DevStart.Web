@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using Web.Marcacion.Context;
 using Web.Marcacion.Models;
+using Web.Marcacion.Repository;
 using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Web.Marcacion.Areas.Perfil.Controllers
@@ -179,6 +180,29 @@ namespace Web.Marcacion.Areas.Perfil.Controllers
                     return View();
                 }
             }
+        }
+
+
+        public ActionResult Importar()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Importar(ImportarEx file)
+        {
+            Metodos obj = new Metodos();
+
+            if (!obj.ValidarImportación(file))
+            {
+                foreach (var m in obj.VariosMsj)
+                {
+                    ModelState.AddModelError("", m);
+                }
+                return View(file);
+            }
+            else
+                return RedirectToAction("Index");
+            
         }
 
         public ActionResult Success()
