@@ -1,0 +1,83 @@
+﻿@model Web.Marcacion.Models.T_Persona
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="col-lg-5">
+    <!-- Material form login -->
+    <div class="card">
+        <div class="card-header info-color white-text py-4t">
+            Eliminar Empleado
+        </div>
+        <!--Card content-->
+        <div class="card-body px-lg-5 pt-0">
+            <!-- Form -->
+            <!--<form class="text-center" style="color: #757575;" action="" method="post">-->
+            @using (Html.BeginForm("Delete", "T_Persona", FormMethod.Post))
+            {
+                <!-- Descripcion -->
+                @Html.HiddenFor(model => model.ID_Persona)
+                <div class="md-form">
+                    <i class="fas fa-envelope prefix" style="left:0"></i>
+                    @Html.TextBoxFor(model => model.Nombre, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
+                    <label for="Descripcion">Nombre</label>
+                </div>
+                <div class="md-form">
+                    <i class="fas fa-envelope prefix" style="left:0"></i>
+                    @Html.TextBoxFor(model => model.Apellido, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
+                    <label for="Descripcion">Apellido</label>
+                </div>
+                <div class="md-form">
+                    <i class="fas fa-envelope prefix" style="left:0"></i>
+                    @Html.TextBoxFor(model => model.NumeroDocumento, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
+                    <label for="Descripcion">Nro. Documento</label>
+                </div>
+                <div class="md-form">
+                    <i class="fas fa-envelope prefix" style="left:0"></i>
+                    @Html.TextBoxFor(model => model.Correo, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
+                    <label for="Descripcion">Correo</label>
+                </div>
+                <div class="md-form">
+                    <i class="fas fa-envelope prefix" style="left:0"></i>
+                    @Html.TextBoxFor(model => model.Movil, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
+                    <label for="Descripcion">Movil</label>
+                </div>
+                <div class="md-form">
+                    <i class="fas fa-envelope prefix" style="left:0"></i>
+                    @Html.TextBoxFor(model => model.Direccion, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
+                    <label for="Descripcion">Dirección</label>
+                </div>
+                <!-- Estado -->
+                @Html.HiddenFor(model => model.Estado)
+                <div class="form-check" style="padding-left:0 !important">
+                    <input type="checkbox" class="form-check-input" id="chkActive" name="chkActive" checked="@Model.Estado" disabled>
+                    <label class="form-check-label" for="chkActive">Estado</label>
+                </div>
+                <hr />
+                <div class="md-form m-2 text-center">
+                    <button type="submit" class="btn btn-md btn-success">ELIMINAR</button>
+                </div>
+                <!-- Form -->
+            }  @using (Html.BeginForm("Index", "T_Persona", FormMethod.Get))
+            {
+                <div class="md-form m-2 text-center">
+                    <button type="submit" class="btn btn-md btn-success"> Regresar </button>
+                </div>
+            }
+        </div>
+
+    </div>
+    <!-- Material form login -->
+</div>
+
+<script type="text/javascript">
+    //$('#Estado').prop('indeterminate', true);
+    $("[name=chkActive]").on('click', function () {
+        if ($("#chkActive").is(":checked")) {
+            $("[name=Estado]").val(true);
+        } else {
+            $("[name=Estado]").val(false);
+        }
+    });
+</script>

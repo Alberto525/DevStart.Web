@@ -1,0 +1,52 @@
+﻿body {
+    background-image: url(../imagenes/46.jpg);
+    background-repeat: no-repeat;
+}
+
+
+.card {
+    background-color: transparent !important;
+    -webkit-box-shadow: 0 0px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.0) !important;
+    box-shadow: 0 0px 0px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.0) !important;
+}
+
+
+.card-title {
+    color: white;
+}
+
+
+i, fa fa-envelope prefix {
+    color: white;
+}
+
+
+
+
+
+.md-form label {
+    color: #ffffff !important;
+}
+
+
+#materialLoginFormEmail {
+    border-bottom: 1px solid #ffffff !important;
+    color: white !important;
+}
+
+
+
+
+#materialLoginFormPassword {
+    border-bottom: 1px solid #ffffff !important;
+    color: white !important;
+}
+
+
+label, form-check-label {
+    color: #ffffff !important;
+}
+
+a {
+    color: #ffffff !important;
+}

@@ -1,0 +1,68 @@
+﻿@model Web.Marcacion.Models.T_TipoJornada
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-lg-5">
+    <!-- Material form login -->
+    <div class="card">
+        <div class="card-header info-color white-text py-4t">
+            EDITAR TIPO DE JORNADA
+        </div>
+        <!--Card content-->
+        <div class="card-body px-lg-5 pt-0">
+            <!-- Form -->
+            <!--<form class="text-center" style="color: #757575;" action="" method="post">-->
+            @using (Html.BeginForm("Edit", "T_TipoJornada", FormMethod.Post))
+            {
+                <!-- Descripcion -->
+                @Html.HiddenFor(model => model.ID_TipoJornada)
+                <div class="md-form">
+                    <i class="fas fa-envelope prefix" style="left:0"></i>
+                    @Html.TextBoxFor(model => model.Descripcion, htmlAttributes: new { @class = "form-control"  })
+                    <label for="Descripcion">Descripción</label>
+                </div>
+                <!-- Hora de Entrada -->
+                <div class="md-form">
+                    <i class="fas fa-envelope prefix" style="left:0"></i>
+                    @Html.TextBoxFor(model => model.HoraEntrada, htmlAttributes: new { @class = "form-control", type = "time" })
+                    <label for="Descripcion">Hora de Entrada</label>
+                </div>
+                <!-- Hora de Salida -->
+                <div class="md-form">
+                    <i class="fas fa-envelope prefix" style="left:0"></i>
+                    @Html.TextBoxFor(model => model.HoraSalida, htmlAttributes: new { @class = "form-control", type = "time" })
+                    <label for="Descripcion">Hora de Salida</label>
+                </div>
+                <!-- Estado -->
+                @Html.HiddenFor(model => model.Estado)
+                <div class="form-check" style="padding-left:0 !important">
+                    <input type="checkbox" class="form-check-input" id="chkActive" name="chkActive" checked="@Model.Estado">
+                    <label class="form-check-label" for="chkActive">Estado</label>
+                </div>
+                <hr />
+                <div class="md-form m-2 text-center">
+                    <button type="submit" class="btn btn-md btn-success">Actualizar</button>
+                </div>
+            }
+            <!-- Form -->
+
+        </div>
+
+    </div>
+    <!-- Material form login -->
+</div>
+
+<script type="text/javascript">
+    //$('#Estado').prop('indeterminate', true);
+    $("[name=chkActive]").on('click', function () {
+        if ($("#chkActive").is(":checked")) {
+            $("[name=Estado]").val(true);
+        } else {
+            $("[name=Estado]").val(false);
+        }
+    });
+</script>
+

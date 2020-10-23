@@ -10,8 +10,11 @@ namespace Web.Marcacion.Controllers
     public class HomeController : Controller
     {
         StoreContext db = new StoreContext();
+
         public ActionResult Index()
         {
+            string DomainName = HttpContext.Request.Url.Host;
+            ViewBag.localhost = DomainName;
             return View();
         }
 
@@ -21,17 +24,22 @@ namespace Web.Marcacion.Controllers
 
             return View();
         }
-        [HttpPost]
-        public ActionResult Index(string us, string pw)
+
+
+
+        public string Ingresar(string us, string pw)
         {
+            string Respuesta = "";
             var user = db.t_Usuarios.FirstOrDefault(x => x.Usuario == us && x.Clave == pw);
             if (user != null)
             {
-                //var modelPerson = db.T_Persona.FirstOrDefault(x => x.ID_Persona == user.ID_Persona);
-                return RedirectToAction("Index", "T_Perfil", new { area = "Perfil" });
+                Respuesta = "Correcto_" + user;
             }
-
-            return View();
+            else
+            {
+                Respuesta = "Incorrecto_" + user;
+            }
+            return Respuesta;
         }
 
         public ActionResult Contact()

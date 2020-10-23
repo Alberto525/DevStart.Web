@@ -8,6 +8,7 @@ namespace Web.Marcacion.Models
 {
     public class T_Empresa
     {
+
         [Key]
         public int ID_Empresa { get; set; }
         public string RazonSocial { get; set; }
@@ -20,7 +21,6 @@ namespace Web.Marcacion.Models
         public DateTime FechaModificacion { get; set; }
         public int UsuarioModificacion { get; set; }
         public bool Estado { get; set; }
-
 
 
     }

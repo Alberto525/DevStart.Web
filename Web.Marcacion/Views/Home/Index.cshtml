@@ -1,43 +1,44 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Asisste";
     Layout = "~/Views/Shared/_LayoutLogin.cshtml";
 }
-
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 
 <div class="card">
-    <div class="card-body" style="background:#c2c7c7">
-        <h5 class="card-title" style="color:black">Bienvenido</h5>
-        <p class="card-text" style="color:black">Por favor inicie sesión</p>
+    <div class="card-body">
+        <h5 class="card-title">Asisste</h5>
+        <img id="idlogo" src="~/imagenes/Logo.png" />
     </div>
 </div>
-<br />
+
+
+<input type="hidden" value="@ViewBag.localhost" id="idlocalhost" />
 
 <div class="col-lg-5" style="margin: 0 auto;">
     <!-- Material form login -->
     <div class="card">
 
-        <h5 class="card-header info-color white-text text-center py-4">
-            <strong>Sign in</strong>
-        </h5>
+
 
         <!--Card content-->
         <div class="card-body px-lg-5 pt-0">
 
             <!-- Form -->
-            <form id="mainform" class="text-center" style="color: #757575;" action="#!" method="post">
+            <form id="mainform" class="text-center" style="color: #000000;" method="post">
 
                 <!-- Email -->
                 <div class="md-form">
                     <i class="fa fa-envelope prefix" style="left:0"></i>
-                    <input type="email" name="us" id="materialLoginFormEmail" class="form-control">
-                    <label for="materialLoginFormEmail">E-mail</label>
+                    <input type="email" autocomplete="off" name="us" id="materialLoginFormEmail" class="form-control">
+                    <label for="materialLoginFormEmail">Correo</label>
                 </div>
 
                 <!-- Password -->
                 <div class="md-form">
                     <i class="fa fa-lock prefix" style="left:0"></i>
                     <input type="password" name="pw" id="materialLoginFormPassword" class="form-control">
-                    <label for="materialLoginFormPassword">Password</label>
+                    <label for="materialLoginFormPassword">Contraseña</label>
                 </div>
 
                 <div class="d-flex justify-content-around">
@@ -45,38 +46,21 @@
                         <!-- Remember me -->
                         <div class="form-check">
                             <input type="checkbox" class="form-check-input" id="materialLoginFormRemember">
-                            <label class="form-check-label" for="materialLoginFormRemember">Remember me</label>
+                            <label class="form-check-label" for="materialLoginFormRemember">Recordar</label>
+
                         </div>
                     </div>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <div>
                         <!-- Forgot password -->
-                        <a href="">Forgot password?</a>
+                        <a href="">Olvidaste la contraseña?</a>
                     </div>
                 </div>
 
-                <!-- Sign in button -->
-                <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Sign in</button>
 
-                <!-- Register -->
-                <p>
-                    Not a member?
-                    <a href="">Register</a>
-                </p>
 
-                <!-- Social login -->
-                <p>or sign in with:</p>
-                <a type="button" class="btn-floating btn-fb btn-sm">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a type="button" class="btn-floating btn-tw btn-sm">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a type="button" class="btn-floating btn-li btn-sm">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a type="button" class="btn-floating btn-git btn-sm">
-                    <i class="fab fa-github"></i>
-                </a>
+                <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" onclick="needcredentials()" type="button">Iniciar Sesión</button>
+
 
             </form>
             <!-- Form -->
@@ -87,30 +71,5 @@
     <!-- Material form login -->
 </div>
 
-<script type="text/javascript">
 
-    $(document).ready(function () {
-        $('#mainform').submit(function (event) {
-            //event.preventDefault();
-            WebShowLoading();
-            WebNotifyAsBlock("info","Hola Mundo", "Titulo");
-            //$.ajax({
-            //    url: $('#mainform').attr('action'),
-            //    type: 'POST',
-            //    data: $('#mainform').serialize(),
-            //    success: function (response) {
-            //        fireCodeHideLoading();
-            //        if (response.HasError != undefined) {
-            //            if (response.HasError) {
-            //                fireCodeNotifyAsPopup(response.Messages);
-            //            } else {
-            //                fireCodeNotifyAsPopup(response.Messages);
-            //                document.location = "/Security/User/Index"
-            //            }
-            //        }
-            //    }
-            //});
-        });
-    });
-
-</script>
+<script src="~/js/index.js"></script>
