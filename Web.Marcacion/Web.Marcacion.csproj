@@ -170,11 +170,26 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\cssDesign\Layout.css" />
     <Content Include="Content\mdb.min.css" />
+    <Content Include="Content\Site.css" />
     <Content Include="css\layoutlogin.css" />
     <Content Include="css\Principal.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
+    <Content Include="imagenes\18.jpg" />
+    <Content Include="imagenes\24-hours-support.png" />
+    <Content Include="imagenes\46.jpg" />
+    <Content Include="imagenes\add-button.png" />
+    <Content Include="imagenes\addglobal.png" />
+    <Content Include="imagenes\asistencia.png" />
+    <Content Include="imagenes\Assiste.png" />
+    <Content Include="imagenes\help.png" />
+    <Content Include="imagenes\Logo.png" />
+    <Content Include="imagenes\menu.png" />
+    <Content Include="imagenes\office.png" />
+    <Content Include="imagenes\teamwork.png" />
+    <Content Include="imagenes\working-hours.png" />
+    <Content Include="js\index.js" />
+    <Content Include="js\JSPerfil.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -192,12 +207,6 @@
     <Content Include="Scripts\bootstrap.js.map" />
     <Content Include="Scripts\bootstrap.bundle.min.js.map" />
     <Content Include="Scripts\bootstrap.bundle.js.map" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-reboot.min.css.map" />
-    <Content Include="Content\bootstrap-reboot.css.map" />
-    <Content Include="Content\bootstrap-grid.min.css.map" />
-    <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="Content\font\roboto\Roboto-Bold.eot" />
     <Content Include="Content\font\roboto\Roboto-Bold.ttf" />
     <Content Include="Content\font\roboto\Roboto-Bold.woff" />
@@ -257,6 +266,12 @@
     <Content Include="Areas\Persona\Views\T_Persona\Index.cshtml" />
     <Content Include="Areas\Persona\Views\web.config" />
     <Content Include="Areas\Persona\Views\T_Persona\CreateUsuario.cshtml" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -387,7 +402,6 @@
     <Folder Include="Areas\Persona\Models\" />
     <Folder Include="Areas\TipoJornada\Models\" />
     <Folder Include="Areas\TipoJornada\Views\Shared\" />
-    <Folder Include="js\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

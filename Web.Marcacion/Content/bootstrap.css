@@ -1,9 +1,7 @@
-/*!
- * Bootstrap v4.4.1 (https://getbootstrap.com/)
- * Copyright 2011-2019 The Bootstrap Authors
- * Copyright 2011-2019 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -437,6 +435,7 @@ mark,
 .list-unstyled {
   padding-left: 0;
   list-style: none;
+  
 }
 
 .list-inline {
@@ -4754,10 +4753,12 @@ input[type="button"].btn-block {
 }
 
 .card-body {
+    text-align:center;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   min-height: 1px;
   padding: 1.25rem;
+  border-radius:50px;
 }
 
 .card-title {

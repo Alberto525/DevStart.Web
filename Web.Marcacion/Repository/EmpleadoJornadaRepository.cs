@@ -13,7 +13,7 @@ namespace Web.Marcacion.Repository
         {
             using (var db = new StoreContext())
             {
-                return db.Database.SqlQuery<T_EmpleadoJornada>("ListaEmpleadoJornada").ToList();
+                return db.Database.SqlQuery<T_EmpleadoJornada>("sp_ListarEmpleadoJornada").ToList();
             }
         }
 
@@ -21,7 +21,7 @@ namespace Web.Marcacion.Repository
         {
             using (var db = new StoreContext())
             {
-                return db.Database.SqlQuery<T_EmpleadoJornada>("ListaxIDEmpleadoJornada @p0", id).SingleOrDefault();
+                return db.Database.SqlQuery<T_EmpleadoJornada>("sp_ListarxIDEmpleadoJornada @p0", id).SingleOrDefault();
             }
         }
 
@@ -37,7 +37,7 @@ namespace Web.Marcacion.Repository
         {
             using (var db = new StoreContext())
             {
-                db.Database.ExecuteSqlCommand("UpdateJornadaEmpleado @p0,@p1", id, idtipojornada);
+                db.Database.ExecuteSqlCommand("sp_UpdateJornadaEmpleado @p0,@p1", id, idtipojornada);
             }
 
 

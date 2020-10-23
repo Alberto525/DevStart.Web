@@ -27,7 +27,6 @@
 
 
 @import url('https://fonts.googleapis.com/css2?family=Quicksand');
-
 .mdb-color.lighten-5 {
     background-color: #d0d6e2 !important
 }
@@ -1903,7 +1902,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: 300;
-    text-align: center;
+    text-align:center;
 }
 
 .blockquote {
@@ -9686,7 +9685,7 @@ body.scrollable {
         border: none;
         border-bottom: 1px solid #000000;
         border-radius: 0;
-        text-decoration: none;
+        text-decoration:none;
         outline: none;
         -webkit-box-shadow: none;
         box-shadow: none;
@@ -9906,6 +9905,8 @@ body.scrollable {
     }
 
         .md-form .prefix.active {
+         
+         
             color: #4285f4
         }
 
@@ -15954,7 +15955,7 @@ button.mdb-autocomplete-clear {
     }
 
         .side-nav ul li {
-            font-family: Quicksand;
+            font-family:Quicksand;
             padding: 0
         }
 
@@ -16036,7 +16037,7 @@ button.mdb-autocomplete-clear {
         }
 
     .side-nav.fixed {
-        border-radius: 4px;
+        border-radius:4px;
         position: fixed;
         left: 0;
         -webkit-transform: translateX(0);
@@ -18631,7 +18632,8 @@ button.md-toast-close-button {
 }
 
 .black-skin .navbar {
-    background-color: transparent;
+    
+    background-color:transparent;
 }
 
     .black-skin .navbar .navbar-nav .nav-item .dropdown-menu a {
@@ -18740,7 +18742,7 @@ button.md-toast-close-button {
                 color: #000 !important
             }
 
-
+    
 
     .black-skin .side-nav .sidenav-bg.mask-light:after {
         background: rgba(0,0,0,0.65)
@@ -18752,6 +18754,8 @@ button.md-toast-close-button {
 
 .black-skin .btn-primary {
     color: #fff;
+   
+
 }
 
     .black-skin .btn-primary:hover {

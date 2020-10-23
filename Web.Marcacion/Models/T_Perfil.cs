@@ -10,7 +10,7 @@ namespace Web.Marcacion.Models
     {
         [Key]
         public int ID_Perfil { get; set; }
-        public string Perfil { get; set; }
+        public string Descripcion { get; set; }
         public bool Estado { get; set; }
 
     }

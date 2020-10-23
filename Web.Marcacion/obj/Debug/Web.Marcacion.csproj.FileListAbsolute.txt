@@ -173,7 +173,6 @@ C:\Proyecto GIT\DevStart.Web\Web.Marcacion\bin\es\System.Web.Razor.resources.dll
 C:\Proyecto GIT\DevStart.Web\Web.Marcacion\bin\es\System.Web.WebPages.resources.dll
 C:\Proyecto GIT\DevStart.Web\Web.Marcacion\bin\es\System.Web.WebPages.Deployment.resources.dll
 C:\Proyecto GIT\DevStart.Web\Web.Marcacion\bin\es\System.Web.WebPages.Razor.resources.dll
-C:\Proyecto GIT\DevStart.Web\Web.Marcacion\obj\Debug\Web.Marcacion.csprojAssemblyReference.cache
 C:\Proyecto GIT\DevStart.Web\Web.Marcacion\obj\Debug\Web.Marcacion.csproj.CoreCompileInputs.cache
 C:\Proyecto GIT\DevStart.Web\Web.Marcacion\obj\Debug\Web.Marcacion.csproj.CopyComplete
 C:\Proyecto GIT\DevStart.Web\Web.Marcacion\obj\Debug\Web.Marcacion.dll

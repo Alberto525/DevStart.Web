@@ -11,8 +11,8 @@ namespace Web.Marcacion.Models
         [Key]
         public int ID_TipoJornada { get; set; }
         public string Descripcion { get; set; }
-        public DateTime HoraEntrada { get; set; }
-        public DateTime HoraSalida { get; set; }
+        public TimeSpan HoraEntrada { get; set; }
+        public TimeSpan HoraSalida { get; set; }
         public bool Estado { get; set; }
 
     }

@@ -12,20 +12,37 @@ namespace Web.Marcacion.Areas.Perfil.Controllers
     public class T_PerfilController : Controller
     {
         // GET: Perfil/T_Perfil
+        public string DomainName = "";
+
         public ActionResult Index()
         {
-            List<T_Perfil> lista = null;
-            using (StoreContext db = new StoreContext())
-            {
-                lista = db.t_Perfils.Where(x => x.Estado).ToList();
-            }
-            return View(lista);
+            return View();
         }
+
+
+        //Metodo MARCOS JSON
+        #region["Listar Perfil"]
+        public JsonResult ListadoPerfil()
+        {
+            DomainName = HttpContext.Request.Url.Host;
+            ViewBag.localhost = DomainName;
+            List<T_Perfil> lPerfil = null;
+            using (StoreContext SC = new StoreContext())
+            {
+                lPerfil = SC.t_Perfils.Where(x => x.Estado).ToList();
+            }
+            object Listado = lPerfil;
+
+            return Json(Listado, JsonRequestBehavior.AllowGet);
+        }
+        #endregion
+
+
         public ActionResult Create()
         {
             return View();
         }
-       
+
         [HttpPost]
         public ActionResult Create(T_Perfil t_Perfil)
         {
@@ -86,8 +103,8 @@ namespace Web.Marcacion.Areas.Perfil.Controllers
                         db.SaveChanges();
                         return RedirectToAction("Index");
                     }
-                return View(t_Perfil);
-            }
+                    return View(t_Perfil);
+                }
                 catch (Exception)
                 {
                     return View(t_Perfil);
@@ -98,10 +115,10 @@ namespace Web.Marcacion.Areas.Perfil.Controllers
 
         [HttpGet]
         public ActionResult Delete(int? id)
-          {
+        {
             using (StoreContext db = new StoreContext())
             {
-            var data =  db.t_Perfils.Find(id);
+                var data = db.t_Perfils.Find(id);
                 if (data == null) // si el perfil existe
                 {
                     return HttpNotFound();
@@ -110,7 +127,7 @@ namespace Web.Marcacion.Areas.Perfil.Controllers
             }
         }
         [HttpPost]
-        public ActionResult Delete(int id ,T_Perfil t_Perfil)
+        public ActionResult Delete(int id, T_Perfil t_Perfil)
         {
             using (StoreContext db = new StoreContext())
             {
