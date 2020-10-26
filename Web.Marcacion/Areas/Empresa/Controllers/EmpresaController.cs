@@ -50,27 +50,18 @@ namespace Web.Marcacion.Areas.Empresa.Controllers
                 }
             }
         }
-        public ActionResult Detail(string ID)
+        public ActionResult Detail(int? id)
         {
             using (StoreContext db = new StoreContext())
             {
-                var NuevoID = Seguridad.Seguridad.Desencriptar(ID);
-                var data = db.t_empresas.Find(int.Parse(NuevoID));
+                var data = db.t_empresas.Find(id);
                 if (data == null)
                 {
                     return HttpNotFound();
                 }
-
-
-             
-
                 return View(data);
             }
-
         }
-
-
-
         public ActionResult Edit(int? id)
         {
             using (StoreContext db = new StoreContext())
