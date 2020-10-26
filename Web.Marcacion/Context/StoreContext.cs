@@ -17,5 +17,9 @@ namespace Web.Marcacion.Context
 
         public DbSet<T_EmpleadoJornada> t_EmpleadoJornadas { get; set; }
 
+        public DbSet<T_Persona> T_Personas { get; set; }
+        public DbSet<T_TipoDocumento> T_TipoDocumentos { get; set; }
+        public DbSet<T_Cargo> T_Cargos { get; set; }
+
     }
 }

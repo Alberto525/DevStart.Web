@@ -1,0 +1,123 @@
+﻿@model Web.Marcacion.Models.T_Persona
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<div class="col-lg-5">
+    <!-- Material form login -->
+    <div class="card">
+        <div class="card-header info-color white-text py-4t">
+            Nuevo Empleado
+        </div>
+        <!--Card content-->
+        <div class="card-body px-lg-5 pt-0">
+            <!-- Form -->
+            <!--<form class="text-center" style="color: #757575;" action="" method="post">-->
+            @using (Html.BeginForm("Create", "T_Persona", FormMethod.Post))
+            {
+                <!-- Descripcion -->
+            <div class="md-form">
+                <div class="md-form">
+                    <i class="fas fa-envelope prefix" style="left:0"></i>
+                    @Html.TextBoxFor(model => model.Nombre, htmlAttributes: new { @class = "form-control" })
+                    <label for="RazonSocial">Nombre</label>
+                </div>
+                <div class="md-form">
+                    <i class="fas fa-envelope prefix" style="left:0"></i>
+                    @Html.TextBoxFor(model => model.Apellido, htmlAttributes: new { @class = "form-control" })
+                    <label for="RazonSocial">Apellido</label>
+                </div>
+
+                <div class="md-form">
+                    <i class="fas fa-envelope prefix" style="left:0"></i>
+                    @Html.TextBoxFor(model => model.Correo, htmlAttributes: new { @class = "form-control" })
+                <label for="RazonSocial">Correo</label>
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.ID_TipoDocumento, "Tipo documento")
+                    <div class="editor-field">
+                        @Html.DropDownList("ID_TipoDocumento", null, string.Empty, new { @class = "select" })
+                        @Html.ValidationMessageFor(model => model.ID_TipoDocumento)
+                    </div>
+                </div>
+
+
+                <div class="md-form">
+                    <i class="fas fa-envelope prefix" style="left:0"></i>
+                    @Html.TextBoxFor(model => model.NumeroDocumento, htmlAttributes: new { @class = "form-control" })
+                    <label for="RazonSocial">Numero Documento</label>
+                </div>
+
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Sexo)
+                    <div class="editor-field">
+                        @Html.RadioButtonFor(model => model.Sexo, "M") M
+                        @Html.RadioButtonFor(model => model.Sexo, "F") F
+
+                        @* @Html.RadioButtonFor(model => model.Opcion, "H") Plame*@
+                        @Html.ValidationMessageFor(model => model.Sexo)
+                    </div>
+                </div>
+
+                <div class="md-form">
+                    <i class="fas fa-envelope prefix" style="left:0"></i>
+                    @Html.TextBoxFor(model => model.Movil, htmlAttributes: new { @class = "form-control" })
+                    <label for="RazonSocial">Movil</label>
+                </div>
+
+
+                <div class="md-form">
+                    <i class="fas fa-envelope prefix" style="left:0"></i>
+                    @Html.TextBoxFor(model => model.Direccion, htmlAttributes: new { @class = "form-control" })
+                    <label for="RazonSocial">Direccion</label>
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.ID_Cargo, "Seleccione Cargo")
+                    <div class="editor-field">
+                        @Html.DropDownList("ID_Cargo", null, string.Empty, new { @class = "select" })
+                        @Html.ValidationMessageFor(model => model.ID_Cargo)
+                    </div>
+                </div>
+
+            </div>
+                <!-- Estado -->
+                <div class="form-check" style="padding-left:0 !important">
+                    <input type="checkbox" class="form-check-input" id="chkActive" name="chkActive" checked>
+                    <label class="form-check-label" for="chkActive">Estado</label>
+                </div>
+                <hr />
+
+
+                <div class="md-form m-2 text-center">
+                    <button type="submit" class="btn btn-md btn-success">AGREGAR</button>
+                </div>
+
+            }
+            @using (Html.BeginForm("Index", "T_Persona", FormMethod.Get))
+            {
+                <div class="md-form m-2 text-center">
+                    <button type="submit" class="btn btn-md btn-success"> Regresar </button>
+                </div>
+            }
+            <!-- Form -->
+
+        </div>
+
+    </div>
+    <!-- Material form login -->
+</div>
+
+<script type="text/javascript">
+    //$('#Estado').prop('indeterminate', true);
+    $("[name=chkActive]").on('click', function () {
+        if ($("#chkActive").is(":checked")) {
+            $("[name=Estado]").val(true);
+        } else {
+            $("[name=Estado]").val(false);
+        }
+    });
+</script>

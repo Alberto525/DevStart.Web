@@ -168,10 +168,10 @@ namespace Web.Marcacion.Areas.Perfil.Controllers
                     {
                         T_Perfil p = new T_Perfil();
                         p.ID_Perfil = int.Parse(((Excel.Range)range.Cells[row, 1]).Text);
-                        p.Descripcion = ((Excel.Range)range.Cells[row, 2]).Text;
+                        p.Perfil = ((Excel.Range)range.Cells[row, 2]).Text;
                         listPerfil.Add(p);
                     }
-                    ViewBag.ListPerfil = listPerfil.ToList();
+                    System.Web.HttpContext.Current.Session["ListPerfilExcel"] = listPerfil.ToList(); ;
                     return RedirectToAction("Success");
                 }
                 else
@@ -207,6 +207,7 @@ namespace Web.Marcacion.Areas.Perfil.Controllers
 
         public ActionResult Success()
         {
+            ViewBag.ListPerfil = System.Web.HttpContext.Current.Session["ListPerfilExcel"] as List<T_Perfil>;
             return View();
         }
 

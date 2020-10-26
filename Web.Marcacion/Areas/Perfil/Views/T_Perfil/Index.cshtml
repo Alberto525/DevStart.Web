@@ -10,7 +10,7 @@
     <button type="submit" class="btn btn-primary">NUEVO</button>
 }
 
-@using (Html.BeginForm("Importar", "T_Perfil", FormMethod.Get))
+@using (Html.BeginForm("ImportarExcel", "T_Perfil", FormMethod.Get))
 {
     <button type="submit" class="btn btn-primary">IMPORT</button>
 }
@@ -33,7 +33,7 @@
                     {
                         <tr>
                             <td>@olista.ID_Perfil</td>
-                            <td>@olista.Descripcion</td>
+                            <td>@olista.Perfil</td>
                             <td>@olista.Estado</td>
                             <td>
                                 @Html.ActionLink("Edit", "Edit", new { id = olista.ID_Perfil })  |

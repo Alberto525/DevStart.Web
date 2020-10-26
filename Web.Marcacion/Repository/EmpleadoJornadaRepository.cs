@@ -42,6 +42,15 @@ namespace Web.Marcacion.Repository
 
 
         }
+        public void iNSERTARJornadaEmpleado(int idempresa, int id_usuario, int id_tipojornada)
+        {
+            using (var db = new StoreContext())
+            {
+                db.Database.ExecuteSqlCommand("sp_InsertJornadaEmpleado @p0,@p1,@p2", idempresa, id_usuario, id_tipojornada);
+            }
+
+
+        }
 
     }
 }

@@ -187,7 +187,7 @@ namespace Web.Marcacion.Repository
             #region DataTable
             DataTable dt = new DataTable();
             dt.Columns.Add("ID_Perfil", typeof(String)); //1
-            dt.Columns.Add("Descripcion", typeof(String)); //2
+            dt.Columns.Add("Perfil", typeof(String)); //2
             dt.Columns.Add("Estado", typeof(String)); //3
 
             dt.Columns.Add("EsNuevo", typeof(String)); //4  
@@ -252,7 +252,7 @@ namespace Web.Marcacion.Repository
                                 }
 
                             }
-                            if (c.Caption == "Descripcion")
+                            if (c.Caption == "Perfil")
                             {
                                 string nom = r[c].ToString();
 
@@ -297,9 +297,9 @@ namespace Web.Marcacion.Repository
                         {
                             cab = db.t_Perfils.Find(Int32.Parse(r["PerfilID"].ToString()));
                         }
-                        if (!String.IsNullOrEmpty(r["Descripcion"].ToString()) && !r["Descripcion"].ToString().Trim().Equals(cFill))
+                        if (!String.IsNullOrEmpty(r["Perfil"].ToString()) && !r["Perfil"].ToString().Trim().Equals(cFill))
                         {
-                            cab.Descripcion = r["Descripcion"].ToString();
+                            cab.Perfil = r["Perfil"].ToString();
                         }
                         if (!String.IsNullOrEmpty(r["Estado"].ToString()) && !r["Estado"].ToString().Trim().Equals(cFill))
                         {

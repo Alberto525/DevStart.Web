@@ -1,0 +1,94 @@
+﻿@model Web.Marcacion.Models.T_Persona
+
+@{
+    ViewBag.Title = "Detail";
+}
+
+<div class="col-lg-5">
+    <!-- Material form login -->
+    <div class="card">
+        <div class="card-header info-color white-text py-4t">
+            Detalle Empleado
+        </div>
+        <!--Card content-->
+        <div class="card-body px-lg-5 pt-0">
+            <!-- Form -->
+            <!--<form class="text-center" style="color: #757575;" action="" method="post">-->
+           
+                <!-- Descripcion -->
+                @Html.HiddenFor(model => model.ID_Persona)
+                <div class="md-form">
+                    <i class="fas fa-envelope prefix" style="left:0"></i>
+                    @Html.TextBoxFor(model => model.Nombre, htmlAttributes: new { @class = "form-control" })
+                    <label for="Descripcion">Nombre</label>
+                </div>
+                <div class="md-form">
+                    <i class="fas fa-envelope prefix" style="left:0"></i>
+                    @Html.TextBoxFor(model => model.Apellido, htmlAttributes: new { @class = "form-control" })
+                    <label for="Apellido">Apellido</label>
+                </div>               
+
+                <div class="md-form">
+                    <i class="fas fa-envelope prefix" style="left:0"></i>
+                    @Html.TextBoxFor(model => model.NumeroDocumento, htmlAttributes: new { @class = "form-control", disabled = "disabled" } )
+                    <label for="NumeroDocumento">Numero Documento</label>
+                </div>
+                <div class="md-form">
+                    <i class="fas fa-envelope prefix" style="left:0"></i>
+                    @Html.TextBoxFor(model => model.Sexo, htmlAttributes: new { @class = "form-control" , disabled = "disabled" })
+                    <label for="Sexo">Sexo</label>
+                </div>
+                <div class="md-form">
+                    <i class="fas fa-envelope prefix" style="left:0"></i>
+                    @Html.TextBoxFor(model => model.Correo, htmlAttributes: new { @class = "form-control" , disabled = "disabled" })
+                    <label for="Correo">Correo</label>
+                </div>
+                <div class="md-form">
+                    <i class="fas fa-envelope prefix" style="left:0"></i>
+                    @Html.TextBoxFor(model => model.Movil, htmlAttributes: new { @class = "form-control" , disabled = "disabled" })
+                    <label for="Movil">Movil</label>
+                </div>
+                <div class="md-form">
+                    <i class="fas fa-envelope prefix" style="left:0"></i>
+                    @Html.TextBoxFor(model => model.Direccion, htmlAttributes: new { @class = "form-control" , disabled = "disabled" })
+                    <label for="Direccion">Direccion</label>
+                </div>
+                <div class="md-form">
+                    <i class="fas fa-envelope prefix" style="left:0"></i>
+                    @*Html.TextBoxFor(model => model.Cargo, htmlAttributes: new { @class = "form-control", disabled = "disabled" })*@
+                    @Html.Raw(ViewBag.Cargo)
+                            <label for="Cargo">Cargo</label
+                        </div>
+                        <!-- Estado -->
+                        @Html.HiddenFor(model => model.Estado)
+                        <div class="form-check" style="padding-left:0 !important">
+                            <input type="checkbox" class="form-check-input" id="chkActive" name="chkActive" checked="@Model.Estado" disabled>
+                            <label class="form-check-label" for="chkActive">Estado</label>
+                        </div>
+                        <hr />
+                    
+
+                    @using (Html.BeginForm("Salir", "T_Persona", FormMethod.Get))
+                    {
+                        <button type="submit" class="btn btn-primary">SALIR</button>
+                    }
+
+                    <!-- Form -->
+
+                </div>
+
+            </div>
+            <!-- Material form login -->
+        </div>
+
+        <script type="text/javascript">
+            //$('#Estado').prop('indeterminate', true);
+            $("[name=chkActive]").on('click', function () {
+                if ($("#chkActive").is(":checked")) {
+                    $("[name=Estado]").val(true);
+                } else {
+                    $("[name=Estado]").val(false);
+                }
+            });
+        </script>
+

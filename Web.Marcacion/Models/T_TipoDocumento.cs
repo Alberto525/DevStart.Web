@@ -6,12 +6,11 @@ using System.Web;
 
 namespace Web.Marcacion.Models
 {
-    public class T_Perfil
+    public class T_TipoDocumento
     {
         [Key]
-        public int ID_Perfil { get; set; }
-        public string Perfil { get; set; }
-        public bool Estado { get; set; }
+        public int ID_TipoDocumento { get; set; }
+        public string Descripcion { get; set; }
 
     }
 }

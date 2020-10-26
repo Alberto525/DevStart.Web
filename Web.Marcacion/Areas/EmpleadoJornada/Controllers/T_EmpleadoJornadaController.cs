@@ -64,11 +64,11 @@ namespace Web.Marcacion.Areas.EmpleadoJornada.Controllers
 
             var response = empleadoJornadaRepository.ListarXid(id);
 
-            ViewBag.Descripcion = new SelectList(db.t_TipoJornadas.Where(x => x.Estado), "ID_TipoJornada", "Descripcion");
             if (response == null) // si el perfil existe
             {
                 return HttpNotFound();
             }
+            ViewBag.Descripcion = new SelectList(db.t_TipoJornadas.Where(x => x.Estado), "ID_TipoJornada", "Descripcion");
             return View(response);
         }
 
