@@ -160,6 +160,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\AsistenciaRepository.cs" />
     <Compile Include="Repository\EmpleadoJornadaRepository.cs" />
+    <Compile Include="Seguridad\Seguridad.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-grid.css" />
@@ -172,6 +173,7 @@
     <Content Include="Content\mdb.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="css\layoutlogin.css" />
+    <Content Include="css\Login.css" />
     <Content Include="css\Principal.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -180,16 +182,34 @@
     <Content Include="imagenes\46.jpg" />
     <Content Include="imagenes\add-button.png" />
     <Content Include="imagenes\addglobal.png" />
+    <Content Include="imagenes\Asisste.jpg" />
     <Content Include="imagenes\asistencia.png" />
     <Content Include="imagenes\Assiste.png" />
-    <Content Include="imagenes\help.png" />
+    <Content Include="imagenes\backglobal.png" />
+    <Content Include="imagenes\deleteglobal.png" />
     <Content Include="imagenes\Logo.png" />
     <Content Include="imagenes\menu.png" />
     <Content Include="imagenes\office.png" />
+    <Content Include="imagenes\profile.png" />
     <Content Include="imagenes\teamwork.png" />
+    <Content Include="imagenes\editglobal.png" />
     <Content Include="imagenes\working-hours.png" />
-    <Content Include="js\index.js" />
-    <Content Include="js\JSPerfil.js" />
+    <Content Include="js\Empresa\JSEmpresa.js" />
+    <Content Include="js\Inicio.js" />
+    <Content Include="js\Login\index.js" />
+    <Content Include="js\Perfil\JSPerfil.js" />
+    <Content Include="js\Perfil\JSPerfilEditar.js" />
+    <Content Include="PagError\Css\Error.css" />
+    <Content Include="PagError\ErrorPage404.html" />
+    <Content Include="PagError\ErrorPage500.html" />
+    <Content Include="PagError\ErrorPageDefault.html" />
+    <Content Include="PagError\Images\error-404.png" />
+    <Content Include="PagError\Images\error-500-01.jpg" />
+    <Content Include="PagError\Images\error-500-02.jpg" />
+    <Content Include="PagError\Images\error-500-03.jpg" />
+    <Content Include="PagError\Images\error-logo-500.png" />
+    <Content Include="PagError\Images\Image-Error.jpg" />
+    <Content Include="PagError\Js\Error.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -211,7 +231,6 @@
     <Content Include="Areas\Perfil\Views\T_Perfil\Create.cshtml" />
     <Content Include="Areas\Perfil\Views\T_Perfil\Delete.cshtml" />
     <Content Include="Areas\Perfil\Views\T_Perfil\Detail.cshtml" />
-    <Content Include="Areas\Perfil\Views\T_Perfil\Edit.cshtml" />
     <Content Include="Areas\Perfil\Views\T_Perfil\Index.cshtml" />
     <Content Include="Areas\Perfil\Views\web.config" />
     <Content Include="Areas\Perfil\Views\_ViewStart.cshtml" />
@@ -252,6 +271,7 @@
     <Content Include="Content\bootstrap-reboot.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Areas\Perfil\Views\T_Perfil\Edit.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />

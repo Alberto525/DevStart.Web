@@ -68,6 +68,18 @@
                             </div>
                         </li>
                         <li>
+                            <i class="profile"></i>
+                            <a class="collapsible-header waves-effect arrow-r">Perfil<i class="fas fa-angle-down rotate-icon"></i></a>
+                            <div class="collapsible-body">
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <a href="@Url.Action("Index", null, new { area = "Perfil", controller = "T_Perfil" }, Request.Url.Scheme)" class="waves-effect">Ver Perfil</a>
+                                    </li>
+                                   
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
                             <i class="dayworking"></i>
                             <a class="collapsible-header waves-effect arrow-r">
                                 Jornada<i class="fas fa-angle-down rotate-icon"></i>
@@ -209,5 +221,7 @@
             color: #fff
         }
     </style>
+
+    <script src="~/js/Inicio.js"></script>
 </body>
 </html>

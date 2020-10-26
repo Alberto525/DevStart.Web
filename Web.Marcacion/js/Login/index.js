@@ -1,6 +1,6 @@
 ﻿
-var idlocalhost = document.getElementById("idlocalhost");
-var Servidor = idlocalhost.baseURI;
+
+var Servidor = "https://localhost:44375/";
 
 function needcredentials() {
 

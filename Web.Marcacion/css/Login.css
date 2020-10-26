@@ -1,0 +1,16 @@
+﻿body {
+}
+
+
+.clsOlvidarContraseña {
+    font-weight: 900;
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+
+    .clsOlvidarContraseña:hover {
+    
+        color:black !important;
+    }

@@ -1,0 +1,70 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Quicksand');
+
+body {
+   
+}
+
+
+.csby500 {
+    background-size: 100% 169%;
+    background-image: url(../Images/error-500-03.jpg);
+}
+.card-body h1, h5 {
+    color: #FFF;
+    font-family: 'Quicksand' !important;
+    font-weight: 900 !important;
+    font-size: 43px;
+}
+
+.card-body h2 {
+    color: #FFF;
+}
+
+.card.cardmarc.cardmarc500 {
+    top: 84px;
+}
+
+.csh2error500 {
+    font-family: 'Quicksand';
+    font-weight: 800 !important;
+}
+
+
+input.btnVolver {
+    font-family: 'Quicksand';
+    font-size: 19px;
+    border-radius: 8px;
+    border-color: transparent;
+    position: absolute;
+    right: 39%;
+    top: 100%;
+    font-weight: 900;
+    outline: none;
+    width: 23%;
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+
+
+    input.btnVolver:hover {
+        background-color: #e6e6ca;
+        border-color: transparent;
+    }
+
+
+.cardmarc {
+    top: 281px;
+    background-color: transparent !important;
+    -webkit-box-shadow: 0 0px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.0) !important;
+    box-shadow: 0 0px 0px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.0) !important;
+}
+
+
+h3 {
+    font-size: 109px;
+    font-weight: 900;
+    font-family: 'Quicksand';
+    color: #FFF;
+}
