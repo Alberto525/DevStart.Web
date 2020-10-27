@@ -69,7 +69,9 @@
                                         <td>@olista.HoraSalida</td>
                                         <td>
                                             @Html.ActionLink("Edit", "Edit", new { id = olista.ID_EmpleadoJornada })  |
-                                            @Html.ActionLink("Detail", "Detail", new { id = olista.ID_EmpleadoJornada })
+                                            @Html.ActionLink("Detail", "Detail", new { id = olista.ID_EmpleadoJornada }) |
+                                           @Url.Action("EnvioCorreo", "CorreoEnvio" )
+                                           
                                         </td>
                                     </tr>
                                 }

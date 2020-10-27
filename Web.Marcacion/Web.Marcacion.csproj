@@ -135,6 +135,8 @@
     <Compile Include="Areas\EmpleadoJornada\EmpleadoJornadaAreaRegistration.cs" />
     <Compile Include="Areas\Empresa\Controllers\EmpresaController.cs" />
     <Compile Include="Areas\Empresa\EmpresaAreaRegistration.cs" />
+    <Compile Include="Areas\EnvioCorreo\Controllers\CorreoEnvioController.cs" />
+    <Compile Include="Areas\EnvioCorreo\EnvioCorreoAreaRegistration.cs" />
     <Compile Include="Areas\Perfil\Controllers\T_PerfilController.cs" />
     <Compile Include="Areas\Perfil\PerfilAreaRegistration.cs" />
     <Compile Include="Areas\TipoJornada\Controllers\T_TipoJornadaController.cs" />
@@ -147,6 +149,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\E_Correo.cs" />
     <Compile Include="Models\T_Asistencia.cs" />
     <Compile Include="Models\T_Cargo.cs" />
     <Compile Include="Models\T_Empresa.cs" />
@@ -272,6 +275,8 @@
     <Content Include="Content\bootstrap-reboot.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Areas\EnvioCorreo\Views\web.config" />
+    <Content Include="Areas\EnvioCorreo\Views\EnvioCorreo\EnvioCorreo.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -398,6 +403,8 @@
     <Folder Include="Areas\EmpleadoJornada\Models\" />
     <Folder Include="Areas\Empresa\Models\" />
     <Folder Include="Areas\Empresa\Views\Shared\" />
+    <Folder Include="Areas\EnvioCorreo\Models\" />
+    <Folder Include="Areas\EnvioCorreo\Views\Shared\" />
     <Folder Include="Areas\Perfil\Models\" />
     <Folder Include="Areas\Persona\Models\" />
     <Folder Include="Areas\TipoJornada\Models\" />

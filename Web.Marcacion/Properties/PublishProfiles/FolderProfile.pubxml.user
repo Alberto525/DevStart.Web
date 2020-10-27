@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Este archivo se usa en el proceso de publicación y empaquetado del proyecto web. Para personalizar el comportamiento de este proceso,
+edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 para obtener más información. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Users\Alberto\Desktop\App_Assite</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="Areas/Asistencia/AsistenciaAreaRegistration.cs">
+      <publishTime>10/18/2020 19:53:18</publishTime>
+    </File>
+    <File Include="Areas/Asistencia/Controllers/T_AsistenciaController.cs">
+      <publishTime>10/18/2020 19:53:18</publishTime>
+    </File>
+    <File Include="Areas/Asistencia/Views/Shared/_Layout.cshtml">
+      <publishTime>10/18/2020 19:53:18</publishTime>
+    </File>
+    <File Include="Areas/Asistencia/Views/T_Asistencia/Index.cshtml">
+      <publishTime>10/18/2020 19:53:18</publishTime>
+    </File>
+    <File Include="Areas/Asistencia/Views/web.config">
+      <publishTime>10/18/2020 19:53:18</publishTime>
+    </File>
+    <File Include="Areas/Asistencia/Views/_ViewStart.cshtml">
+      <publishTime>10/18/2020 19:53:18</publishTime>
+    </File>
+    <File Include="Areas/EmpleadoJornada/Controllers/T_EmpleadoJornadaController.cs">
+      <publishTime>10/23/2020 11:25:23</publishTime>
+    </File>
+    <File Include="Areas/EmpleadoJornada/EmpleadoJornadaAreaRegistration.cs">
+      <publishTime>10/18/2020 19:53:18</publishTime>
+    </File>
+    <File Include="Areas/EmpleadoJornada/Views/Shared/_Layout.cshtml">
+      <publishTime>10/18/2020 19:53:18</publishTime>
+    </File>
+    <File Include="Areas/EmpleadoJornada/Views/T_EmpleadoJornada/Detail.cshtml">
+      <publishTime>10/23/2020 11:25:23</publishTime>
+    </File>
+    <File Include="Areas/EmpleadoJornada/Views/T_EmpleadoJornada/Edit.cshtml">
+      <publishTime>10/18/2020 19:53:18</publishTime>
+    </File>
+    <File Include="Areas/EmpleadoJornada/Views/T_EmpleadoJornada/Index.cshtml">
+      <publishTime>10/23/2020 11:25:23</publishTime>
+    </File>
+    <File Include="Areas/EmpleadoJornada/Views/web.config">
+      <publishTime>10/18/2020 19:53:18</publishTime>
+    </File>
+    <File Include="Areas/EmpleadoJornada/Views/_ViewStart.cshtml">
+      <publishTime>10/18/2020 19:53:18</publishTime>
+    </File>
+    <File Include="Areas/Empresa/Controllers/EmpresaController.cs">
+      <publishTime>10/18/2020 19:53:18</publishTime>
+    </File>
+    <File Include="Areas/Empresa/EmpresaAreaRegistration.cs">
+      <publishTime>10/18/2020 19:53:18</publishTime>
+    </File>
+    <File Include="Areas/Empresa/Views/Empresa/Create.cshtml">
+      <publishTime>10/18/2020 19:53:18</publishTime>
+    </File>
+    <File Include="Areas/Empresa/Views/Empresa/Delete.cshtml">
+      <publishTime>10/18/2020 19:53:18</publishTime>
+    </File>
+    <File Include="Areas/Empresa/Views/Empresa/Detail.cshtml">
+      <publishTime>10/18/2020 19:53:18</publishTime>
+    </File>
+    <File Include="Areas/Empresa/Views/Empresa/Edit.cshtml">
+      <publishTime>10/18/2020 19:53:18</publishTime>
+    </File>
+    <File Include="Areas/Empresa/Views/Empresa/Index.cshtml">
+      <publishTime>10/18/2020 19:53:18</publishTime>
+    </File>
+    <File Include="Areas/Empresa/Views/web.config">
+      <publishTime>10/18/2020 19:53:18</publishTime>
+    </File>
+    <File Include="Areas/Perfil/Controllers/T_PerfilController.cs">
+      <publishTime>10/23/2020 10:09:48</publishTime>
+    </File>
+    <File Include="Areas/Perfil/PerfilAreaRegistration.cs">
+      <publishTime>10/06/2020 22:50:15</publishTime>
+    </File>
+    <File Include="Areas/Perfil/Views/Shared/_Layout.cshtml">
+      <publishTime>10/06/2020 22:50:15</publishTime>
+    </File>
+    <File Include="Areas/Perfil/Views/T_Perfil/Create.cshtml">
+      <publishTime>10/23/2020 10:09:48</publishTime>
+    </File>
+    <File Include="Areas/Perfil/Views/T_Perfil/Delete.cshtml">
+      <publishTime>10/06/2020 22:50:15</publishTime>
+    </File>
+    <File Include="Areas/Perfil/Views/T_Perfil/Detail.cshtml">
+      <publishTime>10/06/2020 22:50:15</publishTime>
+    </File>
+    <File Include="Areas/Perfil/Views/T_Perfil/Edit.cshtml">
+      <publishTime>10/06/2020 22:50:15</publishTime>
+    </File>
+    <File Include="Areas/Perfil/Views/T_Perfil/Index.cshtml">
+      <publishTime>10/23/2020 10:09:48</publishTime>
+    </File>
+    <File Include="Areas/Perfil/Views/web.config">
+      <publishTime>10/06/2020 22:50:15</publishTime>
+    </File>
+    <File Include="Areas/Perfil/Views/_ViewStart.cshtml">
+      <publishTime>10/06/2020 22:50:15</publishTime>
+    </File>
+    <File Include="Areas/Persona/Controllers/T_PersonaController.cs">
+      <publishTime>10/23/2020 10:09:48</publishTime>
+    </File>
+    <File Include="Areas/Persona/PersonaAreaRegistration.cs">
+      <publishTime>10/26/2020 12:47:28</publishTime>
+    </File>
+    <File Include="Areas/Persona/Views/Shared/_Layout.cshtml">
+      <publishTime>10/26/2020 12:47:28</publishTime>
+    </File>
+    <File Include="Areas/Persona/Views/T_Persona/Create.cshtml">
+      <publishTime>10/26/2020 12:47:28</publishTime>
+    </File>
+    <File Include="Areas/Persona/Views/T_Persona/CreateUsuario.cshtml">
+      <publishTime>10/23/2020 10:09:48</publishTime>
+    </File>
+    <File Include="Areas/Persona/Views/T_Persona/Delete.cshtml">
+      <publishTime>10/26/2020 12:47:28</publishTime>
+    </File>
+    <File Include="Areas/Persona/Views/T_Persona/Detail.cshtml">
+      <publishTime>10/23/2020 10:09:48</publishTime>
+    </File>
+    <File Include="Areas/Persona/Views/T_Persona/Edit.cshtml">
+      <publishTime>10/23/2020 10:09:48</publishTime>
+    </File>
+    <File Include="Areas/Persona/Views/T_Persona/Index.cshtml">
+      <publishTime>10/23/2020 10:09:48</publishTime>
+    </File>
+    <File Include="Areas/Persona/Views/web.config">
+      <publishTime>10/26/2020 12:47:28</publishTime>
+    </File>
+    <File Include="Areas/Persona/Views/_ViewStart.cshtml">
+      <publishTime>10/26/2020 12:47:28</publishTime>
+    </File>
+    <File Include="Areas/TipoJornada/Controllers/T_TipoJornadaController.cs">
+      <publishTime>10/18/2020 19:53:18</publishTime>
+    </File>
+    <File Include="Areas/TipoJornada/TipoJornadaAreaRegistration.cs">
+      <publishTime>10/18/2020 19:53:18</publishTime>
+    </File>
+    <File Include="Areas/TipoJornada/Views/T_TipoJornada/Create.cshtml">
+      <publishTime>10/18/2020 19:53:18</publishTime>
+    </File>
+    <File Include="Areas/TipoJornada/Views/T_TipoJornada/Delete.cshtml">
+      <publishTime>10/18/2020 19:53:18</publishTime>
+    </File>
+    <File Include="Areas/TipoJornada/Views/T_TipoJornada/Detail.cshtml">
+      <publishTime>10/18/2020 19:53:18</publishTime>
+    </File>
+    <File Include="Areas/TipoJornada/Views/T_TipoJornada/Edit.cshtml">
+      <publishTime>10/23/2020 11:25:23</publishTime>
+    </File>
+    <File Include="Areas/TipoJornada/Views/T_TipoJornada/Index.cshtml">
+      <publishTime>10/23/2020 11:25:23</publishTime>
+    </File>
+    <File Include="Areas/TipoJornada/Views/web.config">
+      <publishTime>10/18/2020 19:53:18</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

@@ -18,8 +18,8 @@ namespace Web.Marcacion.Models
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public string Cargo { get; set; }
-        public TimeSpan HoraEntrada { get; set; }
-        public TimeSpan HoraSalida { get; set; }
+        public DateTime HoraEntrada { get; set; }
+        public DateTime HoraSalida { get; set; }
 
     }
 }
