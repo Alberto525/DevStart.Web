@@ -6360,19 +6360,20 @@ table.table a.btn.btn-info {
 .btn-outline-info {
     color: #ffffff !important;
     background-color: transparent !important;
-    border: 2px solid #ff0000 !important;
+    border: 2px solid transparent !important;
+    font-weight: 900;
 }
 
     .btn-outline-info:hover, .btn-outline-info:focus, .btn-outline-info:active, .btn-outline-info:active:focus, .btn-outline-info.active {
-        color: #000000 !important;
-        /* border-color: #4482c3 !important*/
+        color: #000 !important;
+      
     }
 
     .btn-outline-info:not([disabled]):not(.disabled):active, .btn-outline-info:not([disabled]):not(.disabled).active, .show > .btn-outline-info.dropdown-toggle {
-        background-color: transparent !important;
+        /*background-color: transparent !important;
         border-color: #4482c3 !important;
         -webkit-box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18),0 4px 15px 0 rgba(0,0,0,0.15);
-        box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18),0 4px 15px 0 rgba(0,0,0,0.15)
+        box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18),0 4px 15px 0 rgba(0,0,0,0.15)*/
     }
 
         .btn-outline-info:not([disabled]):not(.disabled):active:focus, .btn-outline-info:not([disabled]):not(.disabled).active:focus, .show > .btn-outline-info.dropdown-toggle:focus {
@@ -9025,7 +9026,8 @@ table.table a.btn.btn-black {
 
         .navbar.scrolling-navbar.top-nav-collapse {
             padding-top: 5px;
-            padding-bottom: 5px
+            padding-bottom: 5px;
+            color: #000;
         }
 }
 
@@ -16172,7 +16174,7 @@ button.mdb-autocomplete-clear {
 
 @media (max-height: 992px) {
     .side-nav .logo-wrapper {
-        height: 80px
+        height: 100px
     }
 
         .side-nav .logo-wrapper a {
@@ -16182,6 +16184,9 @@ button.mdb-autocomplete-clear {
         .side-nav .logo-wrapper img {
             padding-top: 3%;
             padding-bottom: 5%;
+            position: relative;
+            top: 29px;
+            right: 4px;
         }
 }
 
@@ -18733,13 +18738,14 @@ button.md-toast-close-button {
             }
 
         .black-skin .side-nav .collapsible li a:not(.collapsible-header) {
-            color: #fff;
+            color: #e2dcdc;
+            font-weight: 900;
             -webkit-transition: all 0.3s linear;
             transition: all 0.3s linear
         }
 
             .black-skin .side-nav .collapsible li a:not(.collapsible-header):hover, .black-skin .side-nav .collapsible li a:not(.collapsible-header).active, .black-skin .side-nav .collapsible li a:not(.collapsible-header):active {
-                color: #000 !important
+                color: #FFF !important
             }
 
     
@@ -19066,7 +19072,7 @@ button.md-toast-close-button {
 }
 
 .black-skin .top-nav-collapse {
-    background-color: #222
+    background-color: transparent;
 }
 
 .black-skin .carousel-multi-item .controls-top > a, .black-skin .carousel-multi-item .carousel-indicators li, .black-skin .carousel-multi-item .carousel-indicators li.active {

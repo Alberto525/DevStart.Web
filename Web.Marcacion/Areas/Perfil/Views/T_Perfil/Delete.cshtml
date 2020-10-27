@@ -31,9 +31,13 @@
                 </div>
                 <hr />
                 <div class="md-form m-2 text-center">
-                    <button type="submit" class="btn btn-md btn-success">ELIMINAR</button>
+                    <button type="submit" class="btn btnmarc Eliminar"></button>
                 </div>
                 <!-- Form -->
+            }
+            @using (Html.BeginForm("Salir", "T_Perfil", FormMethod.Get))
+            {
+                <button type="submit" class="btn btnmarc Regresar"></button>
             }
         </div>
 

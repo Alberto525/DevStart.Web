@@ -565,8 +565,17 @@ pre {
 @media (min-width:1200px) {
     .container, .container-lg, .container-md, .container-sm, .container-xl {
         max-width: 1140px;
-        position:absolute;
-        left:15%;
+      
+    }
+}
+
+
+
+@media (min-width:1408px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width: 1454px;
+        position: relative;
+        right: 81px;
     }
 }
 
@@ -3023,14 +3032,12 @@ a.btn.disabled, fieldset:disabled a.btn {
         }
 
 .btn-outline-info {
-    color: #17a2b8;
-    border-color: #17a2b8
+   
 }
 
     .btn-outline-info:hover {
-        color: #fff;
-        background-color: #17a2b8;
-        border-color: #17a2b8
+        color: #000 !important;
+        font-weight:900;
     }
 
     .btn-outline-info.focus, .btn-outline-info:focus {
@@ -3043,9 +3050,7 @@ a.btn.disabled, fieldset:disabled a.btn {
     }
 
     .btn-outline-info:not(:disabled):not(.disabled).active, .btn-outline-info:not(:disabled):not(.disabled):active, .show > .btn-outline-info.dropdown-toggle {
-        color: #fff;
-        background-color: #17a2b8;
-        border-color: #17a2b8
+      
     }
 
         .btn-outline-info:not(:disabled):not(.disabled).active:focus, .btn-outline-info:not(:disabled):not(.disabled):active:focus, .show > .btn-outline-info.dropdown-toggle:focus {

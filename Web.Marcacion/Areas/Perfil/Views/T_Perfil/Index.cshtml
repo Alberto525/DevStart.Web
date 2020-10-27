@@ -11,7 +11,10 @@
 
 @using (Html.BeginForm("Create", "T_Perfil", FormMethod.Get))
 {
-    <button type="submit" class="btn btn-primary btnmarc"></button>
+    <button id="btnNuevo" type="submit" class="btn btn-primary btnmarc">
+
+    </button>
+    <label id="lblNuevo" for="btnNuevo">Nuevo</label>
 }
 
 
@@ -19,4 +22,4 @@
 </div>
 
 
-<script src="~/js/JSPerfil.js"></script>
+<script src="~/js/Perfil/JSPerfil.js"></script>

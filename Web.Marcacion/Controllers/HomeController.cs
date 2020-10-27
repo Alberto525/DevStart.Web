@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Web.Marcacion.Context;
+using Web.Marcacion.Seguridad;
 
 namespace Web.Marcacion.Controllers
 {
@@ -23,6 +24,19 @@ namespace Web.Marcacion.Controllers
             ViewBag.Message = "Sample app for integrating MDBootstrap into ASP.NET MVC.";
 
             return View();
+        }
+
+        [HttpPost]
+        public string Encripta(string valor)
+        {
+            return Seguridad.Seguridad.Encriptar(valor);
+        }
+
+       
+        [HttpPost]
+        public string Desencripta(string valor)
+        {
+            return Seguridad.Seguridad.Desencriptar(valor);
         }
 
 
