@@ -53,6 +53,15 @@ i.enterprise {
 }
 
 
+i.report {
+    background-image: url(../imagenes/Menu/report.png);
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    background-repeat: no-repeat;
+    left: 15px;
+}
+
 i.assistance {
     background-image: url(../imagenes/asistencia.png);
     width: 100%;
