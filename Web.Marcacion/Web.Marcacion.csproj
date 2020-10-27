@@ -162,7 +162,6 @@
     <Compile Include="Areas\Persona\Controllers\T_PersonaController.cs" />
     <Compile Include="Areas\Persona\PersonaAreaRegistration.cs" />
     <Compile Include="Context\StoreContext.cs" />
-    <Compile Include="Controllers\EmpresaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
