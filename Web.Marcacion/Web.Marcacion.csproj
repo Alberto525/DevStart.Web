@@ -135,8 +135,6 @@
     <Compile Include="Areas\EmpleadoJornada\EmpleadoJornadaAreaRegistration.cs" />
     <Compile Include="Areas\Empresa\Controllers\EmpresaController.cs" />
     <Compile Include="Areas\Empresa\EmpresaAreaRegistration.cs" />
-    <Compile Include="Areas\EnvioCorreo\Controllers\CorreoEnvioController.cs" />
-    <Compile Include="Areas\EnvioCorreo\EnvioCorreoAreaRegistration.cs" />
     <Compile Include="Areas\Perfil\Controllers\T_PerfilController.cs" />
     <Compile Include="Areas\Perfil\PerfilAreaRegistration.cs" />
     <Compile Include="Areas\TipoJornada\Controllers\T_TipoJornadaController.cs" />
@@ -144,12 +142,10 @@
     <Compile Include="Areas\Persona\Controllers\T_PersonaController.cs" />
     <Compile Include="Areas\Persona\PersonaAreaRegistration.cs" />
     <Compile Include="Context\StoreContext.cs" />
-    <Compile Include="Controllers\EmpresaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\E_Correo.cs" />
     <Compile Include="Models\T_Asistencia.cs" />
     <Compile Include="Models\T_Cargo.cs" />
     <Compile Include="Models\T_Empresa.cs" />
@@ -163,6 +159,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\AsistenciaRepository.cs" />
     <Compile Include="Repository\EmpleadoJornadaRepository.cs" />
+    <Compile Include="Seguridad\Seguridad.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-grid.css" />
@@ -175,6 +172,7 @@
     <Content Include="Content\mdb.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="css\layoutlogin.css" />
+    <Content Include="css\Login.css" />
     <Content Include="css\Principal.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -183,16 +181,36 @@
     <Content Include="imagenes\46.jpg" />
     <Content Include="imagenes\add-button.png" />
     <Content Include="imagenes\addglobal.png" />
+    <Content Include="imagenes\Asisste.jpg" />
     <Content Include="imagenes\asistencia.png" />
     <Content Include="imagenes\Assiste.png" />
-    <Content Include="imagenes\help.png" />
+    <Content Include="imagenes\backglobal.png" />
+    <Content Include="imagenes\deleteglobal.png" />
     <Content Include="imagenes\Logo.png" />
     <Content Include="imagenes\menu.png" />
+    <Content Include="imagenes\Menu\report.png" />
     <Content Include="imagenes\office.png" />
+    <Content Include="imagenes\profile.png" />
     <Content Include="imagenes\teamwork.png" />
+    <Content Include="imagenes\editglobal.png" />
     <Content Include="imagenes\working-hours.png" />
-    <Content Include="js\index.js" />
-    <Content Include="js\JSPerfil.js" />
+    <Content Include="js\EmpleadoJornada\EmpleadoJornada.js" />
+    <Content Include="js\Empresa\JSEmpresa.js" />
+    <Content Include="js\Inicio.js" />
+    <Content Include="js\Login\index.js" />
+    <Content Include="js\Perfil\JSPerfil.js" />
+    <Content Include="js\Perfil\JSPerfilEditar.js" />
+    <Content Include="PagError\Css\Error.css" />
+    <Content Include="PagError\ErrorPage404.html" />
+    <Content Include="PagError\ErrorPage500.html" />
+    <Content Include="PagError\ErrorPageDefault.html" />
+    <Content Include="PagError\Images\error-404.png" />
+    <Content Include="PagError\Images\error-500-01.jpg" />
+    <Content Include="PagError\Images\error-500-02.jpg" />
+    <Content Include="PagError\Images\error-500-03.jpg" />
+    <Content Include="PagError\Images\error-logo-500.png" />
+    <Content Include="PagError\Images\Image-Error.jpg" />
+    <Content Include="PagError\Js\Error.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -210,31 +228,10 @@
     <Content Include="Scripts\bootstrap.js.map" />
     <Content Include="Scripts\bootstrap.bundle.min.js.map" />
     <Content Include="Scripts\bootstrap.bundle.js.map" />
-    <Content Include="Content\font\roboto\Roboto-Bold.eot" />
-    <Content Include="Content\font\roboto\Roboto-Bold.ttf" />
-    <Content Include="Content\font\roboto\Roboto-Bold.woff" />
-    <Content Include="Content\font\roboto\Roboto-Bold.woff2" />
-    <Content Include="Content\font\roboto\Roboto-Light.eot" />
-    <Content Include="Content\font\roboto\Roboto-Light.ttf" />
-    <Content Include="Content\font\roboto\Roboto-Light.woff" />
-    <Content Include="Content\font\roboto\Roboto-Light.woff2" />
-    <Content Include="Content\font\roboto\Roboto-Medium.eot" />
-    <Content Include="Content\font\roboto\Roboto-Medium.ttf" />
-    <Content Include="Content\font\roboto\Roboto-Medium.woff" />
-    <Content Include="Content\font\roboto\Roboto-Medium.woff2" />
-    <Content Include="Content\font\roboto\Roboto-Regular.eot" />
-    <Content Include="Content\font\roboto\Roboto-Regular.ttf" />
-    <Content Include="Content\font\roboto\Roboto-Regular.woff" />
-    <Content Include="Content\font\roboto\Roboto-Regular.woff2" />
-    <Content Include="Content\font\roboto\Roboto-Thin.eot" />
-    <Content Include="Content\font\roboto\Roboto-Thin.ttf" />
-    <Content Include="Content\font\roboto\Roboto-Thin.woff" />
-    <Content Include="Content\font\roboto\Roboto-Thin.woff2" />
     <Content Include="Areas\Perfil\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Perfil\Views\T_Perfil\Create.cshtml" />
     <Content Include="Areas\Perfil\Views\T_Perfil\Delete.cshtml" />
     <Content Include="Areas\Perfil\Views\T_Perfil\Detail.cshtml" />
-    <Content Include="Areas\Perfil\Views\T_Perfil\Edit.cshtml" />
     <Content Include="Areas\Perfil\Views\T_Perfil\Index.cshtml" />
     <Content Include="Areas\Perfil\Views\web.config" />
     <Content Include="Areas\Perfil\Views\_ViewStart.cshtml" />
@@ -275,8 +272,8 @@
     <Content Include="Content\bootstrap-reboot.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Areas\EnvioCorreo\Views\web.config" />
-    <Content Include="Areas\EnvioCorreo\Views\EnvioCorreo\EnvioCorreo.cshtml" />
+    <Content Include="Areas\Perfil\Views\T_Perfil\Edit.cshtml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -389,11 +386,6 @@
     <Content Include="Views\Home\Containers.cshtml" />
     <Content Include="Views\Home\Buttons.cshtml" />
     <Content Include="Views\Shared\_LayoutLogin.cshtml" />
-    <Content Include="Views\Empresa\Create.cshtml" />
-    <Content Include="Views\Empresa\Index.cshtml" />
-    <Content Include="Views\Empresa\Delete.cshtml" />
-    <Content Include="Views\Empresa\Detail.cshtml" />
-    <Content Include="Views\Empresa\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />
@@ -403,12 +395,12 @@
     <Folder Include="Areas\EmpleadoJornada\Models\" />
     <Folder Include="Areas\Empresa\Models\" />
     <Folder Include="Areas\Empresa\Views\Shared\" />
-    <Folder Include="Areas\EnvioCorreo\Models\" />
-    <Folder Include="Areas\EnvioCorreo\Views\Shared\" />
     <Folder Include="Areas\Perfil\Models\" />
     <Folder Include="Areas\Persona\Models\" />
     <Folder Include="Areas\TipoJornada\Models\" />
     <Folder Include="Areas\TipoJornada\Views\Shared\" />
+    <Folder Include="Content\font\roboto\" />
+    <Folder Include="js\Menu\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

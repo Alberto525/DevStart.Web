@@ -59,7 +59,7 @@
                             <div class="collapsible-body">
                                 <ul class="list-unstyled">
                                     <li>
-                                        <a href="#" class="waves-effect">Empleados</a>
+                                        <a href="@Url.Action("Index", null, new { area = "Persona", controller = "T_Persona" }, Request.Url.Scheme)" class="waves-effect">Empleados</a>
                                     </li>
                                     <li>
                                         <a href="#" class="waves-effect">Registrar Empleado</a>
@@ -75,7 +75,7 @@
                                     <li>
                                         <a href="@Url.Action("Index", null, new { area = "Perfil", controller = "T_Perfil" }, Request.Url.Scheme)" class="waves-effect">Ver Perfil</a>
                                     </li>
-                                   
+
                                 </ul>
                             </div>
                         </li>
@@ -113,6 +113,17 @@
                                 <ul class="list-unstyled">
                                     <li>
                                         <a href="@Url.Action("Index", null, new { area = "Asistencia", controller = "T_Asistencia" }, Request.Url.Scheme)" class="waves-effect">Ver Marcaciones</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="report"></i>
+                            <a class="collapsible-header waves-effect arrow-r"> Reportes<i class="fas fa-angle-down rotate-icon"></i></a>
+                            <div class="collapsible-body">
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <a href="#" class="waves-effect">Ver Reportes</a>
                                     </li>
                                 </ul>
                             </div>
