@@ -1,8 +1,12 @@
 ﻿@model List<Web.Marcacion.Models.T_EmpleadoJornada>
 @{
+    /**/
+
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <h2>Jornada del Empleado</h2>
 
@@ -11,94 +15,97 @@
     <!-- Material form login -->
     <div class="card">
         <div class="card-header info-color white-text py-4t">
-           BUSCQUEDA DE JORNADA DE UN EMPLEADO
+            BUSCQUEDA DE JORNADA DE UN EMPLEADO
         </div>
         <!--Card content-->
         <div class="card-body px-lg-5 pt-0">
-            @using (Html.BeginForm("Index", "T_EmpleadoJornada", FormMethod.Post , new { @class="form-inline"}))
+            @using (Html.BeginForm("Index", "T_EmpleadoJornada", FormMethod.Post, new { @class = "form-inline" }))
             {
                 <!-- Material input -->
-            <div class="md-form col-lg-3 col-md-3 col-sm-3">
-                <i class="fas fa-envelope prefix" style="left:0"></i>
-                <input type="text" name="nombre" id="nombre" class="form-control-lg">
-                <label for="form1" style="left:10px">Buscar por nombres</label>
-            </div>
+                <div class="md-form col-lg-3 col-md-3 col-sm-3">
+                    <i class="fas fa-envelope prefix" style="left:0"></i>
+                    <input type="text" name="nombre" id="nombre" class="form-control-lg">
+                    <label for="form1" style="left:10px">Buscar por nombres</label>
+                </div>
 
-            <div class="md-form col-lg-3 col-md-3 col-sm-3">
-                <i class="fas fa-envelope prefix" style="left:0"></i>
-                <input type="text" name="apellido" id="apellido" class="form-control-lg">
-                <label for="form1" style="left:10px">Buscar por apellidos</label>
-            </div>
-            <div class="md-form col-lg-3 col-md-3 col-sm-3">
-                <i class="fas fa-envelope prefix" style="left:0"></i>
-                <input type="text" name="jornada" id="jornada" class="form-control-lg">
-                <label for="form1" style="left:10px">Buscar por jornada</label>
-            </div>
+                <div class="md-form col-lg-3 col-md-3 col-sm-3">
+                    <i class="fas fa-envelope prefix" style="left:0"></i>
+                    <input type="text" name="apellido" id="apellido" class="form-control-lg">
+                    <label for="form1" style="left:10px">Buscar por apellidos</label>
+                </div>
+                <div class="md-form col-lg-3 col-md-3 col-sm-3">
+                    <i class="fas fa-envelope prefix" style="left:0"></i>
+                    <input type="text" name="jornada" id="jornada" class="form-control-lg">
+                    <label for="form1" style="left:10px">Buscar por jornada</label>
+                </div>
 
-                <button type="submit" class="btn btn-md btn-primary"  style="right:-50px;">Buscar</button>
+                <button type="submit" class="btn btn-md btn-primary" style="right:-50px;">Buscar</button>
 
             }
         </div>
-        </div>
     </div>
-            <hr />
-            <div>
-                <input id="buscar" type="text" class="form-control" placeholder="Escriba algo para filtrar" style="margin-bottom:20px; margin-left:auto; width:300px" />
-            </div>
-                <div class="row ">
-                    <div class="col-lg-12">
-                        <table class="table table-bordered" id="tabla">
-                            <thead>
-                                <tr>
-                                    <th>NOMBRE Y APELLIDOS</th>
-                                    <th>CARGO</th>
-                                    <th>TIPO DE JORNADA</th>
-                                    <th>HORA DE ENTRADA</th>
-                                    <th>HORA DE SALIDA</th>
-                                    <th>ACCIONES</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach (var olista in Model)
-                                {
-                                    <tr>
-                                        <td>@olista.Nombre @olista.Apellido </td>
-                                        <td>@olista.Cargo</td>
-                                        <td>@olista.Descripcion</td>
-                                        <td>@olista.HoraEntrada</td>
-                                        <td>@olista.HoraSalida</td>
-                                        <td>
-                                            @Html.ActionLink("Edit", "Edit", new { id = olista.ID_EmpleadoJornada })  |
-                                            @Html.ActionLink("Detail", "Detail", new { id = olista.ID_EmpleadoJornada })
-                                        </td>
-                                    </tr>
-                                }
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+</div>
+<hr />
+<div>
+    <input id="buscar" type="text" class="form-control" placeholder="Escriba algo para filtrar" style="margin-bottom:20px; margin-left:auto; width:300px" />
+</div>
+<div class="row ">
+    <div class="col-lg-12">
+        <table class="table table-bordered" id="tabla">
+            <thead>
+                <tr>
+                    <th>NOMBRE Y APELLIDOS</th>
+                    <th>CARGO</th>
+                    <th>TIPO DE JORNADA</th>
+                    <th>HORA DE ENTRADA</th>
+                    <th>HORA DE SALIDA</th>
+                    <th>ACCIONES</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var olista in Model)
+                {
+                    <tr>
+                        <td>@olista.Nombre @olista.Apellido </td>
+                        <td>@olista.Cargo</td>
+                        <td>@olista.Descripcion</td>
+                        <td>@olista.HoraEntrada</td>
+                        <td>@olista.HoraSalida</td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = olista.ID_EmpleadoJornada })  |
+                            @Html.ActionLink("Detail", "Detail", new { id = olista.ID_EmpleadoJornada })
+                            <a class="material-icons" onclick="IrTipoJornada()" >pets</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
 
-            
-                <script type="text/javascript">
-                    document.querySelector("#buscar").onkeyup = function () {
-                        $TableFilter("#tabla", this.value);
-                    }
-                    $TableFilter = function (id, value) {
-                        var rows = document.querySelectorAll(id + ' tbody tr');
-                        for (var i = 0; i < rows.length; i++) {
-                            var showRow = false;
-                            var row = rows[i];
-                            row.style.display = 'none';
+<script src="~/js/EmpleadoJornada/EmpleadoJornada.js"></script>
 
-                            for (var x = 0; x < row.childElementCount; x++) {
-                                if (row.children[x].textContent.toLowerCase().indexOf(value.toLowerCase().trim()) > -1) {
-                                    showRow = true;
-                                    break;
-                                }
-                            }
-                            if (showRow) {
-                                row.style.display = null;
-                            }
-                        }
-                    }
-                </script>
+
+<script type="text/javascript">
+    document.querySelector("#buscar").onkeyup = function () {
+        $TableFilter("#tabla", this.value);
+    }
+    $TableFilter = function (id, value) {
+        var rows = document.querySelectorAll(id + ' tbody tr');
+        for (var i = 0; i < rows.length; i++) {
+            var showRow = false;
+            var row = rows[i];
+            row.style.display = 'none';
+
+            for (var x = 0; x < row.childElementCount; x++) {
+                if (row.children[x].textContent.toLowerCase().indexOf(value.toLowerCase().trim()) > -1) {
+                    showRow = true;
+                    break;
+                }
+            }
+            if (showRow) {
+                row.style.display = null;
+            }
+        }
+    }
+</script>

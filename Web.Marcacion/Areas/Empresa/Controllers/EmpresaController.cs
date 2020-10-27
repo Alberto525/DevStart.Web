@@ -62,15 +62,12 @@ namespace Web.Marcacion.Areas.Empresa.Controllers
                 }
 
 
-             
+
 
                 return View(data);
             }
 
         }
-
-
-
         public ActionResult Edit(int? id)
         {
             using (StoreContext db = new StoreContext())

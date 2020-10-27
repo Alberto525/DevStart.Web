@@ -28,7 +28,7 @@ namespace Web.Marcacion.Areas.EmpleadoJornada.Controllers
                 if (nombre != "" || apellido != "" || jornada != "")
                 {
                     EmpleadoJornadaRepository empleadoJornadaRepository = new EmpleadoJornadaRepository();
-                    var response = empleadoJornadaRepository.ListarXNombre(nombre,apellido,jornada);
+                    var response = empleadoJornadaRepository.ListarXNombre(nombre, apellido, jornada);
                     return View(response);
 
                 }
@@ -41,20 +41,20 @@ namespace Web.Marcacion.Areas.EmpleadoJornada.Controllers
             {
                 return RedirectToAction("Index");
             }
-           
+
         }
 
         public ActionResult Detail(int id)
         {
             EmpleadoJornadaRepository empleadoJornadaRepository = new EmpleadoJornadaRepository();
-            
-                var response = empleadoJornadaRepository.ListarXid(id);
-                if (response == null) // si el perfil existe
-                {
-                    return HttpNotFound();
-                }
-                return View(response);
-            
+
+            var response = empleadoJornadaRepository.ListarXid(id);
+            if (response == null) // si el perfil existe
+            {
+                return HttpNotFound();
+            }
+            return View(response);
+
         }
 
         public ActionResult Edit(int id)
@@ -95,7 +95,7 @@ namespace Web.Marcacion.Areas.EmpleadoJornada.Controllers
             }
 
         }
-        
+
         public ActionResult Salir()
         {
             return RedirectToAction("Index");

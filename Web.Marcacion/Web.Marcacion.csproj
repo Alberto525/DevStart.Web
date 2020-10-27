@@ -142,7 +142,6 @@
     <Compile Include="Areas\Persona\Controllers\T_PersonaController.cs" />
     <Compile Include="Areas\Persona\PersonaAreaRegistration.cs" />
     <Compile Include="Context\StoreContext.cs" />
-    <Compile Include="Controllers\EmpresaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -189,11 +188,13 @@
     <Content Include="imagenes\deleteglobal.png" />
     <Content Include="imagenes\Logo.png" />
     <Content Include="imagenes\menu.png" />
+    <Content Include="imagenes\Menu\report.png" />
     <Content Include="imagenes\office.png" />
     <Content Include="imagenes\profile.png" />
     <Content Include="imagenes\teamwork.png" />
     <Content Include="imagenes\editglobal.png" />
     <Content Include="imagenes\working-hours.png" />
+    <Content Include="js\EmpleadoJornada\EmpleadoJornada.js" />
     <Content Include="js\Empresa\JSEmpresa.js" />
     <Content Include="js\Inicio.js" />
     <Content Include="js\Login\index.js" />
@@ -385,11 +386,6 @@
     <Content Include="Views\Home\Containers.cshtml" />
     <Content Include="Views\Home\Buttons.cshtml" />
     <Content Include="Views\Shared\_LayoutLogin.cshtml" />
-    <Content Include="Views\Empresa\Create.cshtml" />
-    <Content Include="Views\Empresa\Index.cshtml" />
-    <Content Include="Views\Empresa\Delete.cshtml" />
-    <Content Include="Views\Empresa\Detail.cshtml" />
-    <Content Include="Views\Empresa\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />
@@ -404,6 +400,7 @@
     <Folder Include="Areas\TipoJornada\Models\" />
     <Folder Include="Areas\TipoJornada\Views\Shared\" />
     <Folder Include="Content\font\roboto\" />
+    <Folder Include="js\Menu\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

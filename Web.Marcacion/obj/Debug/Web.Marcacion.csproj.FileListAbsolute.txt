@@ -177,4 +177,3 @@ C:\Proyecto GIT\DevStart.Web\Web.Marcacion\obj\Debug\Web.Marcacion.csproj.CoreCo
 C:\Proyecto GIT\DevStart.Web\Web.Marcacion\obj\Debug\Web.Marcacion.csproj.CopyComplete
 C:\Proyecto GIT\DevStart.Web\Web.Marcacion\obj\Debug\Web.Marcacion.dll
 C:\Proyecto GIT\DevStart.Web\Web.Marcacion\obj\Debug\Web.Marcacion.pdb
-C:\Proyecto GIT\DevStart.Web\Web.Marcacion\obj\Debug\Web.Marcacion.csprojAssemblyReference.cache
