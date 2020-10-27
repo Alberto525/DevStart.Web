@@ -1,8 +1,8 @@
-﻿@model Web.Marcacion.Models.T_Perfil
+﻿
+<title>Editar Perfil</title>
 
-@{
-    ViewBag.Title = "Edit";
-}
+
+
 
 <div class="col-lg-5">
     <!-- Material form login -->
@@ -14,25 +14,28 @@
         <div class="card-body px-lg-5 pt-0">
             <!-- Form -->
             <!--<form class="text-center" style="color: #757575;" action="" method="post">-->
-            @using (Html.BeginForm("Edit", "T_Perfil", FormMethod.Post))
+            <!-- Descripcion -->
+
+            <input type="hidden" value="@ViewBag.idPerfil" id="idPerfil" />
+            <div class="md-form">
+                <i class="fas fa-envelope prefix" style="left:0"></i>
+                <input type="text" id="txtDescripcion" class="form-control" />
+                <label id="lblDescripcion" for="Descripcion">Descripción</label>
+            </div>
+            <!-- Estado -->
+
+            <div class="form-check" style="padding-left:0 !important">
+                <input type="checkbox" class="form-check-input" id="chkActive" name="chkActive">
+                <label class="form-check-label" for="chkActive">Estado</label>
+            </div>
+            <hr />
+            <div class="md-form m-2 text-center">
+                <button onclick="Editar()" class="btn btnmarc Editar"></button>
+            </div>
+
+            @using (Html.BeginForm("Salir", "T_Perfil", FormMethod.Get))
             {
-                <!-- Descripcion -->
-                @Html.HiddenFor(model => model.ID_Perfil)
-                <div class="md-form">
-                    <i class="fas fa-envelope prefix" style="left:0"></i>
-                    @Html.TextBoxFor(model => model.Perfil, htmlAttributes: new { @class = "form-control" })
-                    <label for="Descripcion">Descripción</label>
-                </div>
-                <!-- Estado -->
-                @Html.HiddenFor(model => model.Estado)
-                <div class="form-check" style="padding-left:0 !important">
-                    <input type="checkbox" class="form-check-input" id="chkActive" name="chkActive" checked="@Model.Estado">
-                    <label class="form-check-label" for="chkActive">Estado</label>
-                </div>
-                <hr />
-                <div class="md-form m-2 text-center">
-                    <button type="submit" class="btn btn-md btn-success">Actualizar</button>
-                </div>
+                <button type="submit" class="btn btnmarc Regresar"></button>
             }
             <!-- Form -->
 
@@ -42,6 +45,7 @@
     <!-- Material form login -->
 </div>
 
+<script src="~/js/Perfil/JSPerfilEditar.js"></script>
 <script type="text/javascript">
     //$('#Estado').prop('indeterminate', true);
     $("[name=chkActive]").on('click', function () {

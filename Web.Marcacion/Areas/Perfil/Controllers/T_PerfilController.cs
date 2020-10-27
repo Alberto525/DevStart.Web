@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using Web.Marcacion.Context;
 using Web.Marcacion.Models;
+using Web.Marcacion.Seguridad;
 using Web.Marcacion.Repository;
 using Excel = Microsoft.Office.Interop.Excel;
 
@@ -14,47 +15,68 @@ namespace Web.Marcacion.Areas.Perfil.Controllers
     public class T_PerfilController : Controller
     {
         // GET: Perfil/T_Perfil
+
+
         public ActionResult Index()
         {
-            List<T_Perfil> lista = null;
-            using (StoreContext db = new StoreContext())
-            {
-                lista = db.t_Perfils.Where(x => x.Estado).ToList();
-            }
-            return View(lista);
+            return View();
         }
+
+
+        //Metodo MARCOS JSON
+        #region["Listar Perfil"]
+        public JsonResult ListadoPerfil()
+        {
+
+            List<T_Perfil> lPerfil = null;
+            using (StoreContext SC = new StoreContext())
+            {
+                lPerfil = SC.t_Perfils.Where(x => x.Estado).ToList();
+            }
+            object Listado = lPerfil;
+
+            return Json(Listado, JsonRequestBehavior.AllowGet);
+        }
+        #endregion
+
+
         public ActionResult Create()
         {
             return View();
         }
-       
-        [HttpPost]
-        public ActionResult Create(T_Perfil t_Perfil)
-        {
-            t_Perfil.Estado = true;
 
-            using (StoreContext db = new StoreContext())
+
+        public string Crear(T_Perfil bePerfil)
+        {
+            bePerfil.Estado = true;
+            string Respuesta = "";
+            using (StoreContext SC = new StoreContext())
             {
                 try
                 {
                     if (ModelState.IsValid)
                     {
-                        db.t_Perfils.Add(t_Perfil);
-                        db.SaveChanges();
-                        return RedirectToAction("Index");
+                        SC.t_Perfils.Add(bePerfil);
+                        SC.SaveChanges();
+                        Respuesta = "Correcto_";
                     }
-                    return View(t_Perfil);
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    return View();
+                    Respuesta = "Error_" + ex.Message;
                 }
             }
+            return Respuesta;
         }
+
+
+
+
         public ActionResult Detail(int? id)
         {
             using (StoreContext db = new StoreContext())
-            {
+            { 
+
                 var data = db.t_Perfils.Find(id);
                 if (data == null) // si el perfil existe
                 {
@@ -63,47 +85,70 @@ namespace Web.Marcacion.Areas.Perfil.Controllers
                 return View(data);
             }
         }
-        public ActionResult Edit(int? id)
+
+
+       
+        public ActionResult Edit()
         {
-            using (StoreContext db = new StoreContext())
-            {
-                var data = db.t_Perfils.Find(id);
-                if (data == null) // si el perfil existe
-                {
-                    return HttpNotFound();
-                }
-                return View(data);
-            }
+
+            return View();
         }
-        [HttpPost]
-        public ActionResult Edit(T_Perfil t_Perfil)
+
+        public JsonResult MostrarDataPerfil(string ID_Perfil)
         {
-            using (StoreContext db = new StoreContext())
+            object Data = null;
+           
+            using (StoreContext SC = new StoreContext())
+            {
+
+                var IDDescrypt = Seguridad.Seguridad.Desencriptar(ID_Perfil);
+                int ID = int.Parse(IDDescrypt);
+                var Entidades = SC.t_Perfils.Find(ID);
+                Data = Entidades;
+             
+            }
+
+       
+            return Json(Data, JsonRequestBehavior.AllowGet);
+        }
+
+        public string Editar(T_Perfil bePerfil) {
+            string Respuesta = "";
+
+            using (StoreContext SC = new StoreContext())
             {
                 try
                 {
                     if (ModelState.IsValid)
                     {
-                        db.Entry(t_Perfil).State = EntityState.Modified;
-                        db.SaveChanges();
-                        return RedirectToAction("Index");
+                     
+                        SC.Entry(bePerfil).State = EntityState.Modified;
+                        SC.SaveChanges();
+                        Respuesta = "Correcto_";
                     }
-                return View(t_Perfil);
-            }
-                catch (Exception)
+                    else
+                    {
+                        Respuesta = "Error_" + "No se pudo hacer el guardado";
+                    }
+                }
+                catch (Exception ex)
                 {
-                    return View(t_Perfil);
+
+                    Respuesta = "Error_" + ex.Message;
                 }
             }
 
+
+            return Respuesta;
         }
+
 
         [HttpGet]
         public ActionResult Delete(int? id)
-          {
+        {
             using (StoreContext db = new StoreContext())
             {
-            var data =  db.t_Perfils.Find(id);
+                var data = db.t_Perfils.Find(id);
                 if (data == null) // si el perfil existe
                 {
                     return HttpNotFound();
@@ -111,8 +156,14 @@ namespace Web.Marcacion.Areas.Perfil.Controllers
                 return View(data);
             }
         }
+
+
+
+
+
+
         [HttpPost]
-        public ActionResult Delete(int id ,T_Perfil t_Perfil)
+        public ActionResult Delete(int id, T_Perfil t_Perfil)
         {
             using (StoreContext db = new StoreContext())
             {
@@ -168,7 +219,7 @@ namespace Web.Marcacion.Areas.Perfil.Controllers
                     {
                         T_Perfil p = new T_Perfil();
                         p.ID_Perfil = int.Parse(((Excel.Range)range.Cells[row, 1]).Text);
-                        p.Perfil = ((Excel.Range)range.Cells[row, 2]).Text;
+                      //  p.Perfil = ((Excel.Range)range.Cells[row, 2]).Text;
                         listPerfil.Add(p);
                     }
                     System.Web.HttpContext.Current.Session["ListPerfilExcel"] = listPerfil.ToList(); ;

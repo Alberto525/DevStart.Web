@@ -299,7 +299,7 @@ namespace Web.Marcacion.Repository
                         }
                         if (!String.IsNullOrEmpty(r["Perfil"].ToString()) && !r["Perfil"].ToString().Trim().Equals(cFill))
                         {
-                            cab.Perfil = r["Perfil"].ToString();
+                           // cab.Perfil = r["Perfil"].ToString();
                         }
                         if (!String.IsNullOrEmpty(r["Estado"].ToString()) && !r["Estado"].ToString().Trim().Equals(cFill))
                         {

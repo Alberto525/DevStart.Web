@@ -24,6 +24,9 @@
  * 
  *   Attribution: Animate CSS, Twitter Bootstrap, Materialize CSS, Normalize CSS, Waves JS, WOW JS, Toastr, Chart.js
  */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand');
 .mdb-color.lighten-5 {
     background-color: #d0d6e2 !important
 }
@@ -1477,7 +1480,7 @@
 }
 
 .info-color {
-    background-color: #33b5e5 !important
+    background-color: #cc4b4c !important
 }
 
 .info-color-dark {
@@ -1898,7 +1901,8 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 300
+    font-weight: 300;
+    text-align:center;
 }
 
 .blockquote {
@@ -6354,22 +6358,22 @@ table.table a.btn.btn-info {
 }
 
 .btn-outline-info {
-    color: #33b5e5 !important;
+    color: #ffffff !important;
     background-color: transparent !important;
-    border: 2px solid #33b5e5 !important
+    border: 2px solid transparent !important;
+    font-weight: 900;
 }
 
     .btn-outline-info:hover, .btn-outline-info:focus, .btn-outline-info:active, .btn-outline-info:active:focus, .btn-outline-info.active {
-        color: #33b5e5 !important;
-        background-color: transparent !important;
-        border-color: #33b5e5 !important
+        color: #000 !important;
+      
     }
 
     .btn-outline-info:not([disabled]):not(.disabled):active, .btn-outline-info:not([disabled]):not(.disabled).active, .show > .btn-outline-info.dropdown-toggle {
-        background-color: transparent !important;
-        border-color: #33b5e5 !important;
+        /*background-color: transparent !important;
+        border-color: #4482c3 !important;
         -webkit-box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18),0 4px 15px 0 rgba(0,0,0,0.15);
-        box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18),0 4px 15px 0 rgba(0,0,0,0.15)
+        box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18),0 4px 15px 0 rgba(0,0,0,0.15)*/
     }
 
         .btn-outline-info:not([disabled]):not(.disabled):active:focus, .btn-outline-info:not([disabled]):not(.disabled).active:focus, .show > .btn-outline-info.dropdown-toggle:focus {
@@ -9022,7 +9026,8 @@ table.table a.btn.btn-black {
 
         .navbar.scrolling-navbar.top-nav-collapse {
             padding-top: 5px;
-            padding-bottom: 5px
+            padding-bottom: 5px;
+            color: #000;
         }
 }
 
@@ -9680,8 +9685,9 @@ body.scrollable {
         box-sizing: content-box;
         background-color: transparent;
         border: none;
-        border-bottom: 1px solid #ced4da;
+        border-bottom: 1px solid #000000;
         border-radius: 0;
+        text-decoration:none;
         outline: none;
         -webkit-box-shadow: none;
         box-shadow: none;
@@ -9698,7 +9704,7 @@ body.scrollable {
         }
 
             .md-form input:not([type]):focus:not([readonly]) + label, .md-form input[type="text"]:not(.browser-default):focus:not([readonly]) + label, .md-form input[type="password"]:not(.browser-default):focus:not([readonly]) + label, .md-form input[type="email"]:not(.browser-default):focus:not([readonly]) + label, .md-form input[type="url"]:not(.browser-default):focus:not([readonly]) + label, .md-form input[type="time"]:not(.browser-default):focus:not([readonly]) + label, .md-form input[type="date"]:not(.browser-default):focus:not([readonly]) + label, .md-form input[type="datetime"]:not(.browser-default):focus:not([readonly]) + label, .md-form input[type="datetime-local"]:not(.browser-default):focus:not([readonly]) + label, .md-form input[type="tel"]:not(.browser-default):focus:not([readonly]) + label, .md-form input[type="number"]:not(.browser-default):focus:not([readonly]) + label, .md-form input[type="search"]:not(.browser-default):focus:not([readonly]) + label, .md-form input[type="phone"]:not(.browser-default):focus:not([readonly]) + label, .md-form input[type="search-md"]:focus:not([readonly]) + label, .md-form textarea.md-textarea:focus:not([readonly]) + label {
-                color: #4285f4
+                color: #4482c3
             }
 
         .md-form input:not([type]) + label::after, .md-form input[type="text"]:not(.browser-default) + label::after, .md-form input[type="password"]:not(.browser-default) + label::after, .md-form input[type="email"]:not(.browser-default) + label::after, .md-form input[type="url"]:not(.browser-default) + label::after, .md-form input[type="time"]:not(.browser-default) + label::after, .md-form input[type="date"]:not(.browser-default) + label::after, .md-form input[type="datetime"]:not(.browser-default) + label::after, .md-form input[type="datetime-local"]:not(.browser-default) + label::after, .md-form input[type="tel"]:not(.browser-default) + label::after, .md-form input[type="number"]:not(.browser-default) + label::after, .md-form input[type="search"]:not(.browser-default) + label::after, .md-form input[type="phone"]:not(.browser-default) + label::after, .md-form input[type="search-md"] + label::after, .md-form textarea.md-textarea + label::after {
@@ -9901,6 +9907,8 @@ body.scrollable {
     }
 
         .md-form .prefix.active {
+         
+         
             color: #4285f4
         }
 
@@ -14566,7 +14574,7 @@ table.table a.btn.btn-whatsapp {
         height: 18px;
         margin-top: 3px;
         content: "";
-        border: 2px solid #8a8a8a;
+        border: 2px solid #000000;
         border-radius: 1px;
         -webkit-transition: .2s;
         transition: .2s
@@ -15800,7 +15808,7 @@ button.mdb-autocomplete-clear {
 }
 
 .sn-bg-4 {
-    background-image: url("https://mdbootstrap.com/img/Photos/Others/sidenav4.jpg")
+    background-image: url("../imagenes/18.jpg")
 }
 
 .side-nav {
@@ -15949,6 +15957,7 @@ button.mdb-autocomplete-clear {
     }
 
         .side-nav ul li {
+            font-family:Quicksand;
             padding: 0
         }
 
@@ -16030,6 +16039,7 @@ button.mdb-autocomplete-clear {
         }
 
     .side-nav.fixed {
+        border-radius:4px;
         position: fixed;
         left: 0;
         -webkit-transform: translateX(0);
@@ -16081,11 +16091,11 @@ button.mdb-autocomplete-clear {
     }
 
     .side-nav .collapsible a {
-        height: 36px;
+        height: 45px !important;
         font-size: .8rem;
-        font-weight: 300;
+        font-weight: 900;
         line-height: 36px;
-        color: #fff
+        color: #000;
     }
 
         .side-nav .collapsible a.active, .side-nav .collapsible a:hover {
@@ -16145,7 +16155,7 @@ button.mdb-autocomplete-clear {
 
 .side-nav .logo-wrapper {
     height: 8.75rem;
-    border-bottom: 1px solid rgba(153,153,153,0.3)
+    /* border-bottom: 1px solid rgba(153,153,153,0.3)*/
 }
 
     .side-nav .logo-wrapper a {
@@ -16159,12 +16169,12 @@ button.mdb-autocomplete-clear {
         padding-top: 20%;
         padding-right: 50px;
         padding-bottom: 20%;
-        padding-left: 50px
+        padding-left: 89px;
     }
 
 @media (max-height: 992px) {
     .side-nav .logo-wrapper {
-        height: 80px
+        height: 100px
     }
 
         .side-nav .logo-wrapper a {
@@ -16172,8 +16182,11 @@ button.mdb-autocomplete-clear {
         }
 
         .side-nav .logo-wrapper img {
-            padding-top: 7%;
-            padding-bottom: 7%
+            padding-top: 3%;
+            padding-bottom: 5%;
+            position: relative;
+            top: 29px;
+            right: 4px;
         }
 }
 
@@ -18624,8 +18637,8 @@ button.md-toast-close-button {
 }
 
 .black-skin .navbar {
-    color: #fff;
-    background-color: #222
+    
+    background-color:transparent;
 }
 
     .black-skin .navbar .navbar-nav .nav-item .dropdown-menu a {
@@ -18637,7 +18650,10 @@ button.md-toast-close-button {
         }
 
     .black-skin .navbar.double-nav a {
-        color: #fff
+        color: #000;
+        font-family: 'Quicksand';
+        font-size: 20px;
+        font-weight: 900;
     }
 
     .black-skin .navbar form .md-form .form-control {
@@ -18722,18 +18738,17 @@ button.md-toast-close-button {
             }
 
         .black-skin .side-nav .collapsible li a:not(.collapsible-header) {
-            color: #fff;
+            color: #e2dcdc;
+            font-weight: 900;
             -webkit-transition: all 0.3s linear;
             transition: all 0.3s linear
         }
 
             .black-skin .side-nav .collapsible li a:not(.collapsible-header):hover, .black-skin .side-nav .collapsible li a:not(.collapsible-header).active, .black-skin .side-nav .collapsible li a:not(.collapsible-header):active {
-                color: #2ad1a3 !important
+                color: #FFF !important
             }
 
-    .black-skin .side-nav .sidenav-bg:after, .black-skin .side-nav .sidenav-bg.mask-strong:after {
-        background: rgba(0,0,0,0.8)
-    }
+    
 
     .black-skin .side-nav .sidenav-bg.mask-light:after {
         background: rgba(0,0,0,0.65)
@@ -18745,7 +18760,8 @@ button.md-toast-close-button {
 
 .black-skin .btn-primary {
     color: #fff;
-    background-color: #2ad1a3 !important
+   
+
 }
 
     .black-skin .btn-primary:hover {
@@ -19015,8 +19031,8 @@ button.md-toast-close-button {
     }
 
 .black-skin input[type="checkbox"]:checked + label:before {
-    border-right: 2px solid #2ad1a3;
-    border-bottom: 2px solid #2ad1a3
+    border-right: 2px solid #28ff01;
+    border-bottom: 2px solid #28ff01;
 }
 
 .black-skin input[type="checkbox"].filled-in:checked + label:before {
@@ -19030,7 +19046,7 @@ button.md-toast-close-button {
 }
 
 .black-skin .md-form .prefix.active {
-    color: #2ad1a3
+    color: #cc4b4c;
 }
 
 .black-skin .select-wrapper.colorful-select.md-form.md-outline span.caret.active {
@@ -19056,7 +19072,7 @@ button.md-toast-close-button {
 }
 
 .black-skin .top-nav-collapse {
-    background-color: #222
+    background-color: transparent;
 }
 
 .black-skin .carousel-multi-item .controls-top > a, .black-skin .carousel-multi-item .carousel-indicators li, .black-skin .carousel-multi-item .carousel-indicators li.active {

@@ -3,8 +3,10 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="~/imagenes/Assiste.png" />
+    <link rel="stylesheet" type="text/css" href="~/css/layoutlogin.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - MDB in ASP.NET</title>
+    <title>@ViewBag.Title</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.0/css/all.css">
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
@@ -32,41 +34,7 @@
     </div>
 
     <!--Double navigation-->
-    <header>
-        <!-- Sidebar navigation -->
-        <div id="slide-out" class="side-nav sn-bg-4 fixed">
-            <ul class="custom-scrollbar">
-                <!-- Logo -->
-                <li>
-                    <div class="logo-wrapper waves-light">
-                        <a href="#"><img src="https://mdbootstrap.com/img/logo/mdb-transparent.png" class="img-fluid flex-center"></a>
-                    </div>
-                </li>
-            </ul>
-            <div class="sidenav-bg mask-strong"></div>
-        </div>
-        <!--/. Sidebar navigation -->
-        <!-- Navbar -->
-        <nav class="navbar fixed-top navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav">
-            <!-- SideNav slide-out button -->
-            <div class="float-left">
-                <a href="#" data-activates="slide-out" class="button-collapse black-text"><i class="fas fa-bars"></i></a>
-            </div>
-            <!-- Breadcrumb-->
-            <div class="breadcrumb-dn mr-auto">
-                <p>ASSISTE -- ( - | - ) ---</p>
-            </div>
-            <ul class="nav navbar-nav nav-flex-icons ml-auto">
-                <li class="nav-item">
-                    @DateTime.Now.Day /
-                    @DateTime.Now.Month /
-                    @DateTime.Now.Year
-
-                </li>
-            </ul>
-        </nav>
-        <!-- /.Navbar -->
-    </header>
+    <header></header>
     <!--/.Double navigation-->
 
     <main>
@@ -95,6 +63,7 @@
             color: #fff
         }
     </style>
+    <script src="~/js/Inicio.js"></script>
 </body>
 </html>
 
