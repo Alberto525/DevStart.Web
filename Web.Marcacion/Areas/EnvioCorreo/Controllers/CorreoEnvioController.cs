@@ -10,38 +10,34 @@ namespace Web.Marcacion.Areas.EnvioCorreo.Controllers
 {
     public class CorreoEnvioController : Controller
     {
-        // GET: EnvioCorreo/EnvioCorreo
+       
         public ActionResult EnvioCorreo()
         {
             return View();
         }
 
-        [HttpPost]
-        public ActionResult EnvioCorreo (E_Correo model)
+
+        public string Enviar(E_Correo beCorreo)
         {
+            string Respuesta = "";
             try
             {
-                var mensaje = new MailMessage();
-                mensaje.Subject = model.Asunto;
-                mensaje.Body = model.Mensaje;
-                mensaje.To.Add(model.Destino);
+                var Mensaje = new MailMessage();
+                Mensaje.Subject = beCorreo.Asunto;
+                Mensaje.Body = beCorreo.Mensaje;
+                Mensaje.To.Add(beCorreo.Destino);
 
-                mensaje.IsBodyHtml = true;
+                Mensaje.IsBodyHtml = true;
 
-                var smtp = new SmtpClient();
-                smtp.Send(mensaje);
-                ViewBag.Mensaje = "Mensaje enviado correctamente";
-
-
-                
+                var SMTP = new SmtpClient();
+                SMTP.Send(Mensaje);
+                Respuesta =  "Correcto_" + "Mensaje enviado correctamente";
             }
             catch (Exception ex)
             {
-
-                ViewBag.Error = ex.Message;
+                Respuesta = "Error_" + ex.Message;
             }
-
-            return View();
+            return Respuesta;
 
         }
     }

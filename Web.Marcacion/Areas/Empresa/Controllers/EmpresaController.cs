@@ -60,10 +60,6 @@ namespace Web.Marcacion.Areas.Empresa.Controllers
                 {
                     return HttpNotFound();
                 }
-
-
-
-
                 return View(data);
             }
 

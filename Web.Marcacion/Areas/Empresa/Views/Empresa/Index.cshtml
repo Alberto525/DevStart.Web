@@ -55,7 +55,7 @@
 
                                 <td>
                                     @Html.ActionLink("edit", "Edit", new { id = olista.ID_Empresa }, htmlAttributes: new { @class = "material-icons" })
-                                    @*@Html.ActionLink("content_paste", "Detail", new { id = olista.ID_Empresa }, htmlAttributes: new { @id = "idEmpresa", @class = "material-icons" })*@
+
                                     <a onclick="Detalles(@olista.ID_Empresa)" class='material-icons' ;>content_paste</a>
                                     @Html.ActionLink("delete", "Delete", new { id = olista.ID_Empresa }, htmlAttributes: new { @class = "material-icons" })
 
