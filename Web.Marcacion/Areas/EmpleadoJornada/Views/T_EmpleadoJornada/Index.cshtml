@@ -73,8 +73,11 @@
                         <td>@olista.HoraSalida</td>
                         <td>
                             @Html.ActionLink("Edit", "Edit", new { id = olista.ID_EmpleadoJornada })  |
-                            @Html.ActionLink("Detail", "Detail", new { id = olista.ID_EmpleadoJornada })
-                            <a class="material-icons" onclick="IrTipoJornada()" >pets</a>
+                            @Html.ActionLink("Detail", "Detail", new { id = olista.ID_EmpleadoJornada }) |
+                            
+                           <a href="@Url.Action("EnvioCorreo", null, new { area = "EnvioCorreo", controller = "CorreoEnvio" }, Request.Url.Scheme)" class="waves-effect">Envio Correo</a>
+                           
+                            <a class="material-icons" onclick="IrTipoJornada()">pets</a>
                         </td>
                     </tr>
                 }

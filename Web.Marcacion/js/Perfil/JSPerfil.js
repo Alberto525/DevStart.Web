@@ -68,7 +68,7 @@ function TraerDataPerfil(Data) {
             Contenido += "<a class='material-icons'; onclick='Editar(" + Data[i].ID_Perfil+")'> edit </a>";
            
             Contenido += "<a class='material-icons'; href=" + Servidor + 'Perfil/T_Perfil/Detail/' + Data[i].ID_Perfil + "> content_paste </a>";
-            Contenido += "<a class='material-icons'; href=" + Servidor + 'Perfil/T_Perfil/Delete=GHGH/' + Data[i].ID_Perfil + "> delete </a>";
+            Contenido += "<a class='material-icons'; href=" + Servidor + 'Perfil/T_Perfil/Delete/' + Data[i].ID_Perfil + "> delete </a>";
             Contenido += "</td>";
         }
         Contenido += "</tr>";

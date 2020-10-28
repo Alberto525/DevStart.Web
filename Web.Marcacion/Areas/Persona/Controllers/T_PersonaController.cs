@@ -24,6 +24,7 @@ namespace Web.Marcacion.Areas.Persona.Controllers
                 lista = db.T_Personas.Where(x => x.Estado).ToList();
             }
             return View(lista);
+          //  return RedirectToAction("CreateUsuario");
         }
         public ActionResult Create()
         {
@@ -69,19 +70,20 @@ namespace Web.Marcacion.Areas.Persona.Controllers
             }
         }
 
-        public ActionResult CreateUsuario(int? id)
+        public ActionResult CreateUsuario(int id)
         {
             T_Persona perso = db.T_Personas.Find(id);
 
          //   T_Usuario usuario = new T_Usuario();
             T_Usuario_Reg usu = new T_Usuario_Reg();
 
-            usu.ID_Persona = 1;
+            usu.ID_Persona = id;
             usu.Estado = true;
-            // usu.RazonSocial = perso.Apellido + " " + perso.Nombre;
-            // usu.NumeroDocumento = perso.NumeroDocumento ;
-            ViewBag.Correo = perso.Correo;
-            ViewBag.ID_Perfil = new SelectList(db.t_Perfils.ToList(), "ID_Perfil", "Perfil");
+            usu.RazonSocial = perso.Apellido + " " + perso.Nombre;
+            usu.NumeroDocumento = perso.NumeroDocumento;
+            usu.Correo = perso.Correo;
+            // ViewBag.Correo = perso.Correo;
+            ViewBag.ID_Perfil = new SelectList(db.t_Perfils.ToList(), "ID_Perfil", "Descripcion");
             ViewBag.ID_TipoJornada = new SelectList(db.t_TipoJornadas.ToList(), "ID_TipoJornada", "Descripcion");
             // usu.ID_Perfil = 2;
 
@@ -101,7 +103,7 @@ namespace Web.Marcacion.Areas.Persona.Controllers
                     T_Usuario usuario = new T_Usuario();
                     usuario.ID_Perfil = usu.ID_Perfil;
                     usuario.ID_Persona = usu.ID_Persona;
-                    usuario.Usuario = usu.Usuario;
+                    usuario.Usuario = usu.Correo;
                     usuario.Estado = usu.Estado;
                     usuario.Clave = usu.Clave;
 

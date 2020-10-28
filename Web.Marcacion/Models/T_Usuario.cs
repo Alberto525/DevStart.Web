@@ -24,6 +24,7 @@ namespace Web.Marcacion.Models
     {
         [Key]
         public int ID_Usuario { get; set; }
+        public string Correo { get; set; }
         public string RazonSocial { get; set; }
         public string NumeroDocumento { get; set; }
         public string Usuario { get; set; }
