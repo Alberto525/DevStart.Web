@@ -64,11 +64,11 @@ namespace Web.Marcacion.Areas.EmpleadoJornada.Controllers
 
             var response = empleadoJornadaRepository.ListarXid(id);
 
-            ViewBag.Descripcion = new SelectList(db.t_TipoJornadas.Where(x => x.Estado), "ID_TipoJornada", "Descripcion");
             if (response == null) // si el perfil existe
             {
                 return HttpNotFound();
             }
+            ViewBag.Descripcion = new SelectList(db.t_TipoJornadas.Where(x => x.Estado), "ID_TipoJornada", "Descripcion");
             return View(response);
         }
 
@@ -82,13 +82,12 @@ namespace Web.Marcacion.Areas.EmpleadoJornada.Controllers
                 {
                     if (ModelState.IsValid)
                     {
-                        int date = int.Parse(t_EmpleadoJornada.Descripcion);
-                        empleadoJornadaRepository.ActualizarJornadaEmpleado(t_EmpleadoJornada.ID_EmpleadoJornada, date);
+                        empleadoJornadaRepository.ActualizarJornadaEmpleado(t_EmpleadoJornada.ID_EmpleadoJornada, t_EmpleadoJornada.ID_TipoJornada);
                         return RedirectToAction("Index");
                     }
                     return View(t_EmpleadoJornada);
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
                     return View(t_EmpleadoJornada);
                 }

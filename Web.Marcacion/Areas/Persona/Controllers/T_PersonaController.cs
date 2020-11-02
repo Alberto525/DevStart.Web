@@ -69,17 +69,18 @@ namespace Web.Marcacion.Areas.Persona.Controllers
             }
         }
 
-        public ActionResult CreateUsuario(int id)
+        public ActionResult CreateUsuario(int? id)
         {
             T_Persona perso = db.T_Personas.Find(id);
 
          //   T_Usuario usuario = new T_Usuario();
             T_Usuario_Reg usu = new T_Usuario_Reg();
 
-            usu.ID_Persona = id;
+            usu.ID_Persona = 1;
             usu.Estado = true;
-            usu.RazonSocial = perso.Apellido + " " + perso.Nombre;
-            usu.NumeroDocumento = perso.NumeroDocumento ;
+            // usu.RazonSocial = perso.Apellido + " " + perso.Nombre;
+            // usu.NumeroDocumento = perso.NumeroDocumento ;
+            ViewBag.Correo = perso.Correo;
             ViewBag.ID_Perfil = new SelectList(db.t_Perfils.ToList(), "ID_Perfil", "Perfil");
             ViewBag.ID_TipoJornada = new SelectList(db.t_TipoJornadas.ToList(), "ID_TipoJornada", "Descripcion");
             // usu.ID_Perfil = 2;
@@ -133,6 +134,12 @@ namespace Web.Marcacion.Areas.Persona.Controllers
                     return HttpNotFound();
                 }
 
+                var query = db.T_Personas.Join(db.T_Cargos, p => p.ID_Cargo, c => c.ID_Cargo, (p, c) => new { c.Descripcion , p.ID_Persona});
+                var result = query.Where(x => x.ID_Persona == id).Select(x => x.Descripcion).FirstOrDefault();
+
+                // var idcargo = db.T_Personas.Where(x => x.ID_Persona == id).Select(x => x.ID_Cargo);
+                // int codigo = Convert.ToInt32(idcargo);
+                ViewBag.Cargo = result;
                 ViewBag.ID_TipoDocumento = new SelectList(db.T_TipoDocumentos.ToList(), "ID_TipoDocumento", "Descripcion");
                 return View(data);
             }
