@@ -44,9 +44,10 @@ namespace Web.Marcacion.Areas.Empresa.Controllers
                     }
                     return View(t_empresa);
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    return View();
+
+                    return View(ex.Message);
                 }
             }
         }

@@ -3,17 +3,24 @@
     /**/
 
     ViewBag.Title = "Listado de Empleados";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 
 <h2>Listado de Empleados</h2>
 @using (Html.BeginForm("Create", "T_Persona", FormMethod.Get))
 {
-    <button type="submit" class="btn btn-primary">NUEVO</button>
+    <button id="btnNuevo" type="submit" class="btn btn-primary btnmarc"></button>
+    <label id="lblNuevo" for="btnNuevo">Nuevo</label>
+}
+
+@using (Html.BeginForm("ImportarExcel", "T_Persona", FormMethod.Get))
+{
+    <button type="submit" class="btn btn-primary">IMPORT</button>
 }
 
 @using (Html.BeginForm("Delete", "T_Persona", FormMethod.Get))
-{ 
+{
     <div>
         <input id="buscar" type="text" class="form-control" placeholder="Escriba algo para filtrar" style="margin-bottom:20px; margin-left:auto; width:300px" />
     </div>
@@ -21,7 +28,7 @@
         <div class="col-lg-12">
             <table class="table table-bordered" id="tabla">
                 <thead>
-                    <tr>                        
+                    <tr>
                         <th>Apellidos y Nombres</th>
                         <th>Nro. documento</th>
                         <th>Correo</th>
@@ -34,16 +41,27 @@
                     @foreach (var olista in Model)
                     {
                         <tr>
-                            
+
                             <td>@olista.Apellido @olista.Nombre</td>
                             <td>@olista.NumeroDocumento</td>
                             <td>@olista.Correo</td>
                             <td>@olista.Movil</td>
-                            <td>@olista.Estado</td>
+                            @if (@olista.Estado == true)
+                            {
+                                <td>
+                                    <a class='material-icons' ;>check_circle</a>
+                                </td>
+                            }
+                            else
+                            {
+                                <td>
+                                    <a class='material-icons' ;>check_circle_outline</a>
+                                </td>
+                            }
                             <td>
-                                @Html.ActionLink("Edit", "Edit", new { id = olista.ID_Persona })  |
-                                @Html.ActionLink("Detail", "Detail", new { id = olista.ID_Persona }) |
-                                @Html.ActionLink("Delete", "Delete", new { id = olista.ID_Persona })
+                                @Html.ActionLink("edit", "Edit", new { id = olista.ID_Persona }, htmlAttributes: new { @class = "material-icons" })
+                                @Html.ActionLink("content_paste", "Detail", new { id = olista.ID_Persona }, htmlAttributes: new { @class = "material-icons" })
+                                @Html.ActionLink("delete", "Delete", new { id = olista.ID_Persona }, htmlAttributes: new { @class = "material-icons" })
 
                             </td>
                         </tr>

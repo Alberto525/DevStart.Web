@@ -72,9 +72,18 @@
                         <td>@olista.HoraEntrada</td>
                         <td>@olista.HoraSalida</td>
                         <td>
-                            @Html.ActionLink("Edit", "Edit", new { id = olista.ID_EmpleadoJornada })  |
-                            @Html.ActionLink("Detail", "Detail", new { id = olista.ID_EmpleadoJornada })
+<<<<<<< HEAD
+                            @Html.ActionLink("edit", "Edit", new { id = olista.ID_EmpleadoJornada }, htmlAttributes: new { @class = "material-icons" }) 
+                            @Html.ActionLink("content_paste", "Detail", new { id = olista.ID_EmpleadoJornada }, htmlAttributes: new { @class = "material-icons" })
                             <a class="material-icons" onclick="EnviarCorreo()">email</a>
+=======
+                            @Html.ActionLink("Edit", "Edit", new { id = olista.ID_EmpleadoJornada })  |
+                            @Html.ActionLink("Detail", "Detail", new { id = olista.ID_EmpleadoJornada }) |
+                            
+                           <a href="@Url.Action("EnvioCorreo", null, new { area = "EnvioCorreo", controller = "CorreoEnvio" }, Request.Url.Scheme)" class="waves-effect">Envio Correo</a>
+                           
+                            <a class="material-icons" onclick="IrTipoJornada()">pets</a>
+>>>>>>> 091016b7d3854db6405d93405547fff78f975dad
                         </td>
                     </tr>
                 }

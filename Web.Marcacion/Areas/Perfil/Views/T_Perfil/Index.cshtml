@@ -11,18 +11,17 @@
 
 @using (Html.BeginForm("Create", "T_Perfil", FormMethod.Get))
 {
-    <button id="btnNuevo" type="submit" class="btn btn-primary btnmarc">
-
-    </button>
+    <button id="btnNuevo" type="submit" class="btn btn-primary btnmarc"></button>
     <label id="lblNuevo" for="btnNuevo">Nuevo</label>
 }
 
 @using (Html.BeginForm("ImportarExcel", "T_Perfil", FormMethod.Get))
 {
-    <button type="submit" class="btn btn-primary">IMPORT</button>
+    <button id="btnImportar" type="submit" class="btn btn-primary import">Importar</button>
+    <label id="lblImportar" for="btnImportar">Importar</label>
 }
 
-<div id="TBPerfil" class="row ">
+<div id="TBPerfil" class="row">
 </div>
 
 

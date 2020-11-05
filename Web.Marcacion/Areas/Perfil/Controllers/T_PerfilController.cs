@@ -9,6 +9,9 @@ using Web.Marcacion.Models;
 using Web.Marcacion.Seguridad;
 using Web.Marcacion.Repository;
 using Excel = Microsoft.Office.Interop.Excel;
+using System.Data.SqlClient;
+using System.Data;
+using Newtonsoft.Json;
 
 namespace Web.Marcacion.Areas.Perfil.Controllers
 {
@@ -68,10 +71,7 @@ namespace Web.Marcacion.Areas.Perfil.Controllers
             }
             return Respuesta;
         }
-
-
-
-
+        
         public ActionResult Detail(int? id)
         {
             using (StoreContext db = new StoreContext())
@@ -85,9 +85,6 @@ namespace Web.Marcacion.Areas.Perfil.Controllers
                 return View(data);
             }
         }
-
-
-       
         public ActionResult Edit()
         {
 
@@ -141,8 +138,7 @@ namespace Web.Marcacion.Areas.Perfil.Controllers
 
             return Respuesta;
         }
-
-
+        
         [HttpGet]
         public ActionResult Delete(int? id)
         {
@@ -156,11 +152,6 @@ namespace Web.Marcacion.Areas.Perfil.Controllers
                 return View(data);
             }
         }
-
-
-
-
-
 
         [HttpPost]
         public ActionResult Delete(int id, T_Perfil t_Perfil)
@@ -192,7 +183,7 @@ namespace Web.Marcacion.Areas.Perfil.Controllers
         {
             if (excelfile == null || excelfile.ContentLength == 0)
             {
-                ViewBag.Error = "Please select  a excel file";
+                ViewBag.Error = "Seleccione un archivo de Excel !";
                 return View();
             }
             else
@@ -205,62 +196,64 @@ namespace Web.Marcacion.Areas.Perfil.Controllers
                     if (System.IO.File.Exists(path))
                         System.IO.File.Delete(path);
                     excelfile.SaveAs(path);
-                    //-----
-                    //-----
-
-
-                    //Read data from excel file
+                    //LEER DATOS DEL ARCHIVO EXCEL
                     Excel.Application application = new Excel.Application();
                     Excel.Workbook workbook = application.Workbooks.Open(path);
                     Excel.Worksheet worksheet = workbook.ActiveSheet;
                     Excel.Range range = worksheet.UsedRange;
-                    List<T_Perfil> listPerfil = new List<T_Perfil>();
+                    List<PerfilExcel> listPerfil = new List<PerfilExcel>();
                     for(int row = 3; row <= range.Rows.Count; row++)
                     {
-                        T_Perfil p = new T_Perfil();
-                        p.ID_Perfil = int.Parse(((Excel.Range)range.Cells[row, 1]).Text);
-                      //  p.Perfil = ((Excel.Range)range.Cells[row, 2]).Text;
-                        listPerfil.Add(p);
+                        PerfilExcel p = new PerfilExcel();
+                        p.Descripcion = ((Excel.Range)range.Cells[row, 1]).Text;
+                        if (!string.IsNullOrEmpty(p.Descripcion))
+                            listPerfil.Add(p);
                     }
-                    System.Web.HttpContext.Current.Session["ListPerfilExcel"] = listPerfil.ToList(); ;
-                    return RedirectToAction("Success");
+                    workbook.Save();
+                    workbook.Close(true);
+                    application.Quit();
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(application);
+                    if (System.IO.File.Exists(path))
+                        System.IO.File.Delete(path);
+                    if (listPerfil != null && listPerfil.Count > 0)
+                    {
+                        System.Web.HttpContext.Current.Session["ListPerfilExcel"] = listPerfil.ToList();
+                        return RedirectToAction("Success");
+                    }
+                    return View();
                 }
                 else
                 {
-                    ViewBag.Error = "File type is incorrect<br>";
+                    ViewBag.Error = "El tipo de archivo es incorrecto ! <br>";
                     return View();
                 }
             }
         }
-
-
-        public ActionResult Importar()
-        {
-            return View();
-        }
-        [HttpPost]
-        public ActionResult Importar(ImportarEx file)
-        {
-            Metodos obj = new Metodos();
-
-            if (!obj.ValidarImportación(file))
-            {
-                foreach (var m in obj.VariosMsj)
-                {
-                    ModelState.AddModelError("", m);
-                }
-                return View(file);
-            }
-            else
-                return RedirectToAction("Index");
-            
-        }
-
+        
         public ActionResult Success()
         {
-            ViewBag.ListPerfil = System.Web.HttpContext.Current.Session["ListPerfilExcel"] as List<T_Perfil>;
+            ViewBag.ListPerfil = System.Web.HttpContext.Current.Session["ListPerfilExcel"] as List<PerfilExcel>;
             return View();
         }
+
+        [HttpGet]
+        public ActionResult InsertarExcel()
+        {
+            List<PerfilExcel> data = new List<PerfilExcel>();
+            data = System.Web.HttpContext.Current.Session["ListPerfilExcel"] as List<PerfilExcel>;
+            string json = Newtonsoft.Json.JsonConvert.SerializeObject(data);
+            DataTable dt = JsonConvert.DeserializeObject<DataTable>(json);
+            using (StoreContext db = new StoreContext())
+            {
+                var parametros = new SqlParameter("@lstPerfil", SqlDbType.Structured);
+                parametros.Value = dt;
+                parametros.TypeName = "dbo.DatosPerfil";
+
+                db.Database.ExecuteSqlCommand("exec spInsertarExcelPerfil @lstPerfil", parametros);
+                return RedirectToAction("Index");
+            }
+        }
+
 
     }
 }

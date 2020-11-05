@@ -7,11 +7,11 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <h2>Empresa</h2>
-@using (Html.BeginForm("Create", "Empresa", FormMethod.Get))
+@*@using (Html.BeginForm("Create", "Empresa", FormMethod.Get))
 {
     <button id="btnNuevo" type="submit" class="btn btn-primary btnmarc"></button>
     <label id="lblNuevo" for="btnNuevo">Nuevo</label>
-}
+}*@
 
 @using (Html.BeginForm("Delete", "Empresa", FormMethod.Get))
 {
@@ -53,13 +53,13 @@
                                 </td>
                             }
 
-                                <td>
-                                    @Html.ActionLink("edit", "Edit", new { id = olista.ID_Empresa }, htmlAttributes: new { @class = "material-icons" })
+                            <td>
+                                @Html.ActionLink("edit", "Edit", new { id = olista.ID_Empresa }, htmlAttributes: new { @class = "material-icons" })
 
-                                    <a onclick="Detalles(@olista.ID_Empresa)" class='material-icons' ;>content_paste</a>
-                                    @Html.ActionLink("delete", "Delete", new { id = olista.ID_Empresa }, htmlAttributes: new { @class = "material-icons" })
+                                <a onclick="Detalles(@olista.ID_Empresa)" class='material-icons' ;>content_paste</a>
+                                @Html.ActionLink("delete", "Delete", new { id = olista.ID_Empresa }, htmlAttributes: new { @class = "material-icons" })
 
-                                </td>
+                            </td>
                         </tr>
                     }
                 </tbody>
@@ -69,4 +69,4 @@
 
 }
 
-    <script src="~/js/Empresa/JSEmpresa.js"></script>
+<script src="~/js/Empresa/JSEmpresa.js"></script>

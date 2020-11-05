@@ -4,6 +4,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
+
+
 <h2>Asistencia de los empleados</h2>
 <!-- Material input -->
 <div class="col-lg-12">
@@ -53,7 +56,7 @@
                         <th>FECHA</th>
                         <th>HORA DE ENTRADA</th>
                         <th>HORA DE SALIDA</th>
-                        <th>ACCIONES</th>
+                        @*<th>ACCIONES</th>*@
                     </tr>
                 </thead>
                 <tbody>
@@ -66,10 +69,10 @@
                             <td>@olista.Fecha</td>
                             <td>@olista.HoraIngreso</td>
                             <td>@olista.HoraSalida</td>
-                            <td>
-                                @Html.ActionLink("Edit", "Edit", new { id = olista.ID_Asistencia })  |
-                                @Html.ActionLink("Detail", "Detail", new { id = olista.ID_Asistencia})
-                            </td>
+                            @*<td>
+                                @Html.ActionLink("edit", "Edit", new { id = olista.ID_Asistencia }, htmlAttributes: new { @class = "material-icons" })
+                                @Html.ActionLink("delete", "Detail", new { id = olista.ID_Asistencia }, htmlAttributes: new { @class = "material-icons" })
+                            </td>*@
                         </tr>
                     }
                 </tbody>

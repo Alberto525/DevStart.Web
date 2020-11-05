@@ -18,104 +18,112 @@
             @using (Html.BeginForm("Create", "T_Persona", FormMethod.Post))
             {
                 <!-- Descripcion -->
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="md-form">
-                            <i class="fas fa-envelope prefix" style="left:0"></i>
-                            @Html.TextBoxFor(model => model.Nombre, htmlAttributes: new { @class = "form-control" })
-                            <label for="RazonSocial">Nombres</label>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="md-form">
-                            <i class="fas fa-envelope prefix" style="left:0"></i>
-                            @Html.TextBoxFor(model => model.Apellido, htmlAttributes: new { @class = "form-control" })
-                            <label for="RazonSocial">Apellidos</label>
-                        </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="md-form">
+                        <i class="Nombre" style="left:0"></i>
+                        @Html.TextBoxFor(model => model.Nombre, htmlAttributes: new { @required = "true", @class = "form-control" })
+                        <label id="idNombre" for="Nombre">Nombre</label>
                     </div>
                 </div>
+                <div class="col-md-6">
+                    <div class="md-form">
+                        <i class="Apellido" style="left:0"></i>
+                        @Html.TextBoxFor(model => model.Apellido, htmlAttributes: new { @required = "true", @class = "form-control" })
+                        <label id="idApellido" for="Apellido">Apellidos</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="md-form">
+                        <i class="Correo" style="left:0"></i>
+                        @Html.TextBoxFor(model => model.Correo, htmlAttributes: new { @required = "true", @class = "form-control" })
+                        <label id="idCorreo" for="Correo">Correo electronico</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="md-form">
+                        <i class="Telefono" style="left:0"></i>
+                        @Html.TextBoxFor(model => model.Movil, htmlAttributes: new { @maxlength = "9", @class = "form-control" })
+                        <label id="idTelefono" for="Movil">Movil / Telefono</label>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="md-form">
+                        @*<i class="fas fa-envelope prefix" ></i>*@
+                        <i class="PerDireccion" style="left:0"></i>
 
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="editor-label">
-                            @Html.LabelFor(model => model.ID_TipoDocumento, "Tipo documento")
-                            <div class="editor-field">
-                                @Html.DropDownList("ID_TipoDocumento", null, string.Empty, new { @class = "select" })
-                                @Html.ValidationMessageFor(model => model.ID_TipoDocumento)
-                            </div>
-                        </div>
+                        @Html.TextAreaFor(model => model.Direccion, htmlAttributes: new { @style = "resize: none", @class = "form-control" })
+
+                        <label id="idPerDireccion" for="Direccion">Direccion</label>
                     </div>
-                    <div class="col-md-6">
-                        <div class="md-form">
-                            <i class="fas fa-envelope prefix" style="left:0"></i>
-                            @Html.TextBoxFor(model => model.NumeroDocumento, htmlAttributes: new { @class = "form-control" })
-                            <label for="RazonSocial">Numero Documento</label>
+                </div>
+                <div class="col-md-6">
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.ID_TipoDocumento, "Tipo documento")
+                        <div class="editor-field">
+                            @Html.DropDownList("ID_TipoDocumento", null, string.Empty, new { @class = "select" })
+                            @Html.ValidationMessageFor(model => model.ID_TipoDocumento)
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="md-form">
-                            <i class="fas fa-envelope prefix" style="left:0"></i>
-                            @Html.TextBoxFor(model => model.Correo, htmlAttributes: new { @class = "form-control" })
-                            <label for="RazonSocial">Correo electronico</label>
-                        </div>
+                <div class="col-md-6">
+                    <div class="md-form">
+                        <i class="NumeroDocumento" style="left:0"></i>
+                        @Html.TextBoxFor(model => model.NumeroDocumento, htmlAttributes: new { @required = "true", @class = "form-control" })
+                        <label  id="idNumeroDocumento" for="NumeroDocumento">Numero Documento</label>
                     </div>
-                    <div class="col-md-6">
-                        <b>Seleccione Sexo: </b><br />
-                        <div class="custom-control custom-radio custom-control-inline">
-                            @Html.RadioButton("sexo", "M", htmlAttributes: new { @class = "custom-control-input", @id = "sexoM" })
-                            <label class="custom-control-label" for="sexoM" title="Masculino">M</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            @Html.RadioButton("sexo", "F", htmlAttributes: new { @class = "custom-control-input", @id = "sexoF" })
-                            <label class="custom-control-label" for="sexoF" title="Femenino">F</label>
+                </div>
+            </div>
+
+                
+            <div class="row">
+
+                <div class="col-md-6">
+                    <b>Seleccione Sexo: </b><br />
+                    <div class="custom-control custom-radio custom-control-inline">
+                        @Html.RadioButton("sexo", "M", htmlAttributes: new { @class = "custom-control-input", @id = "sexoM" })
+                        <label class="custom-control-label" for="sexoM" title="Masculino">M</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        @Html.RadioButton("sexo", "F", htmlAttributes: new { @class = "custom-control-input", @id = "sexoF" })
+                        <label class="custom-control-label" for="sexoF" title="Femenino">F</label>
+                    </div>
+                    <br />
+                    <br />
+                </div>
+               
+                <div class="col-md-6">
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.ID_Cargo, "Seleccione Cargo")
+                        <div class="editor-field">
+                            @Html.DropDownList("ID_Cargo", null, string.Empty, new { @class = "select" })
+                            @Html.ValidationMessageFor(model => model.ID_Cargo)
                         </div>
                     </div>
                 </div>
-                <br />
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="md-form">
-                            <i class="fas fa-envelope prefix" style="left:0"></i>
-                            @Html.TextBoxFor(model => model.Direccion, htmlAttributes: new { @class = "form-control" })
-                            <label for="RazonSocial">Direccion </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="md-form">
-                            <i class="fas fa-envelope prefix" style="left:0"></i>
-                            @Html.TextBoxFor(model => model.Movil, htmlAttributes: new { @class = "form-control" })
-                            <label for="RazonSocial">Movil / Telefono</label>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="editor-label">
-                            @Html.LabelFor(model => model.ID_Cargo, "Seleccione Cargo")
-                            <div class="editor-field">
-                                @Html.DropDownList("ID_Cargo", null, string.Empty, new { @class = "select" })
-                                @Html.ValidationMessageFor(model => model.ID_Cargo)
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            </div>
+               
+               
+            
                 <hr />
                 <div class="md-form m-2 text-center">
-                    <button type="submit" class="btn btn-md btn-success">AGREGAR</button>
+
+                    <button type="submit" class="btn btnmarc Siguiente">SIGUIENTE</button>
+
                 </div>
 
             }
             @using (Html.BeginForm("Index", "T_Persona", FormMethod.Get))
             {
                 <div class="md-form m-2 text-center">
-                    <button type="submit" class="btn btn-md btn-success"> Regresar </button>
+                    <button type="submit" class="btn btnmarc Regresar">
+                        <a>Volver</a>
+                    </button>
                 </div>
             }
-            <!-- Form -->
+
 
         </div>
     </div>
-               
-    </div>
+
+</div>

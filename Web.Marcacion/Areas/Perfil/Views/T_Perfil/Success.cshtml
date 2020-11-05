@@ -2,28 +2,46 @@
 
 @{
     ViewBag.Title = "Success";
-    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Success</h2>
-@using (Html.BeginForm("Delete", "T_Perfil", FormMethod.Get))
+@using (Html.BeginForm("InsertarExcel", "T_Perfil", FormMethod.Get))
 {
-    <div class="row ">
-        <div class="col-lg-12">
-            <table class="table table-bordered">
-                <thead>
+    <div class="md-form m-2 text-center">
+        <button type="submit" class="btn btn-md btn-success">AGREGAR</button>
+    </div>
+
+}
+
+
+@using (Html.BeginForm("Salir", "T_Perfil", FormMethod.Get))
+{
+    <div class="md-form m-2 text-center">
+        <button type="submit" class="btn btn-md btn-success">REGRESAR</button>
+    </div>
+}
+<div class="row ">
+    <div class="col-lg-12">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>DESCRIPCION</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var olista in (List<Web.Marcacion.Models.PerfilExcel>)ViewBag.ListPerfil)
+                {
                     <tr>
-                        <th>IDPERFIL</th>
-                        <th>DESCRIPCION</th>
-                        <th>ACCIONES</th>
+                        <td>@olista.Descripcion</td>
                     </tr>
+<<<<<<< HEAD
                 </thead>
                 <tbody>
                     @foreach (var olista in (List<Web.Marcacion.Models.T_Perfil>)ViewBag.ListPerfil)
                     {
                         <tr>
                             <td>@olista.ID_Perfil</td>
-                            <td>@olista.Perfil</td>
+                            <td>@olista.Descripcion</td>
                             <td>
                                 @Html.ActionLink("Edit", "Edit", new { id = olista.ID_Perfil })  |
                                 @Html.ActionLink("Detail", "Detail", new { id = olista.ID_Perfil }) |
@@ -35,6 +53,11 @@
                 </tbody>
             </table>
         </div>
+=======
+                }
+            </tbody>
+        </table>
+>>>>>>> 091016b7d3854db6405d93405547fff78f975dad
     </div>
+</div>
 
-}

@@ -4,7 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Web.Marcacion.Context;
+using Web.Marcacion.Models;
 using Web.Marcacion.Seguridad;
+
+using Web.Marcacion.Ayuda;
 
 namespace Web.Marcacion.Controllers
 {
@@ -14,10 +17,32 @@ namespace Web.Marcacion.Controllers
 
         public ActionResult Index()
         {
-            string DomainName = HttpContext.Request.Url.Host;
-            ViewBag.localhost = DomainName;
+            //string DomainName = HttpContext.Request.Url.Host;
+            //ViewBag.localhost = DomainName;
             return View();
         }
+
+
+        public string Ingresar(string us, string pw)
+        {
+            string Respuesta = "";
+            var user = db.t_Usuarios.FirstOrDefault(x => x.Usuario == us && x.Clave == pw);
+            if (user != null)
+            {
+                SessionHelp.AddUserToSession(us);
+                Respuesta = "Correcto_" + user;
+   
+
+            }
+            else
+            {
+                Respuesta = "Incorrecto_" + user;
+            }
+            return Respuesta;
+        }
+
+
+
 
         public ActionResult About()
         {
@@ -32,7 +57,15 @@ namespace Web.Marcacion.Controllers
             return Seguridad.Seguridad.Encriptar(valor);
         }
 
-       
+
+        public ActionResult TerminoDeSesion()
+        {
+
+            return View();
+
+
+        }
+
         [HttpPost]
         public string Desencripta(string valor)
         {
@@ -40,21 +73,7 @@ namespace Web.Marcacion.Controllers
         }
 
 
-
-        public string Ingresar(string us, string pw)
-        {
-            string Respuesta = "";
-            var user = db.t_Usuarios.FirstOrDefault(x => x.Usuario == us && x.Clave == pw);
-            if (user != null)
-            {
-                Respuesta = "Correcto_" + user;
-            }
-            else
-            {
-                Respuesta = "Incorrecto_" + user;
-            }
-            return Respuesta;
-        }
+      
 
         public ActionResult Contact()
         {

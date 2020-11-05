@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="~/css/Principal.css" />
     <title>@ViewBag.Title</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.0/css/all.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
@@ -53,16 +54,15 @@
                     <ul class="collapsible collapsible-accordion">
                         <li>
                             <i class="users"></i>
-                            <a class="collapsible-header waves-effect arrow-r">
-                                Usuario<i class="fas fa-angle-down rotate-icon"></i>
+                            <a class="collapsible-header waves-effect arrow-r">Empleados<i class="fas fa-angle-down rotate-icon"></i>
                             </a>
                             <div class="collapsible-body">
                                 <ul class="list-unstyled">
                                     <li>
-                                        <a href="@Url.Action("Index", null, new { area = "Persona", controller = "T_Persona" }, Request.Url.Scheme)" class="waves-effect">Empleados</a>
-                                    </li>
-                                    <li>
-                                        <a href="@Url.Action("CreateUsuario", null, new { area = "Persona", controller = "T_Persona" }, Request.Url.Scheme)" class="elements">Crear Usuario</a>
+
+                                        <a href="@Url.Action("Index", null, new { area = "Persona", controller = "T_Persona" }, Request.Url.Scheme)" class="waves-effect">Ver Empleados</a>
+
+      
                                     </li>
                                 </ul>
                             </div>
@@ -174,7 +174,7 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="#">Configuración de perfil</a>
-                        <a class="dropdown-item" href="#">Cerrar sesión</a>
+                        <a class="dropdown-item" onclick="CerrarSesion()" >Cerrar sesión</a>
 
                     </div>
                 </li>

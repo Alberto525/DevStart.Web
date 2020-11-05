@@ -40,5 +40,11 @@ namespace Web.Marcacion.Areas.EnvioCorreo.Controllers
             return Respuesta;
 
         }
+
+
+        public ActionResult Salir()
+        {
+            return RedirectToAction("Index");
+        }
     }
 }

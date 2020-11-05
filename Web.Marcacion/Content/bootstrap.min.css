@@ -3779,8 +3779,8 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 
     .custom-control-input:checked ~ .custom-control-label::before {
         color: #fff;
-        border-color: #007bff;
-        background-color: #007bff
+        border-color: black;
+        background-color: #009688;
     }
 
     .custom-control-input:focus ~ .custom-control-label::before {
@@ -3821,7 +3821,7 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
         pointer-events: none;
         content: "";
         background-color: #fff;
-        border: #adb5bd solid 1px
+        border: #060606 solid 1px
     }
 
     .custom-control-label::after {

@@ -18,67 +18,79 @@
             {
                 <!-- Razon Social -->
                 <div class="md-form">
-                    <i class="fas fa-envelope prefix" style="left:0"></i>
+                    <i class="RazonSocial" style="left:0"></i>
                     @Html.TextBoxFor(model => model.RazonSocial, htmlAttributes: new { @class = "form-control" })
-                    <label for="RazonSocial">Razon Social</label>
+                    <label id="idRazonSocial" for="RazonSocial">Razon Social</label>
                 </div>
                 <!-- RUC -->
                 <div class="md-form">
-                    <i class="fas fa-envelope prefix" style="left:0"></i>
-                    @Html.TextBoxFor(model => model.RUC, htmlAttributes: new { @class = "form-control" })
-                    <label for="RUC">RUC</label>
+                    <i class="RUC" style="left:0"></i>
+                    @Html.TextBoxFor(model => model.RUC, htmlAttributes: new { @maxlength = "11", @class = "form-control" })
+                    <label id="idRUC" for="RUC">RUC</label>
                 </div>
                 <!-- Grupo -->
                 <div class="md-form">
-                    <i class="fas fa-envelope prefix" style="left:0"></i>
+                    <i class="Grupo" style="left:0"></i>
                     @Html.TextBoxFor(model => model.Grupo, htmlAttributes: new { @class = "form-control" })
-                    <label for="Grupo">Grupo</label>
+                    <label id="idGrupo" for="Grupo">Grupo</label>
                 </div>
                 <!-- Direccion -->
                 <div class="md-form">
-                    <i class="fas fa-envelope prefix" style="left:0"></i>
-                    @Html.TextBoxFor(model => model.Direccion, htmlAttributes: new { @class = "form-control" })
-                    <label for="Direccion">Direccion</label>
+                    <i class="PerDireccion" style="left:0"></i>
+                    @Html.TextAreaFor(model => model.Direccion, htmlAttributes: new { @style = "resize: none", @class = "form-control" })
+                    <label id="idPerDireccion" for="Direccion">Direccion</label>
                 </div>
                 <!-- Telefono -->
                 <div class="md-form">
-                    <i class="fas fa-envelope prefix" style="left:0"></i>
-                    @Html.TextBoxFor(model => model.Telefono, htmlAttributes: new { @class = "form-control" })
-                    <label for="Telefono">Telefono</label>
+                    <i class="Telefono" style="left:0"></i>
+                    @Html.TextBoxFor(model => model.Telefono, htmlAttributes: new { @maxlength = "9", @class = "form-control" })
+                    <label id="idTelefono" for="Telefono">Telefono</label>
                 </div>
                 <!-- FechaCreacion -->
-                <div class="md-form">
-                    <i class="fas fa-envelope prefix" style="left:0"></i>
-                    @Html.TextBoxFor(model => model.FechaCreacion, htmlAttributes: new { @class = "form-control" })
-                    <label for="FechaCreacion">Fecha de Creacion</label>
-                </div>
-                <!-- UsuarioCreacion -->
-                <div class="md-form">
-                    <i class="fas fa-envelope prefix" style="left:0"></i>
-                    @Html.TextBoxFor(model => model.UsuarioCreacion, htmlAttributes: new { @class = "form-control" })
-                    <label for="UsuarioCreacion">Usuario de creacion</label>
-                </div>
-                <!-- FechaModificacion -->
-                <div class="md-form">
-                    <i class="fas fa-envelope prefix" style="left:0"></i>
-                    @Html.TextBoxFor(model => model.FechaModificacion, htmlAttributes: new { @class = "form-control" })
-                    <label for="FechaModificacion">Fecha de Modificacion</label>
-                </div>
-                <!-- UsuarioModificacion -->
-                <div class="md-form">
-                    <i class="fas fa-envelope prefix" style="left:0"></i>
-                    @Html.TextBoxFor(model => model.UsuarioModificacion, htmlAttributes: new { @class = "form-control" })
-                    <label for="UsuarioMoficacion">Usuario de Modificacion</label>
-                </div>
+               <div class="md-form">
+                <i class="fas fa-envelope prefix" style="display:none"></i>
+                @Html.TextBoxFor(model => model.FechaCreacion, htmlAttributes: new { @type = "hidden", @class = "form-control" })
+                <label style="display:none" for="FechaCreacion">Fecha de Creacion</label>
+            </div>
+            <!-- UsuarioCreacion -->
+            <div class="md-form">
+                <i class="fas fa-envelope prefix"style="display:none"></i>
+                @Html.TextBoxFor(model => model.UsuarioCreacion, htmlAttributes: new { @type = "hidden", @class = "form-control" })
+                <label style="display:none" for="UsuarioCreacion">Usuario de creacion</label>
+            </div>
+            <!-- FechaModificacion -->
+            <div class="md-form">
+                <i class="fas fa-envelope prefix" style="display:none"></i>
+                @Html.TextBoxFor(model => model.FechaModificacion, htmlAttributes: new { @type = "hidden", @class = "form-control" })
+                <label style="display:none" for="FechaModificacion">Fecha de Modificacion</label>
+            </div>
+            <!-- UsuarioModificacion -->
+            <div class="md-form">
+                <i class="fas fa-envelope prefix" style="display:none"></i>
+                @Html.TextBoxFor(model => model.UsuarioModificacion, htmlAttributes: new { @type = "hidden", @class = "form-control" })
+                <label style="display:none" for="UsuarioMoficacion">Usuario de Modificacion</label>
+            </div>
                 <div class="form-check" style="padding-left:0 !important">
                     <input type="checkbox" class="form-check-input" id="chkActive" name="chkActive" checked disabled>
                     <label class="form-check-label" for="chkActive">Estado</label>
                 </div>
                 <hr />
                 <div class="md-form m-2 text-center">
-                    <button type="submit" class="btn btn-md btn-success">AGREGAR</button>
-                </div>
+                    <button type="submit" class="btn btnmarc Agregar AddUser">Crear</button>
 
+                </div>
+            }
+
+
+
+
+            @using (Html.BeginForm("Salir", "Empresa", FormMethod.Get))
+            {
+                <div class="md-form m-2 text-center">
+                    <button type="submit" class="btn btnmarc Regresar">
+                        <a>Cancelar</a>
+                    </button>
+                </div>
             }
 
 

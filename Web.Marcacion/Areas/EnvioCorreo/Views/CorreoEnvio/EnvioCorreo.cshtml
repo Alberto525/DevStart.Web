@@ -17,30 +17,38 @@
         <div class="card-body px-lg-5 pt-0">
 
             <div class="md-form">
-                <i class="fas fa-envelope prefix" style="left:0"></i>
-                <input class="form-control" type="text" id="txtDestino" />
-                <label for="txtDestino">Para</label>
+                <i class="txtDestino" style="left:0"></i>
+                <input class="form-control" type="text" id="txtDestino" required />
+                <label id="lblDestino" for="txtDestino">Para</label>
             </div>
 
             <div class="md-form">
-                <i class="fas fa-envelope prefix" style="left:0"></i>
-                <input class="form-control" type="text" id="txtAsunto" />
-                <label for="txtAsunto">Asunto</label>
+                <i class="txtAsunto" style="left:0"></i>
+                <input class="form-control" type="text" id="txtAsunto"  required/>
+                <label id="lblAsunto" for="txtAsunto">Asunto</label>
             </div>
             <div class="md-form">
-                <i class="fas fa-envelope prefix" style="left:0"></i>
-                <textarea class="form-control" type="texta" id="txtMensaje"> </textarea>
-                <label for="txtMensaje">Mensaje</label>
+                <i class="txtMensaje" style="left:0"></i>
+                <textarea  required class="form-control" type="texta" id="txtMensaje"> </textarea>
+                <label id="lblMensaje" for="txtMensaje">Mensaje</label>
             </div>
             <hr />
             <div class="md-form m-2 text-center">
-                <button id="btnAgregar" onclick="Enviar()" class="btn btnmarc Agregar"></button>
+                
+                <button type="submit" onclick="Enviar()" class="btn btnmarc Agregar CTJ">Enviar</button>
+
+
             </div>
 
+         
+                <button onclick="location.href='https://localhost:44375/EmpleadoJornada/T_EmpleadoJornada'" type="submit" class="btn btnmarc Details">Volver</button>
+          
+
         </div>
+
     </div>
 </div>
-
+<link href="~/css/Global.css" rel="stylesheet" />
 <script src="~/js/EnviarCorreo/JSEnviarCorreo.js"></script>
 
 

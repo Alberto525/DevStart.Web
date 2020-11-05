@@ -7,43 +7,55 @@
 <h2>Jornadas</h2>
 @using (Html.BeginForm("Create", "T_TipoJornada", FormMethod.Get))
 {
-    <button type="submit" class="btn btn-primary">NUEVO</button>
+    <button id="btnNuevo" type="submit" class="btn btn-primary btnmarc"></button>
+    <label id="lblNuevo" for="btnNuevo">Nuevo</label>
 }
-    <div>
-        <input id="buscar" type="text" class="form-control" placeholder="Escriba algo para filtrar" style="margin-bottom:20px; margin-left:auto; width:300px" />
-    </div>
-    <div class="row ">
-        <div class="col-lg-12">
-            <table class="table table-bordered" id="tabla">
-                <thead>
-                    <tr>
-                        <th>DESCRIPCION</th>
-                        <th>HORA DE ENTRADA</th>
-                        <th>HORA DE SALIDA</th>
-                        <th>ESTADO</th>
-                        <th>ACCIONES</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var olista in Model)
+<div>
+    <input id="buscar" type="text" class="form-control" placeholder="Escriba algo para filtrar" style="margin-bottom:20px; margin-left:auto; width:300px" />
+</div>
+<div class="row ">
+    <div class="col-lg-12">
+        <table class="table table-bordered" id="tabla">
+            <thead>
+                <tr>
+                    <th>DESCRIPCION</th>
+                    <th>HORA DE ENTRADA</th>
+                    <th>HORA DE SALIDA</th>
+                    <th>ESTADO</th>
+                    <th>ACCIONES</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var olista in Model)
+                {
+                <tr>
+                    <td>@olista.Descripcion</td>
+                    <td>@olista.HoraEntrada</td>
+                    <td>@olista.HoraSalida</td>
+                    @if (@olista.Estado == true)
                     {
-                        <tr>
-                            <td>@olista.Descripcion</td>
-                            <td>@olista.HoraEntrada</td>
-                            <td>@olista.HoraSalida</td>
-                            <td>@olista.Estado</td>
-                            <td>
-                                @Html.ActionLink("Edit", "Edit", new { id = olista.ID_TipoJornada })  |
-                                @Html.ActionLink("Detail", "Detail", new { id = olista.ID_TipoJornada }) |
-                                @Html.ActionLink("Delete", "Delete", new { id = olista.ID_TipoJornada })
-
-                            </td>
-                        </tr>
+                        <td>
+                            <a class='material-icons' ;>check_circle</a>
+                        </td>
                     }
-                </tbody>
-            </table>
-        </div>
+                    else
+                    {
+                        <td>
+                            <a class='material-icons' ;>check_circle_outline</a>
+                        </td>
+                    }
+                    <td>
+                        @Html.ActionLink("edit", "Edit", new { id = olista.ID_TipoJornada }, htmlAttributes: new { @class = "material-icons" })
+                        @Html.ActionLink("content_paste", "Detail", new { id = olista.ID_TipoJornada }, htmlAttributes: new { @class = "material-icons" })
+                        @Html.ActionLink("delete", "Delete", new { id = olista.ID_TipoJornada }, htmlAttributes: new { @class = "material-icons" })
+
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
     </div>
+</div>
 
 <script type="text/javascript">
     document.querySelector("#buscar").onkeyup = function () {

@@ -18,9 +18,9 @@
 
             <input type="hidden" value="@ViewBag.idPerfil" id="idPerfil" />
             <div class="md-form">
-                <i class="fas fa-envelope prefix" style="left:0"></i>
+                <i class="txtDescripcion" style="left:0"></i>
                 <input type="text" id="txtDescripcion" class="form-control" />
-                <label id="lblDescripcion" for="Descripcion">Descripción</label>
+                <label id="idDescripcion" for="txtDescripcion">Descripción</label>
             </div>
             <!-- Estado -->
 
@@ -30,14 +30,19 @@
             </div>
             <hr />
             <div class="md-form m-2 text-center">
-                <button onclick="Editar()" class="btn btnmarc Editar"></button>
+                <button onclick="Editar()" class="btn btnmarc Editar CPA">Actualizar</button>
             </div>
+
+          
 
             @using (Html.BeginForm("Salir", "T_Perfil", FormMethod.Get))
             {
-                <button type="submit" class="btn btnmarc Regresar"></button>
+                <div class="md-form m-2 text-center">
+                    <button type="submit" class="btn btnmarc Regresar">
+                        <a>Cancelar</a>
+                    </button>
+                </div>
             }
-            <!-- Form -->
 
         </div>
 

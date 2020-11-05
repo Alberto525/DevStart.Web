@@ -2,16 +2,17 @@
 
 @{
     ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="col-lg-5">
+<div class="col-lg-8 col-md-6 col-sm-12">
     <!-- Material form login -->
     <div class="card">
         <div class="card-header info-color white-text py-4t">
             Editar Empleado
         </div>
         <!--Card content-->
-        <div class="card-body px-lg-5 pt-0">
+        <div class="card-body px-lg-12 pt-0">
             <!-- Form -->
             <!--<form class="text-center" style="color: #757575;" action="" method="post">-->
             @using (Html.BeginForm("Edit", "T_Persona", FormMethod.Post))
@@ -20,96 +21,116 @@
                 @Html.HiddenFor(model => model.ID_Persona)
                 @Html.HiddenFor(model => model.FechaCreacion)
                 @Html.HiddenFor(model => model.UsuarioCreacion)
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="md-form">
+                            <i class="Nombre" style="left:0"></i>
+                            @Html.TextBoxFor(model => model.Nombre, htmlAttributes: new { @required = "true", @class = "form-control" })
+                            <label id="idNombre" for="Nombre">Nombre</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="md-form">
+                            <i class="Apellido" style="left:0"></i>
+                            @Html.TextBoxFor(model => model.Apellido, htmlAttributes: new { @required = "true", @class = "form-control" })
+                            <label id="idApellido" for="Apellido">Apellidos</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="md-form">
+                            <i class="Correo" style="left:0"></i>
+                            @Html.TextBoxFor(model => model.Correo, htmlAttributes: new { @required = "true", @class = "form-control" })
+                            <label id="idCorreo" for="Correo">Correo electronico</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="md-form">
+                            <i class="Telefono" style="left:0"></i>
+                            @Html.TextBoxFor(model => model.Movil, htmlAttributes: new { @maxlength = "9", @class = "form-control" })
+                            <label id="idTelefono" for="Movil">Movil / Telefono</label>
+                        </div>
+                    </div>
 
-                <div class="md-form">
-                    <i class="fas fa-envelope prefix" style="left:0"></i>
-                    @Html.TextBoxFor(model => model.Nombre, htmlAttributes: new { @class = "form-control" })
-                    <label for="Descripcion">Nombre</label>
-                </div>
-                <div class="md-form">
-                    <i class="fas fa-envelope prefix" style="left:0"></i>
-                    @Html.TextBoxFor(model => model.Apellido, htmlAttributes: new { @class = "form-control" })
-                    <label for="Apellido">Apellido</label>
-                </div>
+                    <div class="col-md-12">
+                        <div class="md-form">
 
+                            <i class="PerDireccion" style="left:0"></i>
 
-                <div class="editor-label">
-                    @Html.LabelFor(model => model.ID_TipoDocumento, "Tipo documento")
-                    <div class="editor-field">
-                        @Html.DropDownList("ID_TipoDocumento", null, string.Empty, new { @class = "select" })
-                        @Html.ValidationMessageFor(model => model.ID_TipoDocumento)
+                            @Html.TextAreaFor(model => model.Direccion, htmlAttributes: new { @style = "resize: none", @class = "form-control" })
+
+                            <label id="idPerDireccion" for="Direccion">Direccion</label>
+                        </div>
                     </div>
                 </div>
 
 
-                <div class="md-form">
-                    <i class="fas fa-envelope prefix" style="left:0"></i>
-                    @Html.TextBoxFor(model => model.NumeroDocumento, htmlAttributes: new { @class = "form-control" })
-                    <label for="NumeroDocumento">NumeroDocumento</label>
-                </div>
-                <div class="md-form">
-                    <i class="fas fa-envelope prefix" style="left:0"></i>
-                    @Html.TextBoxFor(model => model.Sexo, htmlAttributes: new { @class = "form-control" })
-                    <label for="Sexo">Sexo</label>
-                </div>
-                <div class="md-form">
-                    <i class="fas fa-envelope prefix" style="left:0"></i>
-                    @Html.TextBoxFor(model => model.Correo, htmlAttributes: new { @class = "form-control" })
-                    <label for="Correo">Correo</label>
-                </div>
-                <div class="md-form">
-                    <i class="fas fa-envelope prefix" style="left:0"></i>
-                    @Html.TextBoxFor(model => model.Movil, htmlAttributes: new { @class = "form-control" })
-                    <label for="Movil">Movil</label>
-                </div>
-                <div class="md-form">
-                    <i class="fas fa-envelope prefix" style="left:0"></i>
-                    @Html.TextBoxFor(model => model.Direccion, htmlAttributes: new { @class = "form-control" })
-                    <label for="Direccion">Direccion</label>
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.ID_TipoDocumento, "Tipo documento")
+                            <div class="editor-field">
+                                @Html.DropDownList("ID_TipoDocumento", null, string.Empty, new { @class = "select" })
+                                @Html.ValidationMessageFor(model => model.ID_TipoDocumento)
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-6">
+                        <div class="md-form">
+                            <i class="NumeroDocumento" style="left:0"></i>
+                            @Html.TextBoxFor(model => model.NumeroDocumento, htmlAttributes: new { @required = "true", @class = "form-control" })
+                            <label id="idNumeroDocumento" for="NumeroDocumento">Numero Documento</label>
+                        </div>
+
+                    </div>
+
                 </div>
 
 
-                <div class="editor-label">
-                    @Html.LabelFor(model => model.ID_Cargo, "Seleccione Cargo")
-                    <div class="editor-field">
-                        @Html.DropDownList("ID_Cargo", null, string.Empty, new { @class = "select" })
-                        @Html.ValidationMessageFor(model => model.ID_Cargo)
+
+
+                <div class="col-md-6">
+                    <div class="md-form">
+                        <i class="Sexo" style="left:0"></i>
+                        @Html.TextBoxFor(model => model.Sexo, htmlAttributes: new { @class = "form-control" })
+                        <label id="idSexo" for="Sexo">Sexo</label>
                     </div>
                 </div>
+                <div class="col-md-6">
 
+                </div>
 
 
                 <!-- Estado -->
                 @Html.HiddenFor(model => model.Estado)
-                <div class="form-check" style="padding-left:0 !important">
-                    <input type="checkbox" class="form-check-input" id="chkActive" name="chkActive" checked="@Model.Estado">
-                    <label class="form-check-label" for="chkActive">Estado</label>
+                <div class="form-check" style="padding-left:0 !important;display:none">
+                    <input style="display:none" type="checkbox" class="form-check-input" id="chkActive" name="chkActive" checked="@Model.Estado">
+                    <label style="display:none" class="form-check-label" for="chkActive">Estado</label>
                 </div>
                 <hr />
                 <div class="md-form m-2 text-center">
-                    <button type="submit" class="btn btn-md btn-success">Actualizar</button>
-                </div>
-            }@using (Html.BeginForm("Index", "T_Persona", FormMethod.Get))
-            {
-                <div class="md-form m-2 text-center">
-                    <button type="submit" class="btn btn-md btn-success"> Regresar </button>
+                    <button type="submit" class="btn btnmarc Editar CEP">Actualizar</button>
                 </div>
             }
-            <!-- Form -->
+            @using (Html.BeginForm("Index", "T_Persona", FormMethod.Get))
+            {
+                <div class="md-form m-2 text-center">
+                    <button type="submit" class="btn btnmarc Regresar">
+                        <a>Cancelar</a>
+                    </button>
+                </div>
+            }
 
-        </div>
 
-    </div>
-    <!-- Material form login -->
-</div>
 
-<script type="text/javascript">
-    //$('#Estado').prop('indeterminate', true);
-    $("[name=chkActive]").on('click', function () {
-        if ($("#chkActive").is(":checked")) {
-            $("[name=Estado]").val(true);
-        } else {
-            $("[name=Estado]").val(false);
-        }
-    });
-</script>
+            <script type="text/javascript">
+                //$('#Estado').prop('indeterminate', true);
+                $("[name=chkActive]").on('click', function () {
+                    if ($("#chkActive").is(":checked")) {
+                        $("[name=Estado]").val(true);
+                    } else {
+                        $("[name=Estado]").val(false);
+                    }
+                });
+            </script>

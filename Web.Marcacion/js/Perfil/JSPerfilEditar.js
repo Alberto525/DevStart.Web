@@ -33,7 +33,7 @@ function Mostrar() {
             Respuesta = JSON.parse(xhr.response);
             if (Respuesta != null) {
                 JSON.stringify(Respuesta);
-                document.getElementById("lblDescripcion").classList.add("active");
+                document.getElementById("idDescripcion").classList.add("active");
                 chkActive.checked = Respuesta.Estado;
                 txtDescripcion.value = Respuesta.Descripcion;
 

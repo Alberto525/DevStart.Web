@@ -6,78 +6,78 @@
 }
 
 <div class="col-lg-5">
-    
+
     <div class="card">
         <div class="card-header info-color white-text py-4t">
             ELIMINAR EMPRESA
         </div>
-    
+
         <div class="card-body px-lg-5 pt-0">
-          
+
             @using (Html.BeginForm("Delete", "Empresa", FormMethod.Post))
             {
                 <!-- Razon Social -->
                 @Html.HiddenFor(model => model.ID_Empresa)
                 <div class="md-form">
-                    <i class="fas fa-envelope prefix" style="left:0"></i>
+                    <i class="RazonSocial" style="left:0"></i>
                     @Html.TextBoxFor(model => model.RazonSocial, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
-                    <label for="Descripcion">Descripción</label>
+                    <label id="idRazonSocial" for="RazonSocial">Razon Social</label>
                 </div>
                 <!-- RUC -->
                 @Html.HiddenFor(model => model.ID_Empresa)
                 <div class="md-form">
-                    <i class="fas fa-envelope prefix" style="left:0"></i>
+                    <i class="RUC" style="left:0"></i>
                     @Html.TextBoxFor(model => model.RUC, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
-                    <label for="RUC">RUC</label>
+                    <label id="idRUC" for="RUC">RUC</label>
                 </div>
                 <!-- Grupo -->
                 @Html.HiddenFor(model => model.ID_Empresa)
                 <div class="md-form">
-                    <i class="fas fa-envelope prefix" style="left:0"></i>
+                    <i class="Grupo" style="left:0"></i>
                     @Html.TextBoxFor(model => model.Grupo, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
-                    <label for="Grupo">Grupo</label>
+                    <label id="idGrupo" for="Grupo">Grupo</label>
                 </div>
                 <!-- Direccion -->
                 @Html.HiddenFor(model => model.ID_Empresa)
                 <div class="md-form">
-                    <i class="fas fa-envelope prefix" style="left:0"></i>
+                    <i class="PerDireccion" style="left:0"></i>
                     @Html.TextBoxFor(model => model.Direccion, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
-                    <label for="Direccion">Direccion</label>
+                    <label id="idPerDireccion" for="Direccion">Direccion</label>
                 </div>
                 <!-- Telefono -->
                 @Html.HiddenFor(model => model.ID_Empresa)
                 <div class="md-form">
-                    <i class="fas fa-envelope prefix" style="left:0"></i>
+                    <i class="Telefono" style="left:0"></i>
                     @Html.TextBoxFor(model => model.Telefono, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
-                    <label for="Telefono">Telefono</label>
+                    <label id="idTelefono" for="Telefono">Telefono</label>
                 </div>
                 <!-- FechaCreacion -->
                 @Html.HiddenFor(model => model.ID_Empresa)
                 <div class="md-form">
-                    <i class="fas fa-envelope prefix" style="left:0"></i>
-                    @Html.TextBoxFor(model => model.FechaCreacion, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
-                    <label for="FechaCreacion">Fecha de Creacion</label>
+                    <i class="fas fa-envelope prefix" style="display:none"></i>
+                    @Html.TextBoxFor(model => model.FechaCreacion, htmlAttributes: new { @type = "hidden", @class = "form-control", disabled = "disabled" })
+                    <label style="display:none" for="FechaCreacion">Fecha de Creacion</label>
                 </div>
                 <!-- UsuarioCreacion -->
                 @Html.HiddenFor(model => model.ID_Empresa)
                 <div class="md-form">
-                    <i class="fas fa-envelope prefix" style="left:0"></i>
-                    @Html.TextBoxFor(model => model.UsuarioCreacion, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
-                    <label for="UsuarioCreacion">Usuario de creacion</label>
+                    <i class="fas fa-envelope prefix" style="display:none"></i>
+                    @Html.TextBoxFor(model => model.UsuarioCreacion, htmlAttributes: new { @type = "hidden", @class = "form-control", disabled = "disabled" })
+                    <label style="display:none" for="UsuarioCreacion">Usuario de creacion</label>
                 </div>
                 <!-- FechaModificacion -->
                 @Html.HiddenFor(model => model.ID_Empresa)
                 <div class="md-form">
-                    <i class="fas fa-envelope prefix" style="left:0"></i>
-                    @Html.TextBoxFor(model => model.FechaModificacion, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
-                    <label for="FechaModificacion">Fecha de Modificacion</label>
+                    <i class="fas fa-envelope prefix" style="display:none"></i>
+                    @Html.TextBoxFor(model => model.FechaModificacion, htmlAttributes: new { @type = "hidden", @class = "form-control", disabled = "disabled" })
+                    <label style="display:none" for="FechaModificacion">Fecha de Modificacion</label>
                 </div>
                 <!-- UsuarioModificacion -->
                 @Html.HiddenFor(model => model.ID_Empresa)
                 <div class="md-form">
-                    <i class="fas fa-envelope prefix" style="left:0"></i>
-                    @Html.TextBoxFor(model => model.UsuarioModificacion, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
-                    <label for="UsuarioMoficacion">Usuario de Modificacion</label>
+                    <i class="fas fa-envelope prefix" style="display:none"></i>
+                    @Html.TextBoxFor(model => model.UsuarioModificacion, htmlAttributes: new { @type = "hidden", @class = "form-control", disabled = "disabled" })
+                    <label style="display:none" for="UsuarioMoficacion">Usuario de Modificacion</label>
                 </div>
                 <!-- Estado -->
                 @Html.HiddenFor(model => model.Estado)
@@ -87,18 +87,24 @@
                 </div>
                 <hr />
                 <div class="md-form m-2 text-center">
-                    <button type="submit" class="btn btn-md btn-success">ELIMINAR</button>
+                    <button type="submit" class="btn btnmarc Eliminar">Eliminar</button>
                 </div>
-             
+
             }
+
+            @using (Html.BeginForm("Salir", "Empresa", FormMethod.Get))
+            {
+                <button type="submit" class="btn btnmarc Details">Regresar</button>
+            }
+
         </div>
 
     </div>
-   
+
 </div>
 
 <script type="text/javascript">
-   
+
     $("[name=chkActive]").on('click', function () {
         if ($("#chkActive").is(":checked")) {
             $("[name=Estado]").val(true);
