@@ -20,6 +20,11 @@
     <label id="lblImportar" for="btnImportar">Importar</label>
 }
 
+@using (Html.BeginForm("ImportarExcel", "T_Persona", FormMethod.Get))
+{
+    <button type="submit" class="btn btn-primary">IMPORT</button>
+}
+
 @using (Html.BeginForm("Delete", "T_Persona", FormMethod.Get))
 {
     <div>
