@@ -14,4 +14,10 @@ namespace Web.Marcacion.Models
         public bool Estado { get; set; }
 
     }
+
+    public class PerfilExcel
+    { 
+        public string Descripcion { get; set; }
+
+    }
 }

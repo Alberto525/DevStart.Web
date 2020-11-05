@@ -1,0 +1,37 @@
+﻿@model Web.Marcacion.Models.T_Persona
+@{
+    ViewBag.Title = "ImportarExcel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="col-lg-5">
+
+    <div class="card">
+        <div class="card-header info-color white-text py-4t">
+            IMPORTAR EXCEL
+        </div>
+
+        <div class="card-body px-lg-5 pt-0">
+
+            @using (Html.BeginForm("ImportarExcel", "T_Persona", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+
+                @Html.Raw(ViewBag.Error)
+                <span>Excel File</span><input type="file" name="excelfile" />
+                <br />
+                <input type="submit" value="Import" />
+
+            }
+            @using (Html.BeginForm("Salir", "T_Persona", FormMethod.Get))
+            {
+                <div class="md-form m-2 text-center">
+                    <button type="submit" class="btn btn-md btn-success">REGRESAR</button>
+                </div>
+            }
+
+        </div>
+
+    </div>
+
+</div>

@@ -13,8 +13,13 @@
     <button type="submit" class="btn btn-primary">NUEVO</button>
 }
 
+@using (Html.BeginForm("ImportarExcel", "T_Persona", FormMethod.Get))
+{
+    <button type="submit" class="btn btn-primary">IMPORT</button>
+}
+
 @using (Html.BeginForm("Delete", "T_Persona", FormMethod.Get))
-{ 
+{
     <div>
         <input id="buscar" type="text" class="form-control" placeholder="Escriba algo para filtrar" style="margin-bottom:20px; margin-left:auto; width:300px" />
     </div>
@@ -22,7 +27,7 @@
         <div class="col-lg-12">
             <table class="table table-bordered" id="tabla">
                 <thead>
-                    <tr>                        
+                    <tr>
                         <th>Apellidos y Nombres</th>
                         <th>Nro. documento</th>
                         <th>Correo</th>
@@ -35,7 +40,7 @@
                     @foreach (var olista in Model)
                     {
                         <tr>
-                            
+
                             <td>@olista.Apellido @olista.Nombre</td>
                             <td>@olista.NumeroDocumento</td>
                             <td>@olista.Correo</td>
