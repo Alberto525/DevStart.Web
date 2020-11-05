@@ -18,19 +18,13 @@
             {
                 <!-- Descripcion -->
                 @Html.HiddenFor(model => model.ID_Perfil)
-<<<<<<< HEAD
+
             <div class="md-form">
                 <i class="txtDescripcion" style="left:0"></i>
                 @Html.TextBoxFor(model => model.Descripcion, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
                 <label id="idDescripcion" for="txtDescripcion">Descripción</label>
             </div>
-=======
-                <div class="md-form">
-                    <i class="fas fa-envelope prefix" style="left:0"></i>
-                    @Html.TextBoxFor(model => model.Descripcion, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
-                    <label for="Descripcion">Descripción</label>
-                </div>
->>>>>>> 091016b7d3854db6405d93405547fff78f975dad
+
                 <!-- Estado -->
                 @Html.HiddenFor(model => model.Estado)
                 <div class="form-check" style="padding-left:0 !important">

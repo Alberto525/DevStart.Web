@@ -26,51 +26,17 @@
                         <i class="fas fa-envelope prefix" style="left:0"></i>
                         @Html.TextBoxFor(model => model.Nombre, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
                         <label for="Descripcion">Nombre</label>
-
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="md-form">
-
                         <i class="Apellido" style="left:0"></i>
                         @Html.TextBoxFor(model => model.Apellido, htmlAttributes: new { disabled = "disabled", @class = "form-control" })
                         <label id="idApellido" for="Apellido">Apellidos</label>
-
-                        <i class="fas fa-envelope prefix" style="left:0"></i>
-                        @Html.TextBoxFor(model => model.Apellido, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
-                        <label for="Apellido">Apellido</label>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="md-form">
-                        <i class="fas fa-envelope prefix" style="left:0"></i>
-                        @Html.TextBoxFor(model => model.NumeroDocumento, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
-                        <label for="NumeroDocumento">Numero Documento</label>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="md-form">
-                        <i class="fas fa-envelope prefix" style="left:0"></i>
-                        @Html.TextBoxFor(model => model.Sexo, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
-                        <label for="Sexo">Sexo</label>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="md-form">
-                        <i class="fas fa-envelope prefix" style="left:0"></i>
-                        @Html.TextBoxFor(model => model.Correo, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
-                        <label for="Correo">Correo</label>
->>>>>>> 091016b7d3854db6405d93405547fff78f975dad
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="md-form">
-<<<<<<< HEAD
                         <i class="Correo" style="left:0"></i>
                         @Html.TextBoxFor(model => model.Correo, htmlAttributes: new { disabled = "disabled", @class = "form-control" })
                         <label id="idCorreo" for="Correo">Correo electronico</label>
@@ -83,50 +49,6 @@
                         <label id="idTelefono" for="Movil">Movil / Telefono</label>
                     </div>
                 </div>
-                <div class="col-md-5">
-                    <div class="md-form">
-                        <i class="Sexo" style="left:0;"></i>
-                        @Html.TextBoxFor(model => model.Sexo, htmlAttributes: new { @style= "text-align:center", disabled = "disabled", @class = "form-control" })
-                        <label  id="idSexo" for="Sexo">Sexo</label>
-                    </div>
-                </div>
-=======
-                        <i class="fas fa-envelope prefix" style="left:0"></i>
-                        @Html.TextBoxFor(model => model.Movil, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
-                        <label for="Movil">Movil</label>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="md-form">
-                        <i class="fas fa-envelope prefix" style="left:0"></i>
-                        @Html.TextBoxFor(model => model.Direccion, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
-                        <label for="Direccion">Direccion</label>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="md-form">
-                        <i class="fas fa-envelope prefix" style="left:0"></i>
-                        @Html.TextBox("txtcargo", (string)ViewBag.Cargo, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
-                        @*Html.Raw(ViewBag.Cargo)*@
-                        <label for="Cargo">Cargo</label>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <!-- Estado -->
-                    @Html.HiddenFor(model => model.Estado)
-                    <div class="form-check" style="padding-left:0 !important">
-                        <input type="checkbox" class="form-check-input" id="chkActive" name="chkActive" checked="@Model.Estado" disabled>
-                        <label class="form-check-label" for="chkActive">Estado</label>
-                    </div>
-                </div>
-            </div>
-                    <hr />
-
->>>>>>> 091016b7d3854db6405d93405547fff78f975dad
 
                 <div class="col-md-12">
                     <div class="md-form">
@@ -151,6 +73,17 @@
                         @Html.TextBox("txtcargo", (string)ViewBag.Cargo, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
 
                         <label id="idCargo" for="Cargo">Cargo</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+              
+                <div class="col-md-5">
+                    <div class="md-form">
+                        <i class="Sexo" style="left:0;"></i>
+                        @Html.TextBoxFor(model => model.Sexo, htmlAttributes: new { @style= "text-align:center", disabled = "disabled", @class = "form-control" })
+                        <label  id="idSexo" for="Sexo">Sexo</label>
                     </div>
                 </div>
             </div>

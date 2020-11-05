@@ -1,50 +1,37 @@
 ﻿@model Web.Marcacion.Models.T_Usuario_Reg
 
 @{
-    ViewBag.Title = "CrearUsuario";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+                /**/
+
+                ViewBag.Title = "CrearUsuario";
+                Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="col-lg-8 col-md-6 col-sm-12">
+
     <!-- Material form login -->
     <div class="card">
         <div class="card-header info-color white-text py-4t">
             Crear Credencial de acceso
         </div>
+
         <!--Card content-->
         <div class="card-body px-lg-12 pt-0">
+
             <!-- Form -->
             <!--<form class="text-center" style="color: #757575;" action="" method="post">-->
             @using (Html.BeginForm("CreateUsuario", "T_Persona", FormMethod.Post))
             {
-                <!-- APELLIDOS Y NOMBRES -->
                 @Html.HiddenFor(model => model.ID_Persona)
                 <div class="row">
+
+
                     <div class="col-md-6">
                         <div class="md-form">
-<<<<<<< HEAD
-                            <i class="Nombre" style="left:0"></i>
-                            @Html.TextBoxFor(model => model.RazonSocial, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
-                            <label id="idNombre" for="RazonSocial">Nombre</label>
-=======
-                            <i class="fas fa-envelope prefix" style="left:0"></i>
-                            @Html.TextBoxFor(model => model.RazonSocial, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
-                            <label for="Descripcion">Nombre</label>
->>>>>>> 091016b7d3854db6405d93405547fff78f975dad
-                        </div>
-                    </div>
-                    <!-- NUMERO DE DOCUMENTO -->
-                    <div class="col-md-6">
-                        <div class="md-form">
-<<<<<<< HEAD
+
                             <i class="NumeroDocumento" style="left:0"></i>
                             @Html.TextBoxFor(model => model.NumeroDocumento, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
                             <label id="idNumeroDocumento" for="NumeroDocumento">Numero Documento</label>
-=======
-                            <i class="fas fa-envelope prefix" style="left:0"></i>
-                            @Html.TextBoxFor(model => model.NumeroDocumento, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
-                            <label for="NumeroDocumento">NumeroDocumento</label>
->>>>>>> 091016b7d3854db6405d93405547fff78f975dad
                         </div>
                     </div>
                 </div>
@@ -53,26 +40,15 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="md-form">
-<<<<<<< HEAD
+
                             <i class="Correo" style="left:0"></i>
-                            @*Html.TextBox("txtcorreo", (string)ViewBag.Correo, htmlAttributes: new { @class = "form-control", disabled = "disabled" })*@
                             @Html.TextBoxFor(model => model.Correo, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
                             <label id="idCorreo" for="Correo">Correo electronico</label>
-=======
-                            <i class="fas fa-envelope prefix" style="left:0"></i>
-                            @*Html.TextBox("txtcorreo", (string)ViewBag.Correo, htmlAttributes: new { @class = "form-control", disabled = "disabled" })*@
-                            @Html.TextBoxFor(model => model.Correo, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
-                            <label for="Correo">Correo Electronico</label>
->>>>>>> 091016b7d3854db6405d93405547fff78f975dad
                         </div>
                     </div>
                     <div class="col-md-5">
                         <div class="md-form">
-<<<<<<< HEAD
                             <span class="user">(¡Este es su usuario de acceso!)</span>
-=======
-                            <span>(¡Este es su usuario de acceso!)</span>
->>>>>>> 091016b7d3854db6405d93405547fff78f975dad
                         </div>
                     </div>
                 </div>
@@ -81,15 +57,9 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="md-form">
-<<<<<<< HEAD
                             <i class="Clave" style="left:0"></i>
                             @Html.TextBoxFor(model => model.Clave, htmlAttributes: new { @required = "true", @type = "password", @class = "form-control" })
                             <label id="idClave" for="Clave">Clave</label>
-=======
-                            <i class="fas fa-envelope prefix" style="left:0"></i>
-                            @Html.TextBoxFor(model => model.Clave, htmlAttributes: new { @class = "form-control" })
-                            <label for="RazonSocial">Clave</label>
->>>>>>> 091016b7d3854db6405d93405547fff78f975dad
                         </div>
                     </div>
                 </div>
@@ -98,11 +68,7 @@
                         <div class="editor-label">
                             @Html.LabelFor(model => model.ID_Perfil, "Selecione Perfil")
                             <div class="editor-field">
-<<<<<<< HEAD
-                                @Html.DropDownList("ID_Perfil", null, string.Empty, new { @required = "true" ,@class = "select" })
-=======
-                                @Html.DropDownList("ID_Perfil", null, string.Empty, new { @class = "select" })
->>>>>>> 091016b7d3854db6405d93405547fff78f975dad
+                                @Html.DropDownList("ID_Perfil", null, string.Empty, new { @required = "true", @class = "select" })
                                 @Html.ValidationMessageFor(model => model.ID_Perfil)
                             </div>
                         </div>
@@ -111,36 +77,20 @@
                         <div class="editor-label">
                             @Html.LabelFor(model => model.ID_TipoJornada, "Selecione Jornada")
                             <div class="editor-field">
-<<<<<<< HEAD
                                 @Html.DropDownList("ID_TipoJornada", null, string.Empty, new { @required = "true", @class = "select" })
-=======
-                                @Html.DropDownList("ID_TipoJornada", null, string.Empty, new { @class = "select" })
->>>>>>> 091016b7d3854db6405d93405547fff78f975dad
+
                                 @Html.ValidationMessageFor(model => model.ID_TipoJornada)
                             </div>
                         </div>
                     </div>
                 </div>
-                <hr />
                 <div class="md-form m-2 text-center">
-<<<<<<< HEAD
                     <button type="submit" class="btn btnmarc Agregar AddUser">Crear</button>
-                </div>
-            }
-            @using (Html.BeginForm("Index", "T_Persona", FormMethod.Get))
-            {
-                <div class="md-form m-2 text-center">
-                    <button type="submit" class="btn btnmarc Regresar">
-                        <a>Cancelar</a>
-                    </button>
-=======
-                    <button type="submit" class="btn btn-md btn-success">Crear</button>
                 </div>
             }@using (Html.BeginForm("Index", "T_Persona", FormMethod.Get))
             {
                 <div class="md-form m-2 text-center">
-                    <button type="submit" class="btn btn-md btn-success"> Regresar </button>
->>>>>>> 091016b7d3854db6405d93405547fff78f975dad
+                    <button type="submit" class="btn btnmarc Regresar">Cancelar</button>
                 </div>
             }
             <!-- Form -->
@@ -149,4 +99,3 @@
 
     </div>
 </div>
-
